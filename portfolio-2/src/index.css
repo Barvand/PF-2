@@ -1,2 +1,163 @@
 @import "tailwindcss";
 
+@layer theme, base, components, utilities;
+
+@layer utilities {
+  .container {
+    margin: auto;
+    max-width: 1100px;
+  }
+}
+
+@layer theme {
+  .brand-color {
+    color: #ff6700;
+  }
+  .secondary-color {
+    color: #343131;
+  }
+}
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --color-main: #ff6700;
+  --breakpoint-3xl: 1920px;
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1); /* ... */
+}
+
+:root {
+  --brand-color: #ff6700;
+  --black-color: #131313;
+}
+
+body {
+  font-family: "Inter", serif;
+  background-color: var(--black-color);
+}
+
+h1 {
+  font-family: "Montserrat", serif;
+}
+
+/* Black background with orange dots */
+.custom-bg-black {
+  background: linear-gradient(
+    to bottom,
+    #000,
+    #ff6700
+  ); /* Black to Orange gradient */
+  background-image: radial-gradient(rgba(255, 103, 0, 0.6) 1px, transparent 0);
+  background-size: 80px 80px;
+  background-position: -19px -19px;
+}
+
+/* Orange background with black dots */
+.custom-bg-orange {
+  background: linear-gradient(
+    to bottom,
+    #dfd7d7,
+    #ff6700
+  ); /* Black to Orange gradient */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1px, transparent 0);
+  background-size: 80px 80px;
+  background-position: -19px -19px;
+  background-color: #ff6700;
+}
+
+.section--mockup-laptop {
+  position: relative;
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.section--mockup-laptop::before,
+.section--mockup-laptop::after {
+  content: "";
+  position: absolute;
+}
+
+.section--mockup-laptop[data-mockup-color="orange"]::before,
+.section--mockup-laptop[data-mockup-color="orange"]::after {
+  background: #ff6700; /* Orange */
+}
+
+.section--mockup-laptop[data-mockup-color="black"]::before,
+.section--mockup-laptop[data-mockup-color="black"]::after {
+  background: #000000; /* Black */
+}
+/* Vertical Line */
+.section--mockup-laptop::before {
+  width: 100px;
+  height: 3px; /* Adjust height */
+  top: 0;
+  right: 0;
+}
+
+/* Horizontal Line */
+.section--mockup-laptop::after {
+  width: 100px; /* Adjust width */
+  height: 3px;
+  bottom: 0;
+  right: 0;
+}
+
+.icon {
+  position: relative;
+  display: inline-block; /* Ensure it behaves as a container */
+  padding: 10px; /* Adjust padding for better effect */
+  overflow: hidden; /* Prevents shine effect from overflowing */
+  border-radius: 8px; /* Optional: Smooth edges */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover Glow Effect */
+.icon:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+/* Shine Effect */
+.icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    transparent
+  );
+  transition: all 650ms ease-in-out;
+}
+
+.icon:hover::before {
+  left: 100%;
+}
+
+.wave {
+  background-image: url("/wavesOpacity.svg");
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.section-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust height */
+  background-image: url("/wave-divider.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}

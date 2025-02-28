@@ -1,8 +1,12 @@
+import ProjectSection from "../components/ProjectSection";
+import IntroPortfolio from "../components/IntroPortfolio";
+
 function Home() {
   return (
-    <div>
-      <h1> Portfolio </h1>
-    </div>
+    <main className="">
+      <IntroPortfolio />
+      <ProjectSection />
+    </main>
   );
 }
 
