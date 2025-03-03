@@ -1,11 +1,12 @@
 export interface Project {
   name: string;
+  logo: string;
   description: string;
   audience: string;
   design: string[];
   techStack: string[];
-  logo: string;
-  favicon: string
-  mockup: string;
+  mockups: {
+    desktop: string;
+    mobile: string;
+  };
 }
-

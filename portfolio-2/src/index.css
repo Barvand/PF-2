@@ -6,6 +6,13 @@
   .container {
     margin: auto;
     max-width: 1100px;
+    padding: 6px;
+  }
+}
+
+@layer base {
+  img {
+    max-width: 100%;
   }
 }
 
@@ -28,7 +35,7 @@
 
 :root {
   --brand-color: #ff6700;
-  --black-color: #131313;
+  --black-color: #000;
 }
 
 body {
@@ -137,6 +144,7 @@ h1 {
   left: 100%;
 }
 
+/* Hero image wave */
 .wave {
   background-image: url("/wavesOpacity.svg");
   position: absolute;
@@ -160,4 +168,47 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
+}
+
+.custom-shape-divider-top-1741012308 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
+@keyframes waveAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* Media queries */
+@media (max-width: 768px) {
+  .section--mockup-laptop::before {
+    top: unset; /* Remove top positioning */
+    bottom: 0; /* Move to the bottom */
+    right: 1; /* Move to the left */
+    width: 3px; /* Make it a vertical line */
+    height: 100px; /* Adjust height */
+  }
+
+  .section--mockup-laptop::after {
+    bottom: 1; /* Remove right positioning */
+    left: 0; /* Move to the left */
+    width: 3px;
+    height: 100px;
+  }
+
+  .section--mockup-laptop {
+    border-bottom: 3px solid;
+  }
 }

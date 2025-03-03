@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function IntroPortfolio() {
   return (
-    <div className="relative h-dvh flex items-center bg-black text-white overflow-hidden custom-bg-black">
+    <div className="relative h-[80vh] flex items-center bg-black text-white overflow-hidden custom-bg-black">
       <div className="container flex flex-col sm:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
         {/* Left Section: Text */}
         <div className="wave"> </div>
