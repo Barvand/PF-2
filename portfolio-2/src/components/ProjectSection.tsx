@@ -16,10 +16,7 @@ const ProjectSections = forwardRef<HTMLElement>((props, ref) => {
         </div>
       </div>
       {projects.map((project, index) => (
-        <RenderProject
-          key={index}
-          project={project}
-        />
+        <RenderProject key={index} project={project} />
       ))}
     </section>
   );

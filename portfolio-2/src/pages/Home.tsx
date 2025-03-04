@@ -2,7 +2,7 @@ import { useRef } from "react";
 import ProjectSections from "../components/ProjectSection";
 import IntroPortfolio from "../components/IntroPortfolio";
 import NavigationText from "../components/NavigationText";
-import Waves from "../components/Waves";
+import ButtonToTop from "../features/ButtonToTop";
 import Roadmap from "../components/RoadMap";
 import { IoArrowDownOutline } from "react-icons/io5";
 
@@ -64,6 +64,7 @@ function Home() {
             <h3 className="text-xl"> How does this look? </h3>
           </div>
         </div>
+        <ButtonToTop />
       </section>
     </main>
   );

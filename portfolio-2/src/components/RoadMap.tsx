@@ -1,6 +1,6 @@
-"use client";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { FaArrowDown } from "react-icons/fa";
 
 export default function Roadmap() {
   const containerRef = useRef(null);
@@ -12,16 +12,16 @@ export default function Roadmap() {
       {/* Scroll Snap Container */}
       <div
         ref={containerRef}
-        className="w-full h-[80vh] overflow-y-scroll snap-y snap-mandatory flex flex-col items-center space-y-16 pb-16"
+        className="w-full h-[80vh] container justify-evenly space-y-16 pb-16"
       >
         {/* Step 1 */}
         <motion.div
-          className="flex items-center space-x-8 snap-center"
+          className="row"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative">
+          <div className="relative col-five">
             <img
               className="object-cover object-top h-94 w-94 rounded shadow-lg"
               src="/young-me-military.jpg"
@@ -32,20 +32,24 @@ export default function Roadmap() {
               <p> 2009 - 2012 </p>
             </div>
           </div>
-          <svg
-            className="w-12 h-12 text-main"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-          <div className="relative">
+
+          <div className="col-two">
+            <svg
+              className="w-12 h-12 text-main"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+
+          <div className="relative col-five">
             <img
               className="object-cover object-top h-94 w-94 rounded shadow-lg"
               src="/instructor.jpg"
@@ -58,36 +62,51 @@ export default function Roadmap() {
           </div>
         </motion.div>
 
+        {/* Arrow Only Row */}
+        <div className="row">
+          <div className="col-nine"></div>{" "}
+          {/* Empty space to push the arrow right */}
+          <FaArrowDown size={42} />
+        </div>
+
         {/* Step 2 */}
         <motion.div
-          className="flex items-center space-x-8 snap-center"
+          className="row"
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <img
-            className="object-cover object-top h-94 w-94 rounded shadow-lg"
-            src="/customer-service.jpg"
-            alt="Customer Service"
-          />
-          <svg
-            className="w-12 h-12 text-main"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
+          <div className="col-five">
+            <img
+              className="object-cover object-top h-94 w-94 rounded shadow-lg"
+              src="/young-me-military.jpg"
+              alt="Customer Service"
             />
-          </svg>
-          <img
-            className="object-cover h-64 w-64 rounded-lg shadow-lg"
-            src="/warehouse.jpg"
-            alt="Warehouse"
-          />
+          </div>
+
+          <div className="col-two">
+            <svg
+              className="w-12 h-12 text-main"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+
+          <div className="col-five">
+            <img
+              className="object-cover object-top h-94 w-94 rounded shadow-lg"
+              src="/young-me-military.jpg"
+              alt="Warehouse"
+            />
+          </div>
         </motion.div>
 
         {/* Add more steps as needed */}

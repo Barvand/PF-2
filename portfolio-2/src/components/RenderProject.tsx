@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Project } from "../types/ProjectType";
 import ResponsiveTab from "./ResponsiveTab";
+import { motion } from "framer-motion";
+
 interface RenderProjectProps {
   project: Project;
 }
@@ -13,7 +15,13 @@ function RenderProject({ project }: RenderProjectProps) {
   return (
     <>
       <div className="custom-bg-black flex sm:h-dvh items-center relative w-full">
-        <div className="flex flex-col lg:flex-row flex-start gap-1 container bg-black">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="flex flex-col lg:flex-row flex-start gap-1 container bg-black"
+        >
           {/* Mockup Section */}
           <div className="section--mockup-laptop md:border-r-3 sm:p-2 md:w-full md:h-full lg:w-[1000px] lg:h-[800px] mt-4 mb-3">
             <div className="flex justify-between items-center">
@@ -36,7 +44,13 @@ function RenderProject({ project }: RenderProjectProps) {
             </div>
 
             {/* Display mockup */}
-            <div className="mt-5 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="mt-5 flex justify-center"
+            >
               {imageSrc && (
                 <img
                   src={imageSrc}
@@ -44,11 +58,17 @@ function RenderProject({ project }: RenderProjectProps) {
                   className="rounded-lg shadow-lg"
                 />
               )}
-            </div>
+            </motion.div>
           </div>
 
           {/* Text Section */}
-          <div className="section-project--text p-4 flex flex-col gap-4 pt-2 pb-2 text-white">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="section-project--text p-4 flex flex-col gap-4 pt-2 pb-2 text-white"
+          >
             <img className="w-46" src={project.logo} alt="project.logo"></img>
             <div>
               <h2 className="font-bold">What is {project.name}?</h2>
@@ -62,7 +82,7 @@ function RenderProject({ project }: RenderProjectProps) {
               <p>{project.audience}</p>
             </div>
 
-            <div className="">
+            <div>
               <h2 className="font-bold">Design process</h2>
               {project.design.map((point, index) => (
                 <p key={index}> {point}</p>
@@ -79,14 +99,14 @@ function RenderProject({ project }: RenderProjectProps) {
                     key={index}
                     className="relative group px-2.5 rounded text-gray-200 cursor-pointer font-bold overflow-hidden"
                   >
-                    {tech} {/* Keep the text inside the paragraph */}
+                    {tech}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main group-hover:w-full group-hover:transition-all duration-300 ease-in-out"></span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
       <svg
         className="w-full h-12 text-gray-700"

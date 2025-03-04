@@ -15,8 +15,11 @@ function IntroPortfolio({ Project, Contact }) {
             >
               Bart van den Berg
             </motion.h1>
+            <motion.circle
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+            />
 
-            {/* Typewriter Effect for Impact */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -25,7 +28,7 @@ function IntroPortfolio({ Project, Contact }) {
             ></motion.h2>
 
             {/* Improved Bullet Points */}
-            <motion.ul
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
@@ -43,7 +46,7 @@ function IntroPortfolio({ Project, Contact }) {
                   Leiden, the Netherlands.{" "}
                 </span>
               </h2>
-            </motion.ul>
+            </motion.div>
             {/* Call to Action Button - Positioned Below */}
             <div className="flex gap-5">
               <motion.div
