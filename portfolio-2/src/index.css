@@ -8,6 +8,12 @@
     max-width: 1100px;
     padding: 6px;
   }
+    .brand-color {
+    color: #ff6700;
+  }
+  .bg-secondary {
+    background-color: #343131;
+  }
 }
 
 @layer base {
@@ -16,14 +22,6 @@
   }
 }
 
-@layer theme {
-  .brand-color {
-    color: #ff6700;
-  }
-  .secondary-color {
-    color: #343131;
-  }
-}
 
 @theme {
   --font-display: "Satoshi", "sans-serif";
@@ -45,6 +43,14 @@ body {
 
 h1 {
   font-family: "Montserrat", serif;
+}
+
+.button-icon-hand {
+  opacity: 0;
+}
+
+.button-icon-hand:hover {
+  opacity: 1;
 }
 
 /* Black background with orange dots */
@@ -75,6 +81,7 @@ h1 {
 .section--mockup-laptop {
   position: relative;
   padding: 20px; /* Adjust padding as needed */
+  border-right: solid 3px var(--brand-color);
 }
 
 .section--mockup-laptop::before,
@@ -83,21 +90,13 @@ h1 {
   position: absolute;
 }
 
-.section--mockup-laptop[data-mockup-color="orange"]::before,
-.section--mockup-laptop[data-mockup-color="orange"]::after {
-  background: #ff6700; /* Orange */
-}
-
-.section--mockup-laptop[data-mockup-color="black"]::before,
-.section--mockup-laptop[data-mockup-color="black"]::after {
-  background: #000000; /* Black */
-}
 /* Vertical Line */
 .section--mockup-laptop::before {
   width: 100px;
   height: 3px; /* Adjust height */
   top: 0;
   right: 0;
+  background-color: var(--brand-color);
 }
 
 /* Horizontal Line */
@@ -106,6 +105,7 @@ h1 {
   height: 3px;
   bottom: 0;
   right: 0;
+  background-color: var(--brand-color);
 }
 
 .icon {
@@ -170,7 +170,7 @@ h1 {
   background-position: center bottom;
 }
 
-.custom-shape-divider-top-1741012308 {
+.customer-divider {
   position: absolute;
   top: 0;
   left: 0;
@@ -181,6 +181,10 @@ h1 {
 
 .flip-horizontal {
   transform: scaleX(-1);
+}
+
+.flip-vertical {
+  transform: scaleY(-1);
 }
 
 @keyframes waveAnimation {

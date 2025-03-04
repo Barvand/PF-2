@@ -3,6 +3,8 @@ import ProjectSections from "../components/ProjectSection";
 import IntroPortfolio from "../components/IntroPortfolio";
 import NavigationText from "../components/NavigationText";
 import Waves from "../components/Waves";
+import Roadmap from "../components/RoadMap";
+import { IoArrowDownOutline } from "react-icons/io5";
 
 function Home() {
   // Define section references
@@ -17,37 +19,39 @@ function Home() {
 
   return (
     <main>
-      <IntroPortfolio />
+      <IntroPortfolio
+        Project={() => scrollToSection(projectsRef)}
+        Contact={() => scrollToSection(aboutMeRef)}
+      />
       <NavigationText
         onProjectsClick={() => scrollToSection(projectsRef)}
         onAboutMeClick={() => scrollToSection(aboutMeRef)}
         onFutureClick={() => scrollToSection(futureRef)}
       />
-
       <ProjectSections ref={projectsRef} />
-
       {/* Other sections */}
-      <section ref={aboutMeRef} className=" justify-center bg-gray-300">
-        <div className="relative bg-main">
-          <div className="relative flex">
-            <h2 className="text-5xl font-bold text-gray-200 bg-main p-3 flex justify-end container">
-              About me
-            </h2>
+      <section ref={aboutMeRef} className=" justify-center custom-bg-black">
+        <div className="relative mt-20">
+          <div className="container border-b border-main flex justify-between cursor-pointer group">
+            <h2 className="text-5xl text-main font-bold">About me</h2>
+            <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
+              <IoArrowDownOutline size={42} />
+            </div>
           </div>
         </div>
-        <Waves color={"#ff6700"} flip={false} />
 
-        <div className="container">
-          <h2> You know the deal </h2>
-        </div>
+        <Roadmap />
       </section>
       <section ref={futureRef} className="flex bg-gray-200 h-screen">
-        <div className=" relative w-full">
-          <h2 className="text-5xl font-bold text-gray-200 bg-main p-3">
-            Future Section
-          </h2>
-          <Waves color={"#ff6700"} flip={true} />
-          <div className="">
+        <div className=" relative w-full mt-20">
+          <div className="container border-b border-main flex justify-between cursor-pointer group">
+            <h2 className="text-5xl text-main font-bold">The future</h2>
+            <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
+              <IoArrowDownOutline size={42} />
+            </div>
+          </div>
+
+          <div className="container">
             <h2> Trading Journal Platform </h2>
             <p>
               As a day trader, it is a must to keep track of your trades in
