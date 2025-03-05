@@ -96,7 +96,7 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section
       ref={ref}
-      className="p-6 max-w-4xl container text-white bg-black min-h-screen"
+      className="p-1 container text-white bg-black sm:size-fit"
     >
       {/* Section Header */}
       <div className="relative mt-20 mb-20">
@@ -114,15 +114,14 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
         </div>
       </div>
 
-
       {/* Category Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-6">
+      <div className="flex flex-wrap gap-1 mb-6 justify-center">
         {categories.map((category) => (
           <motion.button
             key={category}
             onClick={() => setSelectedCategory(category)}
             whileTap={{ scale: 0.9 }}
-            className={`relative border border-main py-3 px-3 rounded font-bold cursor-pointer transition group ${
+            className={`relative border border-main py-1 px-1 sm:py-2 sm:px-2 rounded font-bold cursor-pointer transition group ${
               selectedCategory === category
                 ? "bg-main text-white shadow-lg"
                 : "bg-black border-main text-main hover:bg-white"
@@ -137,12 +136,12 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
       </div>
 
       {/* Tech Stack Cards */}
-      <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <motion.div layout className="grid grid-cols-2 md:grid-cols-5 gap-2">
         {filteredStack.map((tech) => (
           <motion.div
             key={tech.id}
             className="relative
-             hover:bg-gray-200 group py-3 px-3 rounded text-white cursor-pointer 
+             hover:bg-gray-200 group py-1 px-1 rounded text-white cursor-pointer 
              font-bold text-center shadow-md transition-all hover:scale-105"
             style={{ backgroundColor: tech.color }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -153,8 +152,10 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
             {tech.name}
 
             {/* Hover Underline Animation */}
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white 
-            group-hover:w-full group-hover:transition-all"></span>
+            <span
+              className="absolute bottom-0 left-0 w-0 h-0.5 bg-white 
+            group-hover:w-full group-hover:transition-all"
+            ></span>
           </motion.div>
         ))}
       </motion.div>

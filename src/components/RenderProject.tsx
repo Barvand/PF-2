@@ -14,7 +14,7 @@ function RenderProject({ project }: RenderProjectProps) {
 
   return (
     <>
-      <div className="custom-bg-black flex sm:h-dvh items-center relative w-full">
+      <div className="custom-bg-black flex items-center relative w-full mt-20 mb-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ function RenderProject({ project }: RenderProjectProps) {
             viewport={{ once: true, amount: 0.2 }}
             className="section-project--text p-4 flex flex-col gap-4 pt-2 pb-2 text-white"
           >
-            <img className="w-46" src={project.logo} alt="project.logo"></img>
+            <img className="w-26" src={project.logo} alt="project.logo"></img>
             <div>
               <h2 className="font-bold">What is {project.name}?</h2>
               <p>{project.description}</p>

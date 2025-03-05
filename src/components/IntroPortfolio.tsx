@@ -8,7 +8,7 @@ interface IntroPortFolioProps {
 function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
   return (
     <>
-      <div className="relative h-[80vh] flex items-center bg-black text-white overflow-hidden custom-bg-black">
+      <div className="relative p-2 sm:h-[80vh] flex  bg-black text-white overflow-hidden custom-bg-black">
         <div className="container flex flex-col sm:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
           {/* Left Section: Text */}
           <div className="max-w-lg">
