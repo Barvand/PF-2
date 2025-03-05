@@ -35,6 +35,15 @@
   --black-color: #000;
 }
 
+.container:hover .circleContainer {
+  transform: translateY(-50%) translateX(0); /* Move into view */
+  opacity: 1;
+}
+
+.container:hover .circle {
+  transform: scale(1); /* Expand into view */
+}
+
 body {
   font-family: "Inter", serif;
   background-color: var(--black-color);
@@ -191,7 +200,6 @@ h1 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto;
-  column-gap: 5em;
   justify-content: center;
   width: 100%;
 }
@@ -207,9 +215,19 @@ h1 {
   align-items: center;
 }
 
+.col-six {
+  grid-column: span 6;
+}
+
 .col-nine {
   grid-column: auto / span 9;
 }
+
+.clipped-image {
+  position: relative;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
 
 @keyframes waveAnimation {
   from {
@@ -219,6 +237,7 @@ h1 {
     transform: translateX(-50%);
   }
 }
+
 /* Media queries */
 @media (max-width: 768px) {
   .section--mockup-laptop::before {
@@ -239,4 +258,47 @@ h1 {
   .section--mockup-laptop {
     border-bottom: 3px solid;
   }
+}
+
+/* Sam fisher reference */
+.circleContainer {
+  position: absolute;
+  left: -20px; /* Start hidden to the left */
+  top: 50%;
+  transform: translateY(20%) translateX(10px); /* Slightly offscreen */
+  opacity: 0; /* Initially invisible */
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  width: 20px;
+  height: 10px;
+}
+
+.circle {
+  width: 5px;
+  height: 5px;
+  background-color: #aaff00; /* Bright green color */
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(170, 255, 0, 0.5); /* Green glow effect */
+  position: absolute;
+  transform: scale(0.6); /* Start smaller */
+  transition: transform 0.4s ease-out;
+}
+
+/* Triangle formation */
+.circle:nth-child(1) {
+  /* Top */
+  top: 0;
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+.circle:nth-child(2) {
+  /* Bottom-left */
+  bottom: 0;
+  left: 0;
+}
+
+.circle:nth-child(3) {
+  /* Bottom-right */
+  bottom: 0;
+  right: 0;
 }

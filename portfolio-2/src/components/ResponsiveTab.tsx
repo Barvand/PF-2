@@ -1,4 +1,14 @@
-function ResponsiveTab({ onSelectDesktop, onSelectMobile, activeTab }) {
+interface ResponsiveTabProps {
+  onSelectDesktop: () => void;
+  onSelectMobile: () => void;
+  activeTab: string;
+}
+
+function ResponsiveTab({
+  onSelectDesktop,
+  onSelectMobile,
+  activeTab,
+}: ResponsiveTabProps) {
   return (
     <div className="flex gap-1">
       {/* Desktop Icon */}

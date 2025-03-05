@@ -4,7 +4,7 @@ import RenderProject from "./RenderProject";
 import { IoArrowDownOutline } from "react-icons/io5";
 
 // Use forwardRef to accept a ref from Home.tsx
-const ProjectSections = forwardRef<HTMLElement>((props, ref) => {
+const ProjectSections = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section ref={ref}>
       <div className="container">

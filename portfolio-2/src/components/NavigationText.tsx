@@ -5,12 +5,14 @@ interface NavigationTextProps {
   onProjectsClick: () => void;
   onAboutMeClick: () => void;
   onFutureClick: () => void;
+  onTechStackClick: () => void;
 }
 
 function NavigationText({
   onProjectsClick,
   onAboutMeClick,
   onFutureClick,
+  onTechStackClick,
 }: NavigationTextProps) {
   return (
     <div className="bg-main flex flex-col justify-center relative mb-20 gap-10 pb-20">
@@ -20,6 +22,15 @@ function NavigationText({
         onClick={onProjectsClick}
       >
         <h2 className="text-5xl font-bold">Projects</h2>
+        <div className="transition-transform duration-300 group-hover:animate-bounce">
+          <MdArrowOutward size={42} />
+        </div>
+      </div>
+      <div
+        className="container border-b border-black flex justify-between cursor-pointer group"
+        onClick={onTechStackClick}
+      >
+        <h2 className="text-5xl font-bold">Tech stack</h2>
         <div className="transition-transform duration-300 group-hover:animate-bounce">
           <MdArrowOutward size={42} />
         </div>

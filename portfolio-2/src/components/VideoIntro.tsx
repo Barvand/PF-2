@@ -5,7 +5,7 @@ function VideoIntro() {
   const [text, setText] = useState("");
   const [overlayText, setOverlayText] = useState("");
   const [fade, setFade] = useState("opacity-100"); // Controls text fade
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   // Typewriter effect for "Hei, hallo."
   useEffect(() => {
@@ -31,33 +31,33 @@ function VideoIntro() {
 
     const currentTime = video.currentTime;
 
-     const textSequence = [
-       {
-         text: "Where it all began—discipline, structure, and problem-solving.",
-         time: 1,
-         duration: 7,
-       },
-       {
-         text: "From discipline to leadership—coaching and motivating others.",
-         time: 12,
-         duration: 6,
-       },
-       {
-         text: "Adapting, listening, and delivering solutions.",
-         time: 18,
-         duration: 5,
-       },
-       {
-         text: "Hands-on work, organization, and efficiency.",
-         time: 22,
-         duration: 4,
-       },
-       {
-         text: "Creating experiences, attention to detail, and service excellence.",
-         time: 26,
-         duration: 4,
-       },
-     ];
+    const textSequence = [
+      {
+        text: "Where it all began—discipline, structure, and problem-solving.",
+        time: 1,
+        duration: 7,
+      },
+      {
+        text: "From discipline to leadership—coaching and motivating others.",
+        time: 12,
+        duration: 6,
+      },
+      {
+        text: "Adapting, listening, and delivering solutions.",
+        time: 18,
+        duration: 5,
+      },
+      {
+        text: "Hands-on work, organization, and efficiency.",
+        time: 22,
+        duration: 4,
+      },
+      {
+        text: "Creating experiences, attention to detail, and service excellence.",
+        time: 26,
+        duration: 4,
+      },
+    ];
 
     // Find the current text based on time
     const matchedText = textSequence.find(

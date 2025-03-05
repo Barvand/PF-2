@@ -18,7 +18,7 @@ import { IoMdArrowRoundUp } from "react-icons/io";
  * ```
  */
 
-function ButtonToTop(): JSX.Element {
+function ButtonToTop() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {

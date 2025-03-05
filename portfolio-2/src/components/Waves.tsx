@@ -1,4 +1,9 @@
-function Waves({ color, flip }) {
+interface WavesProps {
+  color: string;
+  flip: boolean;
+}
+
+function Waves({ color, flip }: WavesProps) {
   return (
     <div
       className={`custom-shape-divider-top-1741012421 ${

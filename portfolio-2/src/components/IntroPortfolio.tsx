@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 
-function IntroPortfolio({ Project, Contact }) {
+interface IntroPortFolioProps {
+  Project: () => void;
+  Contact: () => void;
+}
+
+function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
   return (
     <>
       <div className="relative h-[80vh] flex items-center bg-black text-white overflow-hidden custom-bg-black">
@@ -15,11 +20,6 @@ function IntroPortfolio({ Project, Contact }) {
             >
               Bart van den Berg
             </motion.h1>
-            <motion.circle
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-            />
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
