@@ -11,6 +11,8 @@ export const projects = [
       desktop: "/holidaze-desktop.jpg",
       mobile: "/holidaze-mockup.svg",
     },
+    liveLink: "https://holidazingtime.netlify.app/", // <-- Add this
+    repoLink: "https://github.com/Barvand/Project-exam-2", // <-- And this
   },
   {
     name: "TimeLess",
@@ -24,6 +26,8 @@ export const projects = [
       desktop: "/timeless-website.png",
       mobile: "/Timeless-mobile.svg",
     },
+    liveLink: "https://timeless-shop.netlify.app/", // <-- Add this
+    repoLink: "https://github.com/Barvand/JavaScript-Frameworks/", // <-- And this
   },
   {
     name: "Vindt",
@@ -37,6 +41,7 @@ export const projects = [
       desktop: "/vindt-desktop.jpg",
       mobile: "/vindt-mobile-mockup.svg",
     },
+    liveLink: "https://vindt-auction.netlify.app/home/",
+    repoLink: "https://github.com/Barvand/Semester-Project-2",
   },
 ];
-
