@@ -1,11 +1,55 @@
-import Logo from "./Logo";
+import Hamburger from "hamburger-react";
+import { useState, useEffect } from "react";
+import DesktopNavigation from "./DesktopNavigation";
+import HamburgerMenu from "./HamburgerMenu";
 
-function Navigation() {
+interface NavigationProps {
+  scrollToProjects: () => void;
+  scrollToAboutMe: () => void;
+  scrollToTechStack: () => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({
+  scrollToProjects,
+  scrollToAboutMe,
+  scrollToTechStack,
+}) => {
+  const [open, setOpen] = useState(false);
+  // Prevent scrolling when hamburger is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // Cleanup function
+    };
+  }, [open]);
+
   return (
     <div>
-      <Logo />
+      <div className="flex md:hidden container bg-main justify-end">
+        {/* Hamburger Menu */}
+        <Hamburger size={32} toggled={open} toggle={setOpen} />
+      </div>
+      {/* Mobile Navigation Menu */}
+      {open && (
+        <HamburgerMenu
+          scrollToProjects={scrollToProjects}
+          scrollToAboutMe={scrollToAboutMe}
+          scrollToTechStack={scrollToTechStack}
+          setOpen={setOpen}
+        />
+      )}
+      <DesktopNavigation
+        scrollToProjects={scrollToProjects}
+        scrollToAboutMe={scrollToAboutMe}
+        scrollToTechStack={scrollToTechStack}
+      />
     </div>
   );
-}
+};
 
 export default Navigation;

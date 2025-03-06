@@ -215,19 +215,25 @@ h1 {
   align-items: center;
 }
 
+.col-four {
+  grid-column: span 4;
+}
 .col-six {
   grid-column: span 6;
 }
 
-.col-nine {
-  grid-column: auto / span 9;
+.col-eight {
+  grid-column: auto / span 8;
+}
+
+.col-twelve {
+  grid-column: span 12;
 }
 
 .clipped-image {
   position: relative;
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
-
 
 @keyframes waveAnimation {
   from {

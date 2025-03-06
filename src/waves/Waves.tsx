@@ -6,7 +6,7 @@ interface WavesProps {
 function Waves({ color, flip }: WavesProps) {
   return (
     <div
-      className={`custom-shape-divider-top-1741012421 ${
+      className={`custom-wave ${
         flip ? "flip-horizontal" : ""
       }`}
     >

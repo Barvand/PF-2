@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { projects } from "../data";
+import { projects } from "../data/data";
 import RenderProject from "./RenderProject";
 import { IoArrowDownOutline } from "react-icons/io5";
 

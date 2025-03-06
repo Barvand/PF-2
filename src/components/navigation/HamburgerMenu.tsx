@@ -1,21 +1,27 @@
-interface DesktopNavigationProps {
+interface HamburgerMenuProps {
   scrollToProjects: () => void;
   scrollToAboutMe: () => void;
   scrollToTechStack: () => void;
+  setOpen: (open: boolean) => void; // Corrected type
 }
 
-function DesktopNavigation({
+function HamburgerMenu({
   scrollToProjects,
   scrollToAboutMe,
   scrollToTechStack,
-}: DesktopNavigationProps) {
+  setOpen,
+}: HamburgerMenuProps) {
   return (
-    <nav className=" border-main border-b-3 text-white hidden md:block m-1">
-      <div className="container flex justify-around items-center h-20">
+    <div
+      className="absolute z-4 top-20 left-0 w-full h-screen p-4 
+        text-white bg-black"
+    >
+      <nav className="flex flex-col gap-10 mt-6">
         <button
-          className="text-lg font-bold hover:text-main group relative cursor-pointer"
+          className="text-lg font-bold hover:text-main relative group"
           onClick={() => {
             scrollToProjects();
+            setOpen(false);
           }}
         >
           Projects
@@ -25,9 +31,10 @@ function DesktopNavigation({
           ></span>
         </button>
         <button
-          className="text-lg font-bold text-white hover:text-main group relative cursor-pointer"
+          className="text-lg font-bold hover:text-main relative group"
           onClick={() => {
             scrollToAboutMe();
+            setOpen(false);
           }}
         >
           About Me
@@ -37,9 +44,10 @@ function DesktopNavigation({
           ></span>
         </button>
         <button
-          className="text-lg font-bold text-white hover:text-main relative group cursor-pointer"
+          className="text-lg font-bold hover:text-main relative group"
           onClick={() => {
             scrollToTechStack();
+            setOpen(false);
           }}
         >
           Tech Stack
@@ -48,9 +56,9 @@ function DesktopNavigation({
             group-hover:w-full group-hover:transition-all"
           ></span>
         </button>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
 
-export default DesktopNavigation;
+export default HamburgerMenu;

@@ -9,4 +9,6 @@ export interface Project {
     desktop: string;
     mobile: string;
   };
+  liveLink: string;
+  repoLink: string;
 }

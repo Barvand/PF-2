@@ -1,51 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-
-const milestones = [
-  {
-    title: "Luchtmobiele brigade",
-    year: "2009 - 2012",
-    description: "Built resilience, teamwork, and leadership.",
-    image: "/military.jpg",
-    location: "Arnhem, Netherlands",
-  },
-  {
-    title: "Fitness Instructor",
-    year: "2012 - 2016",
-    description: "Taught, motivated, and helped people transform.",
-    image: "/instructor.jpg",
-    location: "Leiden, Netherlands",
-  },
-  {
-    title: "Customer Service",
-    year: "2016 - 2019",
-    description: "Developed communication and problem-solving skills.",
-    image: "/barcelona.jpg",
-    location: "Barcelona, Spain",
-  },
-  {
-    title: "Warehouse & Logistics",
-    year: "2019 - 2021",
-    description: "Learned efficiency, operations, and adaptability.",
-    image: "/amsterdam.jpg",
-    location: "Amsterdam, Netherlands",
-  },
-  {
-    title: "Hospitality",
-    year: "2021 - 2023",
-    description: "Refined service, user experience, and attention to detail.",
-    image: "/citybox.jpg",
-    location: "Bergen, Norway",
-  },
-  {
-    title: "Front-End Development",
-    year: "2023 - Present",
-    description:
-      "Combining creativity with technical skills to build immersive experiences.",
-    image: "/father.jpg",
-    location: "Bergen, Norway",
-  },
-];
+import { milestones } from "../data/milestones";
 
 export default function AboutSection() {
   const [expanded, setExpanded] = useState(false);
@@ -67,14 +22,14 @@ export default function AboutSection() {
 
   return (
     <section ref={sectionRef} className="max-w-4xl mx-auto p-8 text-white">
-      <h2 className="text-3xl font-bold text-orange-500 mb-6">
+      <h2 className="text-3xl font-bold text-white mb-6">
         How my journey started
       </h2>
 
       {/* Timeline Container */}
-      <div className="relative border-l-2 border-orange-500 pl-6 space-y-8">
+      <div className="relative border-l-2 border-main pl-6 space-y-8">
         {milestones
-          .slice(0, expanded ? milestones.length : 2)
+          .slice(0, expanded ? milestones.length : 3)
           .map((milestone, index) => (
             <motion.div
               key={index}
@@ -85,7 +40,7 @@ export default function AboutSection() {
               className="relative"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-[-35px] top-2 w-5 h-5 bg-orange-500 rounded-full"></div>
+              <div className="absolute left-[-35px] top-2 w-5 h-5 bg-main rounded-full"></div>
 
               {/* Content */}
               <div className="bg-black p-1 rounded shadow-lg row h-62">

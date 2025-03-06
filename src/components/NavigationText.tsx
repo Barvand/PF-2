@@ -1,17 +1,15 @@
 import { MdArrowOutward } from "react-icons/md";
-import Waves from "./Waves";
+import Waves from "../waves/Waves";
 
 interface NavigationTextProps {
   onProjectsClick: () => void;
   onAboutMeClick: () => void;
-  onFutureClick: () => void;
   onTechStackClick: () => void;
 }
 
 function NavigationText({
   onProjectsClick,
   onAboutMeClick,
-  onFutureClick,
   onTechStackClick,
 }: NavigationTextProps) {
   return (
@@ -21,7 +19,7 @@ function NavigationText({
         className="container border-b border-black flex justify-between cursor-pointer group"
         onClick={onProjectsClick}
       >
-        <h2 className="text-5xl font-bold">Projects</h2>
+        <h2 className="text-3xl sm:text-5xl font-bold">Projects</h2>
         <div className="transition-transform duration-300 group-hover:animate-bounce">
           <MdArrowOutward size={42} />
         </div>
@@ -30,7 +28,7 @@ function NavigationText({
         className="container border-b border-black flex justify-between cursor-pointer group"
         onClick={onTechStackClick}
       >
-        <h2 className="text-5xl font-bold">Tech stack</h2>
+        <h2 className="text-3xl sm:text-5xl font-bold">Tech stack</h2>
         <div className="transition-transform duration-300 group-hover:animate-bounce">
           <MdArrowOutward size={42} />
         </div>
@@ -39,16 +37,7 @@ function NavigationText({
         className="container border-black border-b flex justify-between cursor-pointer group"
         onClick={onAboutMeClick}
       >
-        <h2 className="text-5xl font-bold">Learn more about me</h2>
-        <div className="transition-transform duration-300 group-hover:animate-bounce">
-          <MdArrowOutward size={42} />
-        </div>
-      </div>
-      <div
-        className="container border-black border-b flex justify-between items-center cursor-pointer group"
-        onClick={onFutureClick}
-      >
-        <h2 className="text-5xl font-bold">The future</h2>
+        <h2 className="text-3xl sm:text-5xl font-bold">Learn more about me</h2>
         <div className="transition-transform duration-300 group-hover:animate-bounce">
           <MdArrowOutward size={42} />
         </div>
