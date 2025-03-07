@@ -45,7 +45,7 @@ export default function AboutSection() {
         {/* Timeline Container */}
         <div className="relative border-l-2 border-main pl-6 space-y-8">
           {milestones
-            .slice(0, expanded ? milestones.length : 3)
+            .slice(0, expanded ? milestones.length : 4)
             .map((milestone, index) => (
               <motion.div
                 key={index}

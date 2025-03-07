@@ -36,14 +36,13 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
 
   return (
     <>
-      <GrayWave />
       <section
         ref={ref}
-        className="p-1 text-white bg-secondary md:h-[80vh] flex items-center"
+        className="p-1 text-white bg-secondary md:h-[60vh] flex items-center"
       >
         {/* Section Header */}
         <div className="container">
-          <div className="relative mt-20 mb-20">
+          <div className="relative mt-10 mb-10">
             <div className="container border-b border-main flex justify-between cursor-pointer group">
               <h2 className="text-5xl text-main font-bold">
                 Tech I am familiar with
@@ -113,7 +112,6 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
           </motion.div>
         </div>
       </section>
-      <GrayWaveTransform />
     </>
   );
 });

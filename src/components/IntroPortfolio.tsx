@@ -8,8 +8,8 @@ interface IntroPortFolioProps {
 function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
   return (
     <>
-      <div className="relative p-2 sm:h-[80vh] flex  bg-black text-white overflow-hidden custom-bg-black">
-        <div className="container flex flex-col sm:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
+      <div className="relative mb-20 p-2 sm:h-[80vh] flex bg-black text-white overflow-hidden custom-bg-black">
+        <div className="container flex flex-col md:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
           {/* Left Section: Text */}
           <div className="max-w-lg">
             <motion.h1
@@ -81,7 +81,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
           </div>
           {/* Right Section: Image */}
           <motion.div
-            className="h-[500px] w-[400px] section--mockup-laptop"
+            className="w-full h-[300px] md:h-[500px] md:w-[400px] section--mockup-laptop"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
