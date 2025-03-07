@@ -39,7 +39,7 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
       <GrayWave />
       <section
         ref={ref}
-        className="p-1 text-white bg-[#364153] md:h-[80vh] flex items-center"
+        className="p-1 text-white bg-secondary md:h-[80vh] flex items-center"
       >
         {/* Section Header */}
         <div className="container">

@@ -47,7 +47,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
                 </span>
               </h2>
             </motion.div>
-            {/* Call to Action Button - Positioned Below */}
+            {/* Call to Action Button*/}
             <div className="flex gap-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
               >
                 <button
                   onClick={Project}
-                  className="relative border border-main hover:bg-gray-200 group  py-3 px-3 rounded text-main cursor-pointer font-bold"
+                  className="relative border hover:bg-gray-200 group  py-3 px-3 rounded text-main cursor-pointer font-bold"
                 >
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main group-hover:w-full group-hover:transition-all"></span>
                   Explore my work
@@ -81,14 +81,13 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
           </div>
           {/* Right Section: Image */}
           <motion.div
-            className="h-[500px] w-[400px] section--mockup-laptop border-r-3 border-main"
-            data-mockup-color="orange"
+            className="h-[500px] w-[400px] section--mockup-laptop"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
             <img
-              className="h-full w-full object-cover rounded-xl shadow-lg"
+              className="h-full w-full object-cover rounded shadow-lg"
               src="/github-image.jpg"
               alt="Bart-picture"
             />

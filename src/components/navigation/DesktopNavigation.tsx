@@ -10,8 +10,9 @@ function DesktopNavigation({
   scrollToTechStack,
 }: DesktopNavigationProps) {
   return (
-    <nav className=" border-main border-b-3 text-white hidden md:block m-1">
+    <nav className=" border-main text-white hidden md:block m-1">
       <div className="container flex justify-around items-center h-20">
+        <img src="BartBergLogo.svg" alt="Logo" />
         <button
           className="text-lg font-bold hover:text-main group relative cursor-pointer"
           onClick={() => {

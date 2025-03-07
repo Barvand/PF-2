@@ -30,7 +30,8 @@ const Navigation: React.FC<NavigationProps> = ({
 
   return (
     <div>
-      <div className="flex md:hidden container bg-main justify-end">
+      <div className="flex md:hidden container bg-main justify-between">
+        <img src="BartBergLogoBlack.svg" alt="BartBergLogoBlack" className="w-44"/>
         {/* Hamburger Menu */}
         <Hamburger size={32} toggled={open} toggle={setOpen} />
       </div>

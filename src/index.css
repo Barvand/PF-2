@@ -12,7 +12,7 @@
     color: #ff6700;
   }
   .bg-secondary {
-    background-color: #343131;
+    background-color: #364153;
   }
 }
 
@@ -33,6 +33,8 @@
 :root {
   --brand-color: #ff6700;
   --black-color: #000;
+  --bg-secondary: #364153;
+  --text-secondary: #364153;
 }
 
 .container:hover .circleContainer {
@@ -100,7 +102,7 @@ h1 {
 
 /* Vertical Line */
 .section--mockup-laptop::before {
-  width: 100px;
+  width: 300px;
   height: 3px; /* Adjust height */
   top: 0;
   right: 0;
@@ -109,7 +111,7 @@ h1 {
 
 /* Horizontal Line */
 .section--mockup-laptop::after {
-  width: 100px; /* Adjust width */
+  width: 220px; /* Adjust width */
   height: 3px;
   bottom: 0;
   right: 0;
@@ -150,41 +152,6 @@ h1 {
 
 .icon:hover::before {
   left: 100%;
-}
-
-/* Hero image wave */
-.wave {
-  background-image: url("/wavesOpacity.svg");
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.section-divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px; /* Adjust height */
-  background-image: url("/wave-divider.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
-}
-
-.customer-divider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
 }
 
 .flip-horizontal {
@@ -235,37 +202,6 @@ h1 {
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
 
-@keyframes waveAnimation {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-  .section--mockup-laptop::before {
-    top: unset; /* Remove top positioning */
-    bottom: 0; /* Move to the bottom */
-    right: 1; /* Move to the left */
-    width: 3px; /* Make it a vertical line */
-    height: 100px; /* Adjust height */
-  }
-
-  .section--mockup-laptop::after {
-    bottom: 1; /* Remove right positioning */
-    left: 0; /* Move to the left */
-    width: 3px;
-    height: 100px;
-  }
-
-  .section--mockup-laptop {
-    border-bottom: 3px solid;
-  }
-}
-
 /* Sam fisher reference */
 .circleContainer {
   position: absolute;
@@ -307,4 +243,52 @@ h1 {
   /* Bottom-right */
   bottom: 0;
   right: 0;
+}
+
+/*  Contact form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input {
+  border: var(--text-secondary) solid 2px;
+  padding: 4px;
+  border-radius: 0.25rem;
+}
+
+input.input-error,
+select.input-error,
+textarea.input-error {
+  border-color: #fc8181;
+  outline: none;
+}
+
+input.input-error:focus,
+select.input-error:focus,
+textarea.input-error:focus {
+  border-color: #e53e3e; /* Slightly darker red on focus */
+  box-shadow: 0 0 5px rgba(252, 129, 129, 0.5);
+}
+
+.error {
+  padding: 1px;
+  color: red;
+  font-size: 12px;
+}
+textarea {
+  border: var(--text-secondary) solid 2px;
+  padding: 4px;
+  border-radius: 0.25rem;
+}
+
+
+button:disabled {
+  opacity: 0.35;
+}
+
+.successMessage {
+  font-size: 12px;
 }
