@@ -1,12 +1,9 @@
 import GrayWave from "../../waves/GrayWave";
 import ContactForm from "./ContactForm";
 import Waves from "../../waves/Waves";
+import { forwardRef } from "react";
 
-interface FooterProps {
-  ref: () => void;
-}
-
-function Footer({ ref }: FooterProps) {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
     <footer ref={ref} className="relative bg-gray-900 text-white">
       {/* Top Decorative Wave */}
@@ -39,6 +36,6 @@ function Footer({ ref }: FooterProps) {
       </div>
     </footer>
   );
-}
+});
 
 export default Footer;
