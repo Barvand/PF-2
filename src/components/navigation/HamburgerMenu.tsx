@@ -2,6 +2,7 @@ interface HamburgerMenuProps {
   scrollToProjects: () => void;
   scrollToAboutMe: () => void;
   scrollToTechStack: () => void;
+  scrollToContact: () => void;
   setOpen: (open: boolean) => void; // Corrected type
 }
 
@@ -9,6 +10,7 @@ function HamburgerMenu({
   scrollToProjects,
   scrollToAboutMe,
   scrollToTechStack,
+  scrollToContact,
   setOpen,
 }: HamburgerMenuProps) {
   return (
@@ -51,6 +53,19 @@ function HamburgerMenu({
           }}
         >
           Tech Stack
+          <span
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
+            group-hover:w-full group-hover:transition-all"
+          ></span>
+        </button>
+        <button
+          className="text-lg font-bold hover:text-main relative group"
+          onClick={() => {
+            scrollToContact();
+            setOpen(false);
+          }}
+        >
+          Contact
           <span
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
             group-hover:w-full group-hover:transition-all"

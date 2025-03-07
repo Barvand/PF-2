@@ -2,9 +2,10 @@ import GrayWave from "../../waves/GrayWave";
 import ContactForm from "./ContactForm";
 import Waves from "../../waves/Waves";
 
-function Footer() {
+
+function Footer({ ref }) {
   return (
-    <footer className="relative bg-gray-900 text-white">
+    <footer ref={ref} className="relative bg-gray-900 text-white">
       {/* Top Decorative Wave */}
       <Waves color={"#black"} flip={true} />
 

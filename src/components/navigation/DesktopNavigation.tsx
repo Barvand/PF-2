@@ -2,12 +2,14 @@ interface DesktopNavigationProps {
   scrollToProjects: () => void;
   scrollToAboutMe: () => void;
   scrollToTechStack: () => void;
+  scrollToContact: () => void;
 }
 
 function DesktopNavigation({
   scrollToProjects,
   scrollToAboutMe,
   scrollToTechStack,
+  scrollToContact,
 }: DesktopNavigationProps) {
   return (
     <nav className=" border-main text-white hidden md:block m-1">
@@ -44,6 +46,18 @@ function DesktopNavigation({
           }}
         >
           Tech Stack
+          <span
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
+            group-hover:w-full group-hover:transition-all"
+          ></span>
+        </button>
+        <button
+          className="text-lg font-bold text-white hover:text-main relative group cursor-pointer"
+          onClick={() => {
+            scrollToContact();
+          }}
+        >
+          Contact
           <span
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
             group-hover:w-full group-hover:transition-all"

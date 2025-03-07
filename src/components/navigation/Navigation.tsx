@@ -7,12 +7,14 @@ interface NavigationProps {
   scrollToProjects: () => void;
   scrollToAboutMe: () => void;
   scrollToTechStack: () => void;
+  scrollToContact: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({
   scrollToProjects,
   scrollToAboutMe,
   scrollToTechStack,
+  scrollToContact,
 }) => {
   const [open, setOpen] = useState(false);
   // Prevent scrolling when hamburger is open
@@ -31,7 +33,11 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <div>
       <div className="flex md:hidden container bg-main justify-between">
-        <img src="BartBergLogoBlack.svg" alt="BartBergLogoBlack" className="w-44"/>
+        <img
+          src="BartBergLogoBlack.svg"
+          alt="BartBergLogoBlack"
+          className="w-44"
+        />
         {/* Hamburger Menu */}
         <Hamburger size={32} toggled={open} toggle={setOpen} />
       </div>
@@ -41,6 +47,7 @@ const Navigation: React.FC<NavigationProps> = ({
           scrollToProjects={scrollToProjects}
           scrollToAboutMe={scrollToAboutMe}
           scrollToTechStack={scrollToTechStack}
+          scrollToContact={scrollToContact}
           setOpen={setOpen}
         />
       )}
@@ -48,6 +55,7 @@ const Navigation: React.FC<NavigationProps> = ({
         scrollToProjects={scrollToProjects}
         scrollToAboutMe={scrollToAboutMe}
         scrollToTechStack={scrollToTechStack}
+        scrollToContact={scrollToContact}
       />
     </div>
   );
