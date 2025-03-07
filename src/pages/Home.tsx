@@ -4,7 +4,6 @@ import IntroPortfolio from "../components/IntroPortfolio";
 import NavigationText from "../components/NavigationText";
 import ButtonToTop from "../features/ButtonToTop";
 import Roadmap from "../components/RoadMap";
-import { IoArrowDownOutline } from "react-icons/io5";
 import Navigation from "../components/navigation/Navigation";
 import TechStack from "../components/techstack/Techstack";
 import Footer from "../components/footer/Footer";

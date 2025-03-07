@@ -2,8 +2,11 @@ import GrayWave from "../../waves/GrayWave";
 import ContactForm from "./ContactForm";
 import Waves from "../../waves/Waves";
 
+interface FooterProps {
+  ref: () => void;
+}
 
-function Footer({ ref }) {
+function Footer({ ref }: FooterProps) {
   return (
     <footer ref={ref} className="relative bg-gray-900 text-white">
       {/* Top Decorative Wave */}
