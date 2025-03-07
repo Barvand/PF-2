@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import { useState, forwardRef } from "react";
 import { IoArrowDownOutline } from "react-icons/io5";
 import { techStack } from "../../data/techStackArray";
-import GrayWave from "../../waves/GrayWave";
-import GrayWaveTransform from "../../waves/GrayWaveTransform";
 
 const categories: (keyof CategoryColorsProps | "All")[] = [
   "All",
