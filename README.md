@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# Hei, hallo! Welcome to my digital space!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This portfolio showcases my journey as a **front-end developer**, blending clean UI design, modern animations, and engaging interactivity. From futuristic eCommerce shops to next-gen auction platforms, every project reflects my passion for crafting seamless user experiences.
 
-Currently, two official plugins are available:
+🌐 **Live Portfolio:** [bartholomeusberg.com](#)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🖥️ About This Portfolio
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This portfolio was designed to be **simple, stylish, and immersive**—a place where I showcase my work in a dynamic and engaging way.
 
-- Configure the top-level `parserOptions` property like this:
+### ✨ Features:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+✔️ **Minimal yet impactful design**  
+✔️ **Smooth animations & transitions**  
+✔️ **Responsive and mobile-friendly**  
+✔️ **Interactive project showcases**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🚀 Technologies Used
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **React** – For a dynamic UI
+- **TypeScript** – Ensuring type safety and scalability
+- **Tailwind CSS** – For a clean and efficient styling approach
+- **Framer Motion** – Adding smooth animations
+- **Netlify** – For fast and seamless deployment
+
+---
+
+## 📌 Featured Projects
+
+### 🛎️ Holidaze
+
+_A modern accommodation booking platform built with React & TypeScript._  
+🔗 **Live Demo:** [Holidazing Time](https://holidazingtime.netlify.app/)  
+📂 **Repo:** [GitHub](https://github.com/Barvand/Project-exam-2)
+
+### 🛍️ TimeLess
+
+_A futuristic eCommerce shop designed for a younger audience._  
+🔗 **Live Demo:** [Timeless](https://timeless-shop.netlify.app/)  
+📂 **Repo:** [GitHub](https://github.com/Barvand/JavaScript-Frameworks/)
+
+### 🎯 Vindt
+
+_A next-generation auction website with a clean and modern UI._  
+🔗 **Live Demo:** [Vindt](https://vindt.netlify.app/)  
+📂 **Repo:** [GitHub](https://github.com/Barvand/Semester-Project-2)
+
+---
+
+## 📬 Connect With Me
+
+💼 **Portfolio:** [Bartholomeusberg.com](bartholomeusberg.com)  
+💬 **LinkedIn:** [LinkedIn](www.linkedin.com/in/bart-van-den-berg-b90219155)  
+🐙 **GitHub:** [github.com/Barvand](https://github.com/Barvand)
+
+---
