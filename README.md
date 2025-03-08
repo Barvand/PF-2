@@ -2,8 +2,6 @@
 
 This portfolio showcases my journey as a **front-end developer**, blending clean UI design, modern animations, and engaging interactivity. From futuristic eCommerce shops to next-gen auction platforms, every project reflects my passion for crafting seamless user experiences.
 
-🌐 **Live Portfolio:** [Live website](bartholomeusberg.com)
-
 ---
 
 ## 🖥️ About This Portfolio
