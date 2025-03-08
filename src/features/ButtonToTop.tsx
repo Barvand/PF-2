@@ -1,50 +1,60 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoMdArrowRoundUp } from "react-icons/io";
 
 /**
- * A floating button that appears when the user scrolls down and allows them to return to the top of the page smoothly.
- *
- * @component
- * @description
- * - Listens for the scroll event to determine when to show the button.
- * - When clicked, scrolls the page back to the top with a smooth animation.
- * - Uses `IoMdArrowRoundUp` as an icon for the button.
- *
- * @returns {JSX.Element} A button that appears when the user scrolls down and scrolls the page to the top when clicked.
- *
- * @example
- * ```tsx
- * <ButtonToTop />
- * ```
+ * A floating button that appears when the user scrolls up and allows them to return to the top of the page smoothly.
+ * - Disappears when the user scrolls down or after 1 second of inactivity.
  */
 
 function ButtonToTop() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 600);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY.current && currentScrollY > 600) {
+        // User is scrolling up, show button
+        setIsVisible(true);
+      } else {
+        // User is scrolling down, hide button
+        setIsVisible(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+
+      // Clear previous timeout
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      // Set new timeout to hide the button after 3s of no scrolling
+      scrollTimeout.current = setTimeout(() => {
+        setIsVisible(false);
+      }, 3000);
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
     };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <div>
       {isVisible && (
         <button
-          className="fixed top-25 right-0 p-2 sm:right-5 text-main text-2xl sm:text-3xl lg:text-4xl bg-gray-800 border-1 border-gray-200
-          rounded-full sm:p-3 transition-transform duration-300 group-hover:animate-bounce"
+          className="fixed top-20 right-5 p-3 text-main text-3xl rounded-full cursor-pointer transition-opacity duration-500 opacity-100 hover:opacity-80"
+          style={{ backgroundColor: "rgba(31, 41, 55, 0.8)" }} // Equivalent to bg-gray-800 with 50% opacity
           onClick={scrollToTop}
         >
           <IoMdArrowRoundUp />
