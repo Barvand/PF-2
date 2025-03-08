@@ -3,7 +3,7 @@ export interface Project {
   logo: string;
   description: string;
   audience: string;
-  design: string[];
+  design: string;
   techStack: string[];
   mockups: {
     desktop: string;

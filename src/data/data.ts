@@ -23,9 +23,8 @@ export const projects = [
       "A futuristic eCommerce shop designed to deliver a sleek and immersive shopping experience.",
     audience:
       "TimeLess is tailored for a younger audience that values a seamless online shopping journey.",
-    design: [
+    design:
       "The goal was to create a futuristic yet timeless design, blending dark, bold tones with vibrant accents to achieve a high-tech, visually striking aesthetic. The interface is sleek, minimal, and engaging, ensuring a smooth user experience while maintaining a cutting-edge feel.",
-    ],
     techStack: ["React", "TypeScript", "Tailwind CSS", "Zustand", "HTML"],
     logo: "/timelesslogo.png",
     favicon: "/timeless-favicon.png",
