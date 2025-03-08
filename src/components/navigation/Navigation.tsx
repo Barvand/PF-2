@@ -18,6 +18,19 @@ const Navigation: React.FC<NavigationProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   // Prevent scrolling when hamburger is open
   useEffect(() => {
     if (open) {

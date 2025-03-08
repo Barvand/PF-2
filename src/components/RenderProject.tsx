@@ -80,11 +80,7 @@ function RenderProject({ project }: RenderProjectProps) {
               <h3 className="font-semibold text-lg text-white">
                 Design Process
               </h3>
-              <ul className="list-disc list-inside text-gray-400">
-                {project.design.map((point, index) => (
-                  <li key={index}>{point}</li>
-                ))}
-              </ul>
+              <p className="text-gray-400">{project.design}</p>
             </div>
 
             <div>

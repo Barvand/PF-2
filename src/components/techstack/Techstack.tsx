@@ -19,7 +19,7 @@ interface CategoryColorsProps {
 
 const categoryColors: CategoryColorsProps = {
   "Front-End": "#0F172A",
-  "Back-End": "#334155",
+  "Back-End": "#0F121A",
   "Version Control & Deployment": "#64748B",
   "Project Management": "#475569",
 };

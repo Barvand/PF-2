@@ -15,11 +15,10 @@ function HamburgerMenu({
 }: HamburgerMenuProps) {
   return (
     <div
-      className="fixed top-0 left-0 w-full p-4 
-      text-white bg-gray-900 z-40 flex flex-col h-[600px] items-center 
-      justify-center border-b"
+      className="fixed top-20 left-0 w-full p-4 text-white bg-gray-900 
+      z-40 flex flex-col h-screen items-center justify-between border-b"
     >
-      <nav className="flex flex-col gap-10">
+      <nav className="flex flex-col gap-10 flex-grow justify-center">
         <button
           className="text-lg font-bold hover:text-main relative group"
           onClick={() => {
@@ -72,8 +71,10 @@ function HamburgerMenu({
             group-hover:w-full transition-all duration-300"
           ></span>
         </button>
-        <img src="BartBergLogo.svg" alt="BartBergLogo" />
       </nav>
+
+      {/* Logo at the bottom */}
+      <img src="BartBergLogo.svg" alt="BartBergLogo" className="mb-10 w-32" />
     </div>
   );
 }
