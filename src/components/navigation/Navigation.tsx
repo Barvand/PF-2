@@ -1,5 +1,5 @@
-import Hamburger from "hamburger-react";
 import { useState, useEffect } from "react";
+import Hamburger from "hamburger-react";
 import DesktopNavigation from "./DesktopNavigation";
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -17,6 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({
   scrollToContact,
 }) => {
   const [open, setOpen] = useState(false);
+
   // Prevent scrolling when hamburger is open
   useEffect(() => {
     if (open) {
@@ -32,16 +33,21 @@ const Navigation: React.FC<NavigationProps> = ({
 
   return (
     <div>
-      <div className="flex md:hidden container bg-main justify-between">
+      {/* Fixed Mobile Navbar */}
+      <div
+        className="fixed top-0 left-0 w-full bg-main flex md:hidden 
+        justify-between items-center px-6 py-4 z-50 shadow-lg"
+      >
         <img
           src="BartBergLogoBlack.svg"
           alt="BartBergLogoBlack"
           className="w-44"
         />
-        {/* Hamburger Menu */}
+        {/* Hamburger Toggle Button */}
         <Hamburger size={32} toggled={open} toggle={setOpen} />
       </div>
-      {/* Mobile Navigation Menu */}
+
+      {/* Mobile Navigation Menu (Only visible when open) */}
       {open && (
         <HamburgerMenu
           scrollToProjects={scrollToProjects}
@@ -51,6 +57,8 @@ const Navigation: React.FC<NavigationProps> = ({
           setOpen={setOpen}
         />
       )}
+
+      {/* Desktop Navigation */}
       <DesktopNavigation
         scrollToProjects={scrollToProjects}
         scrollToAboutMe={scrollToAboutMe}

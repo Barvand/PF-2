@@ -15,10 +15,11 @@ function HamburgerMenu({
 }: HamburgerMenuProps) {
   return (
     <div
-      className="absolute z-4 top-20 left-0 w-full h-screen p-4 
-        text-white bg-black"
+      className="fixed top-0 left-0 w-full p-4 
+      text-white bg-gray-900 z-40 flex flex-col h-[600px] items-center 
+      justify-center border-b"
     >
-      <nav className="flex flex-col gap-10 mt-6">
+      <nav className="flex flex-col gap-10">
         <button
           className="text-lg font-bold hover:text-main relative group"
           onClick={() => {
@@ -29,7 +30,7 @@ function HamburgerMenu({
           Projects
           <span
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
-            group-hover:w-full group-hover:transition-all"
+            group-hover:w-full transition-all duration-300"
           ></span>
         </button>
         <button
@@ -42,7 +43,7 @@ function HamburgerMenu({
           About Me
           <span
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
-            group-hover:w-full group-hover:transition-all"
+            group-hover:w-full transition-all duration-300"
           ></span>
         </button>
         <button
@@ -55,7 +56,7 @@ function HamburgerMenu({
           Tech Stack
           <span
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
-            group-hover:w-full group-hover:transition-all"
+            group-hover:w-full transition-all duration-300"
           ></span>
         </button>
         <button
@@ -68,9 +69,10 @@ function HamburgerMenu({
           Contact
           <span
             className="absolute bottom-0 left-0 w-0 h-0.5 bg-main 
-            group-hover:w-full group-hover:transition-all"
+            group-hover:w-full transition-all duration-300"
           ></span>
         </button>
+        <img src="BartBergLogo.svg" alt="BartBergLogo" />
       </nav>
     </div>
   );

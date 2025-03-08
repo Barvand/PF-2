@@ -28,7 +28,7 @@ function RenderProject({ project }: RenderProjectProps) {
             <img
               src={project.logo}
               alt={`${project.name} logo`}
-              className="h-12"
+              className="h-14 w-30"
             />
             <ResponsiveTab
               activeTab={activeTab}
@@ -103,22 +103,28 @@ function RenderProject({ project }: RenderProjectProps) {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-2">
               <a
+                className=" text-white hover:text-[#FF6700] flex justify-between gap-2 bg-gray-800 p-2 rounded"
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#FF6700]"
               >
-                <FaExternalLinkAlt size={20} />
+                <p className="text-main"> Live link </p>
+                <p>
+                  <FaExternalLinkAlt size={20} />
+                </p>
               </a>
               <a
                 href={project.repoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#FF6700]"
+                className="text-white hover:text-[#FF6700] flex justify-between gap-2 bg-gray-800 p-2 rounded"
               >
-                <FaGithub size={20} />
+                <p className="text-main"> Github Repo</p>
+                <p>
+                  <FaGithub size={20} />
+                </p>
               </a>
             </div>
           </motion.div>

@@ -8,7 +8,7 @@ interface IntroPortFolioProps {
 function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
   return (
     <>
-      <div className="relative mb-20 p-2 sm:h-[80vh] flex bg-black text-white overflow-hidden custom-bg-black">
+      <div className="relative mb-20 mt-30 p-2 sm:h-[80vh] flex bg-black text-white overflow-hidden custom-bg-black">
         <div className="container flex flex-col md:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
           {/* Left Section: Text */}
           <div className="max-w-lg">
@@ -34,7 +34,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
               transition={{ duration: 1, delay: 0.6 }}
               className="mt-6 space-y-3 text-lg"
             >
-              <h2 className="text-3xl fontbold">
+              <h2 className="text-xl md:text-3xl fontbold">
                 Im a passionate Front-End developer located in
                 <span className="font-bold text-green-200 italic">
                   {" "}

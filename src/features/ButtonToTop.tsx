@@ -23,7 +23,7 @@ function ButtonToTop() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
+      setIsVisible(window.scrollY > 600);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -43,7 +43,7 @@ function ButtonToTop() {
     <div>
       {isVisible && (
         <button
-          className="fixed bottom-5 right-0 p-2 sm:right-5 text-white text-xl sm:text-3xl lg:text-4xl
+          className="fixed top-25 right-0 p-2 sm:right-5 text-main text-2xl sm:text-3xl lg:text-4xl bg-gray-800 border-1 border-gray-200
           rounded-full sm:p-3 transition-transform duration-300 group-hover:animate-bounce"
           onClick={scrollToTop}
         >
