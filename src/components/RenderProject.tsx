@@ -28,7 +28,11 @@ function RenderProject({ project }: RenderProjectProps) {
             <img
               src={project.logo}
               alt={`${project.name} logo`}
-              className="h-14 w-30"
+              className={
+                project.logo.includes("LogoTotalentreprenor")
+                  ? "w-100"
+                  : "h-14 w-30 object-contain"
+              }
             />
             <ResponsiveTab
               activeTab={activeTab}
@@ -58,19 +62,19 @@ function RenderProject({ project }: RenderProjectProps) {
 
           {/* Text Section (4 columns on larger screens, full-width on mobile) */}
           <motion.div
-            className="col-span-12 md:col-span-4 text-white space-y-4 flex flex-col"
+            className="col-span-12 md:col-span-4 space-y-4 flex flex-col"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <h2 className="text-3xl font-bold text-[#FF6700] border-b border-gray-600 pb-2">
+            <h2 className="text-3xl font-bold text-white border-b border-gray-600 pb-2">
               {project.name}
             </h2>
             <p className="text-gray-300">{project.description}</p>
 
             <div>
-              <h3 className="font-semibold text-lg text-white">
+              <h3 className="font-semibold text-lg">
                 Target Audience
               </h3>
               <p className="text-gray-400">{project.audience}</p>
@@ -84,7 +88,7 @@ function RenderProject({ project }: RenderProjectProps) {
             </div>
 
             <div>
-              <h3 className="text-lg text-[#FF6700] font-bold border-b border-gray-600 pb-2">
+              <h3 className="text-lg font-bold border-b border-gray-600 pb-2">
                 Built With
               </h3>
               <div className="flex flex-wrap mt-2 gap-2">

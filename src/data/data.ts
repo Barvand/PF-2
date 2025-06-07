@@ -1,5 +1,23 @@
 export const projects = [
   {
+    name: "Total Entreprenør",
+    description:
+      "Total entreprenør is a website designed and developed for a local construction entrepenor in Bergen.",
+    audience:
+      "We have designed the website for a broader B2C audience to increase the general sales of the company.",
+    design:
+      "The website features a simplistic clean UX to minimize clutter and to maximize customer contact",
+    techStack: ["HTML", "CSS", "Tailwind CSS", "NEXT.js", "React"],
+    logo: "LogoTotalentreprenor.png",
+    favicon: "/totalentreprenorFavicon.svg",
+    mockups: {
+      desktop: "/totalentreprenorProject.png",
+      mobile: "/holidaze-mockup.svg",
+    },
+    liveLink: "https://totalbyggoganlegg.no/",
+    repoLink: "",
+  },
+  {
     name: "Holidaze",
     description:
       "Holidaze is a modern accommodation booking application designed to provide a seamless and intuitive user experience. This project was built using pure React, without any state management libraries, to explore its capabilities and limitations. My goal was to gain a deeper understanding of React's core principles while creating a functional and stylish booking platform.",

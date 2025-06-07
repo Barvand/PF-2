@@ -75,6 +75,7 @@ h1 {
   background-position: -19px -19px;
 }
 
+
 /* Orange background with black dots */
 .custom-bg-orange {
   background: linear-gradient(
@@ -292,3 +293,4 @@ button:disabled {
 .successMessage {
   font-size: 12px;
 }
+
