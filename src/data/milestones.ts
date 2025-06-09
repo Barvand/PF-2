@@ -22,14 +22,14 @@ export const milestones = [
   },
   {
     title: "Warehouse & Logistics",
-    year: "2019 - 2021",
+    year: "2019",
     description: "Learned efficiency, operations, and adaptability.",
     image: "/amsterdam.jpg",
     location: "Amsterdam, Netherlands",
   },
   {
     title: "Hospitality",
-    year: "2021 - 2023",
+    year: "2019 - 2023",
     description: "Refined service, user experience, and attention to detail.",
     image: "/citybox.jpg",
     location: "Bergen, Norway",

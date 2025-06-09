@@ -35,7 +35,9 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
               className="mt-6 space-y-3 text-lg"
             >
               <h2 className="text-xl md:text-3xl fontbold">
-                Im a passionate Front-End developer located in
+                Im a passionate{" "}
+                <span className="font-bold italic text-yellow-200">Front-end</span> developer
+                located in
                 <span className="font-bold text-green-200 italic">
                   {" "}
                   Bergen, Norway{" "}
