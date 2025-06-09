@@ -12,7 +12,7 @@ export const projects = [
     favicon: "/totalentreprenorFavicon.svg",
     mockups: {
       desktop: "/totalentreprenorProject.png",
-      mobile: "/holidaze-mockup.svg",
+      mobile: "/totalentreprenorProject.png",
     },
     liveLink: "https://totalbyggoganlegg.no/",
     repoLink: "",

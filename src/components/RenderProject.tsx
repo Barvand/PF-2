@@ -13,7 +13,7 @@ function RenderProject({ project }: RenderProjectProps) {
   const [activeTab, setActiveTab] = useState("desktop");
 
   return (
-    <div className="custom-bg-black relative w-full mt-20 mb-20 p-4">
+    <div className="relative w-full mt-20 mb-20 p-4">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

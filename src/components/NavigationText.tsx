@@ -1,5 +1,7 @@
 import { MdArrowOutward } from "react-icons/md";
-import Waves from "../waves/Waves";
+
+import GrayWaveTransform from "../waves/GrayWaveTransform";
+import GrayWave from "../waves/GrayWave";
 
 interface NavigationTextProps {
   onProjectsClick: () => void;
@@ -13,35 +15,42 @@ function NavigationText({
   onTechStackClick,
 }: NavigationTextProps) {
   return (
-    <div className="bg-gray-900 text-main flex flex-col justify-center relative mb-20 gap-10 pb-20">
-      <Waves color={"#000"} flip={false} />
-      <div
-        className="container border-b border-white flex justify-between cursor-pointer group"
-        onClick={onProjectsClick}
-      >
-        <h2 className="text-3xl sm:text-5xl font-bold">Projects</h2>
-        <div className="transition-transform duration-300 group-hover:animate-bounce">
-          <MdArrowOutward size={42} />
+    <div className="bg-gray-900 text-main flex flex-col justify-center relative mb-20 gap-10">
+      <GrayWaveTransform />
+
+      {/* === Section Link === */}
+      {[
+        {
+          label: "Projects",
+          onClick: onProjectsClick,
+        },
+        {
+          label: "Tech stack",
+          onClick: onTechStackClick,
+        },
+        {
+          label: "Learn more about me",
+          onClick: onAboutMeClick,
+        },
+      ].map(({ label, onClick }) => (
+        <div
+          key={label}
+          onClick={onClick}
+          className="relative container cursor-pointer group overflow-hidden"
+        >
+          <div className="flex justify-between items-center pb-1">
+            <h2 className="text-3xl sm:text-5xl font-bold">{label}</h2>
+            <div className="transform transition-transform duration-300 delay-300 group-hover:-translate-y-1">
+              <MdArrowOutward size={42} />
+            </div>
+          </div>
+
+          {/* Underline Animation */}
+          <span className="block h-0.5 bg-main origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </div>
-      </div>
-      <div
-        className="container border-b border-white flex justify-between cursor-pointer group"
-        onClick={onTechStackClick}
-      >
-        <h2 className="text-3xl sm:text-5xl font-bold">Tech stack</h2>
-        <div className="transition-transform duration-300 group-hover:animate-bounce">
-          <MdArrowOutward size={42} />
-        </div>
-      </div>
-      <div
-        className="container border-white border-b flex justify-between cursor-pointer group"
-        onClick={onAboutMeClick}
-      >
-        <h2 className="text-3xl sm:text-5xl font-bold">Learn more about me</h2>
-        <div className="transition-transform duration-300 group-hover:animate-bounce">
-          <MdArrowOutward size={42} />
-        </div>
-      </div>
+      ))}
+
+      <GrayWave />
     </div>
   );
 }

@@ -40,8 +40,8 @@ function Home() {
           onTechStackClick={() => scrollToSection(techStackRef)} // ✅ Fixed
         />
         <ProjectSections ref={projectsRef} />
-        <TechStack ref={techStackRef} /> {/* ✅ Fixed */}
-        <section ref={aboutMeRef} className=" justify-center custom-bg-black">
+        <TechStack ref={techStackRef} />
+        <section ref={aboutMeRef} className=" justify-center">
           <Roadmap />
         </section>
         <Footer ref={contactRef} />

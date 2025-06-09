@@ -65,30 +65,16 @@ h1 {
 
 /* Black background with orange dots */
 .custom-bg-black {
-  background: linear-gradient(
-    to bottom,
-    #000,
-    #ff6700
-  ); /* Black to Orange gradient */
-  background-image: radial-gradient(rgba(255, 103, 0, 0.6) 1px, transparent 0);
-  background-size: 80px 80px;
-  background-position: -19px -19px;
+  background: #000; /* Black base */
+  background-image: radial-gradient(rgba(255, 103, 0, 0.25) 1px, transparent 0);
+  background-size: 20px 20px;
+  background-repeat: repeat;
 }
 
-
-/* Orange background with black dots */
-.custom-bg-orange {
-  background: linear-gradient(
-    to bottom,
-    #dfd7d7,
-    #ff6700
-  ); /* Black to Orange gradient */
-  background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1px, transparent 0);
-  background-size: 80px 80px;
-  background-position: -19px -19px;
-  background-color: #ff6700;
+.custom-gradient {
+  background: linear-gradient(120deg, #000000, #1a1a1a, #ff6700);
+  background-size: 200% 200%;
 }
-
 .section--mockup-laptop {
   position: relative;
   padding: 20px; /* Adjust padding as needed */
@@ -285,7 +271,6 @@ textarea {
   border-radius: 0.25rem;
 }
 
-
 button:disabled {
   opacity: 0.35;
 }
@@ -293,4 +278,3 @@ button:disabled {
 .successMessage {
   font-size: 12px;
 }
-
