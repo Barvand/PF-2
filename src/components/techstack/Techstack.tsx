@@ -3,7 +3,6 @@ import { useState, forwardRef } from "react";
 import { IoArrowDownOutline } from "react-icons/io5";
 import { techStack } from "../../data/techStackArray";
 import GrayWaveTransform from "../../waves/GrayWaveTransform";
-import GrayWave from "../../waves/GrayWave";
 
 const categories: (keyof CategoryColorsProps | "All")[] = [
   "All",
