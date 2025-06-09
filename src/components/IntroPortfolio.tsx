@@ -8,7 +8,7 @@ interface IntroPortFolioProps {
 function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
   return (
     <motion.div
-      className="relative sm:h-[80vh] flex text-white overflow-hidden"
+      className="relative pt-30 pb-30 sm:h-[80vh] flex text-white overflow-hidden"
       style={{
         backgroundImage: "linear-gradient(135deg, #000000, #1a1a1a, #ff6700)",
         backgroundSize: "200% 200%",
@@ -25,7 +25,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
     >
       <div className="container flex flex-col md:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
         {/* Left Section: Text */}
-        <div className="max-w-lg">
+        <div className="max-w-lg px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
