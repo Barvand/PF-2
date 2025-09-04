@@ -15,9 +15,7 @@ function NavigationText({
   onTechStackClick,
 }: NavigationTextProps) {
   return (
-    <div className="bg-gray-900 text-main flex flex-col justify-center relative mb-20 gap-10">
-      <GrayWaveTransform />
-
+    <div className="bg-gray-900 text-main flex flex-col justify-center relative mb-20 gap-10 py-10">
       {/* === Section Link === */}
       {[
         {
@@ -49,8 +47,6 @@ function NavigationText({
           <span className="block h-0.5 bg-main origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out" />
         </div>
       ))}
-
-      <GrayWave />
     </div>
   );
 }
