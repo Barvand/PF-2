@@ -1,36 +1,32 @@
-import { motion } from "framer-motion";
+import { motion, useTransform } from "framer-motion";
+import HeroStars from "./background/HeroBg";
 
 interface IntroPortFolioProps {
   Project: () => void;
   Contact: () => void;
+  scrollYProgress?: any;
 }
 
-function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
+function IntroPortfolio({
+  Project,
+  Contact,
+  scrollYProgress,
+}: IntroPortFolioProps) {
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   return (
-    <motion.div
-      className="relative pt-30 pb-30 sm:h-[80vh] flex text-white overflow-hidden"
-      style={{
-        backgroundImage: "linear-gradient(135deg, #000000, #1a1a1a, #ff6700)",
-        backgroundSize: "200% 200%",
-      }}
-      animate={{
-        backgroundPosition: ["0% 0%", "100% 100%"],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        repeatType: "reverse", // 🔁 makes it go back instead of jumping
-        ease: "linear",
-      }}
+    <motion.section
+      style={{ scale }}
+      className="sticky top-0 py-20 sm:h-[100vh] flex text-white overflow-hidden bg-gray-900"
     >
+      <HeroStars />
       <div className="container flex flex-col md:flex-row sm:justify-center md:justify-center items-center gap-5 px-6 lg:px-12 relative">
         {/* Left Section: Text */}
-        <div className="max-w-lg px-4">
+        <div className="max-w-lg px-4 ">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-main text-4xl font-bold"
+            className="text-gray-900 text-5xl font-bold rounded bg-main p-2 inline-block"
           >
             Bart van den Berg
           </motion.h1>
@@ -48,7 +44,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
             transition={{ duration: 1, delay: 0.6 }}
             className="mt-6 space-y-3 text-lg"
           >
-            <h2 className="text-xl md:text-3xl fontbold">
+            <h2 className="text-xl md:text-3xl">
               Im a passionate{" "}
               <span className="font-bold italic text-yellow-200">
                 Front-end
@@ -105,13 +101,13 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
           transition={{ duration: 1, delay: 1 }}
         >
           <img
-            className="h-full w-full object-cover rounded shadow-lg"
+            className="h-full w-full object-cover rounded shadow-2xl shadow-cyan-200"
             src="/github-image.jpg"
             alt="Bart-picture"
           />
         </motion.div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 }
 

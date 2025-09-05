@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState, forwardRef } from "react";
 import { IoArrowDownOutline } from "react-icons/io5";
 import { techStack } from "../../data/techStackArray";
-import GrayWaveTransform from "../../waves/GrayWaveTransform";
 
 const categories: (keyof CategoryColorsProps | "All")[] = [
   "All",
@@ -39,7 +38,6 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
         ref={ref}
         className="text-white bg-gray-900 md:h-[60vh] flex flex-col items-center"
       >
-        <GrayWaveTransform />
         {/* Section Header */}
         <div className="container flex flex-col justify-center">
           <div className="relative mt-10 mb-10">
@@ -112,7 +110,6 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
           </motion.div>
         </div>
       </section>
-      <GrayWaveTransform />
     </>
   );
 });

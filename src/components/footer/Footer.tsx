@@ -1,14 +1,10 @@
-import GrayWave from "../../waves/GrayWave";
 import ContactForm from "./ContactForm";
-import Waves from "../../waves/Waves";
+
 import { forwardRef } from "react";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
     <footer ref={ref} className="relative bg-gray-900 text-white">
-      {/* Top Decorative Wave */}
-      <Waves color={"#black"} flip={true} />
-
       {/* Main Footer Content */}
       <div className="bg-gray-900 py-16  flex flex-col items-center gap-8 p-2">
         {/* Logo */}
@@ -26,9 +22,6 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           </div>
         </div>
       </div>
-
-      {/* Bottom Decorative Wave */}
-      <GrayWave />
 
       <div className="bg-gray-800 py-8 px-2 text-center">
         &copy; {new Date().getFullYear()} Bart van den Berg | Crafted with

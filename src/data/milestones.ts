@@ -9,7 +9,7 @@ export const milestones = [
   {
     title: "Fitness Instructor",
     year: "2012 - 2016",
-    description: "Taught, motivated, and helped people transform.",
+    description: "Taught, motivate, and helped people transform.",
     image: "/instructor.jpg",
     location: "Leiden, Netherlands",
   },

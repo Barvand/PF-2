@@ -1,8 +1,5 @@
 import { MdArrowOutward } from "react-icons/md";
 
-import GrayWaveTransform from "../waves/GrayWaveTransform";
-import GrayWave from "../waves/GrayWave";
-
 interface NavigationTextProps {
   onProjectsClick: () => void;
   onAboutMeClick: () => void;
@@ -15,7 +12,7 @@ function NavigationText({
   onTechStackClick,
 }: NavigationTextProps) {
   return (
-    <div className="bg-gray-900 text-main flex flex-col justify-center relative mb-20 gap-10 py-10">
+    <div className="text-main flex flex-col justify-center mb-20 gap-10 py-10 bg-amber-950 sm:h-[50vh]">
       {/* === Section Link === */}
       {[
         {

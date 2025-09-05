@@ -53,7 +53,7 @@ function ButtonToTop() {
     <div>
       {isVisible && (
         <button
-          className="fixed top-20 right-5 p-3 text-main text-3xl rounded-full cursor-pointer transition-opacity duration-500 opacity-100 hover:opacity-80"
+          className="fixed bottom-20 right-5 p-3 text-main text-3xl rounded-full cursor-pointer transition-opacity duration-500 opacity-100 hover:opacity-80"
           style={{ backgroundColor: "rgba(31, 41, 55, 0.8)" }} // Equivalent to bg-gray-800 with 50% opacity
           onClick={scrollToTop}
         >

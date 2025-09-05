@@ -1,8 +1,8 @@
 export const projects = [
   {
-    name: "Total Entreprenør",
+    name: "Totalentreprenør AS",
     description:
-      "Total entreprenør is a website designed and developed for a local construction entrepenor in Bergen.",
+      "Total entreprenør is a website designed and developed for a local construction company in Bergen.",
     audience:
       "We have designed the website for a broader B2C audience to increase the general sales of the company.",
     design:

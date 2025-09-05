@@ -48,7 +48,7 @@
 
 body {
   font-family: "Inter", serif;
-  background-color: var(--black-color);
+  background-color: #101828;
 }
 
 h1 {
@@ -61,14 +61,6 @@ h1 {
 
 .button-icon-hand:hover {
   opacity: 1;
-}
-
-/* Black background with orange dots */
-.custom-bg-black {
-  background: #000; /* Black base */
-  background-image: radial-gradient(rgba(255, 103, 0, 0.25) 1px, transparent 0);
-  background-size: 20px 20px;
-  background-repeat: repeat;
 }
 
 .custom-gradient {
@@ -277,4 +269,29 @@ button:disabled {
 
 .successMessage {
   font-size: 12px;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee var(--dur) linear infinite;
+  animation-direction: var(--dir);
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

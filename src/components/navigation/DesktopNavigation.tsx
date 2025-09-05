@@ -12,7 +12,7 @@ function DesktopNavigation({
   scrollToContact,
 }: DesktopNavigationProps) {
   return (
-    <nav className=" border-main text-white hidden md:block m-1">
+    <nav className="text-white hidden md:block fixed top-0 left-0 w-full z-[999] bg-gray-900 border-b-2 border-gray-700 shadow-2xl">
       <div className="container flex justify-around items-center h-20">
         <img src="BartBergLogo.svg" alt="Logo" />
         <button

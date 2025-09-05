@@ -1,12 +1,13 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import ProjectSections from "../components/ProjectSection";
 import IntroPortfolio from "../components/IntroPortfolio";
 import NavigationText from "../components/NavigationText";
 import ButtonToTop from "../features/ButtonToTop";
 import Roadmap from "../components/RoadMap";
 import Navigation from "../components/navigation/Navigation";
-import TechStack from "../components/techstack/Techstack";
+import { useScroll } from "framer-motion";
 import Footer from "../components/footer/Footer";
+import TechStackRow from "../components/techstack/TechStackRow";
 
 function Home() {
   // Define section references
@@ -21,6 +22,12 @@ function Home() {
     }
   };
 
+  const heroRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress: heroProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+
   return (
     <>
       <Navigation
@@ -30,17 +37,22 @@ function Home() {
         scrollToContact={() => scrollToSection(contactRef)}
       />
       <main>
-        <IntroPortfolio
-          Project={() => scrollToSection(projectsRef)}
-          Contact={() => scrollToSection(contactRef)}
-        />
+        <section ref={heroRef}>
+          <IntroPortfolio
+            Project={() => scrollToSection(projectsRef)}
+            Contact={() => scrollToSection(contactRef)}
+            scrollYProgress={heroProgress}
+          />
+        </section>
+        <TechStackRow />
+
         <NavigationText
           onProjectsClick={() => scrollToSection(projectsRef)}
           onAboutMeClick={() => scrollToSection(aboutMeRef)}
           onTechStackClick={() => scrollToSection(techStackRef)} // ✅ Fixed
         />
         <ProjectSections ref={projectsRef} />
-        <TechStack ref={techStackRef} />
+        {/* <TechStack ref={techStackRef} /> */}
         <section ref={aboutMeRef} className=" justify-center">
           <Roadmap />
         </section>

@@ -56,10 +56,10 @@ export default function AboutSection() {
                 className="relative"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-[-35px] top-2 w-5 h-5 bg-main rounded-full"></div>
+                <div className="absolute left-[-35px] top-2 w-5 h-5 bg-main"></div>
 
                 {/* Content */}
-                <div className="bg-black p-1 rounded shadow-lg row h-62">
+                <div className="p-3 rounded border-gray-500 bg-gray-800 border row h-62 items-center">
                   <div className="col-six flex flex-col justify-center">
                     <h3
                       className={`text-xl font-semibold mt-2 ${
@@ -75,7 +75,7 @@ export default function AboutSection() {
                     <p className="text-white mt-2">{milestone.description}</p>
                     <p className="text-gray-400 mt-2"> {milestone.location}</p>
                   </div>
-                  <div className="col-six h-60">
+                  <div className="col-six mt-4 sm:mt-0 h-48 w-full overflow-hidden rounded">
                     <img
                       src={milestone.image}
                       alt={milestone.title}
