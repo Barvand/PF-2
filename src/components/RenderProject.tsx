@@ -31,7 +31,7 @@ function RenderProject({ project }: RenderProjectProps) {
               alt={`${project.name} logo`}
               className={
                 project.logo.includes("LogoTotalentreprenor")
-                  ? "w-70"
+                  ? "w-45"      
                   : "h-14 w-30 object-contain"
               }
             />

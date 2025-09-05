@@ -282,16 +282,44 @@ button:disabled {
 }
 
 @keyframes marquee {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(-50%); /* shift by one copy width */
   }
 }
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.marquee-track {
+  animation: var(--dur, 28s) linear infinite var(--dir, normal) marquee;
+}
+.marquee-track[style*="--dir: reverse"] {
+  animation-name: marquee-reverse;
+}
 
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
     animation: none;
+    transform: translateX(0) !important;
+  }
+}
+
+/* Optional: adjust speed on larger screens so px/s feels similar */
+@media (min-width: 640px) {
+  .marquee-track {
+    animation-duration: calc(var(--dur, 28s) + 4s);
+  }
+}
+@media (min-width: 1024px) {
+  .marquee-track {
+    animation-duration: calc(var(--dur, 28s) + 8s);
   }
 }

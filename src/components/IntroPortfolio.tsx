@@ -26,7 +26,7 @@ function IntroPortfolio({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-gray-900 text-5xl font-bold rounded bg-main p-2 inline-block"
+            className="text-gray-900 text-5xl font-bold rounded bg-main p-2 inline-block mt-20 md:mt-0"
           >
             Bart van den Berg
           </motion.h1>
@@ -101,7 +101,7 @@ function IntroPortfolio({
           transition={{ duration: 1, delay: 1 }}
         >
           <img
-            className="h-full w-full object-cover rounded shadow-2xl shadow-cyan-200"
+            className="h-full w-full object-cover"
             src="/github-image.jpg"
             alt="Bart-picture"
           />

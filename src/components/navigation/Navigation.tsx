@@ -48,11 +48,11 @@ const Navigation: React.FC<NavigationProps> = ({
     <div>
       {/* Fixed Mobile Navbar */}
       <div
-        className="fixed top-0 left-0 w-full bg-main flex md:hidden 
-        justify-between items-center px-6 py-4 z-50 shadow-lg"
+        className="fixed top-0 left-0 w-full text-white bg-gray-900 flex md:hidden 
+        justify-between items-center px-6 py-4 z-50 shadow-sm shadow-gray-600"
       >
         <img
-          src="BartBergLogoBlack.svg"
+          src="BartBergLogo.svg"
           alt="BartBergLogoBlack"
           className="w-44"
         />

@@ -16,7 +16,7 @@ const ICONS = [
 
 export default function TechStackRow() {
   return (
-    <section className="bg-gray-900 text-white sm:h-[50vh] items-center flex">
+    <section className="bg-gray-900 text-white h-[100vh] sm:h-[50vh] items-center flex overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <h2 className="text-3xl font-bold mb-8">Stacks I have worked with</h2>
 
