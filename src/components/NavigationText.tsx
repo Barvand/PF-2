@@ -1,18 +1,28 @@
 import { MdArrowOutward } from "react-icons/md";
+import { BiSolidNavigation } from "react-icons/bi";
 
 interface NavigationTextProps {
   onProjectsClick: () => void;
   onAboutMeClick: () => void;
-  onTechStackClick: () => void;
 }
 
 function NavigationText({
   onProjectsClick,
   onAboutMeClick,
-  onTechStackClick,
 }: NavigationTextProps) {
   return (
-    <div className="text-main flex flex-col justify-center mb-20 gap-10 py-10 bg-amber-950 sm:h-[50vh]">
+    <div className="text-main flex flex-col justify-center mb-20 gap-5 py-10 bg-amber-950  border-b border-t border-gray-500">
+      <div className="container flex items-center gap-5">
+        <div className="relative inline-flex p-2">
+          {/* top-left corner */}
+          <span className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-cyan-500"></span>
+          {/* bottom-right corner */}
+          <span className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-cyan-500"></span>
+
+          <BiSolidNavigation className="text-cyan-500" size={32} />
+        </div>
+        <h2 className="text-3xl font-semibold"> Navigation </h2>
+      </div>
       {/* === Section Link === */}
       {[
         {
@@ -20,11 +30,7 @@ function NavigationText({
           onClick: onProjectsClick,
         },
         {
-          label: "Tech stack",
-          onClick: onTechStackClick,
-        },
-        {
-          label: "Learn more about me",
+          label: "Background",
           onClick: onAboutMeClick,
         },
       ].map(({ label, onClick }) => (
