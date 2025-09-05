@@ -13,7 +13,6 @@ function Home() {
   // Define section references
   const projectsRef = useRef<HTMLElement | null>(null);
   const aboutMeRef = useRef<HTMLElement | null>(null);
-  const techStackRef = useRef<HTMLElement | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
 
   const scrollToSection = (ref: React.RefObject<HTMLElement | null>) => {
@@ -33,7 +32,6 @@ function Home() {
       <Navigation
         scrollToProjects={() => scrollToSection(projectsRef)}
         scrollToAboutMe={() => scrollToSection(aboutMeRef)}
-        scrollToTechStack={() => scrollToSection(techStackRef)}
         scrollToContact={() => scrollToSection(contactRef)}
       />
       <main>
@@ -49,7 +47,6 @@ function Home() {
         <NavigationText
           onProjectsClick={() => scrollToSection(projectsRef)}
           onAboutMeClick={() => scrollToSection(aboutMeRef)}
-          onTechStackClick={() => scrollToSection(techStackRef)} // ✅ Fixed
         />
         <ProjectSections ref={projectsRef} />
         {/* <TechStack ref={techStackRef} /> */}

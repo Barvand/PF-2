@@ -6,14 +6,12 @@ import HamburgerMenu from "./HamburgerMenu";
 interface NavigationProps {
   scrollToProjects: () => void;
   scrollToAboutMe: () => void;
-  scrollToTechStack: () => void;
   scrollToContact: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({
   scrollToProjects,
   scrollToAboutMe,
-  scrollToTechStack,
   scrollToContact,
 }) => {
   const [open, setOpen] = useState(false);
@@ -51,11 +49,7 @@ const Navigation: React.FC<NavigationProps> = ({
         className="fixed top-0 left-0 w-full text-white bg-gray-900 flex md:hidden 
         justify-between items-center px-6 py-4 z-50 shadow-sm shadow-gray-600"
       >
-        <img
-          src="BartBergLogo.svg"
-          alt="BartBergLogoBlack"
-          className="w-44"
-        />
+        <img src="BartBergLogo.svg" alt="BartBergLogoBlack" className="w-44" />
         {/* Hamburger Toggle Button */}
         <Hamburger size={32} toggled={open} toggle={setOpen} />
       </div>
@@ -65,7 +59,6 @@ const Navigation: React.FC<NavigationProps> = ({
         <HamburgerMenu
           scrollToProjects={scrollToProjects}
           scrollToAboutMe={scrollToAboutMe}
-          scrollToTechStack={scrollToTechStack}
           scrollToContact={scrollToContact}
           setOpen={setOpen}
         />
@@ -75,7 +68,6 @@ const Navigation: React.FC<NavigationProps> = ({
       <DesktopNavigation
         scrollToProjects={scrollToProjects}
         scrollToAboutMe={scrollToAboutMe}
-        scrollToTechStack={scrollToTechStack}
         scrollToContact={scrollToContact}
       />
     </div>
