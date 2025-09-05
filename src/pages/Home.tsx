@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import ProjectSections from "../components/ProjectSection";
 import IntroPortfolio from "../components/IntroPortfolio";
 import NavigationText from "../components/NavigationText";
