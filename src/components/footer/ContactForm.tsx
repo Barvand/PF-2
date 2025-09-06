@@ -55,7 +55,10 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
-      <label htmlFor="name"> Name </label>
+      <label htmlFor="name">
+        {" "}
+        Name<span className="text-red-500">* </span>{" "}
+      </label>
       <input
         value={values.name}
         id="name"
@@ -67,7 +70,10 @@ function ContactForm() {
       />
       {errors.name && touched.name && <p className="error">{errors.name}</p>}
 
-      <label htmlFor="email"> Email </label>
+      <label htmlFor="email">
+        {" "}
+        Email<span className="text-red-500">* </span>{" "}
+      </label>
       <input
         value={values.email}
         id="email"
@@ -79,7 +85,10 @@ function ContactForm() {
       />
       {errors.email && touched.email && <p className="error">{errors.email}</p>}
 
-      <label htmlFor="subject"> Subject </label>
+      <label htmlFor="subject">
+        {" "}
+        Subject<span className="text-red-500">* </span>{" "}
+      </label>
       <input
         value={values.subject}
         id="subject"
@@ -93,7 +102,9 @@ function ContactForm() {
         <p className="error">{errors.subject}</p>
       )}
 
-      <label htmlFor="textArea"> </label>
+      <label htmlFor="textArea">  Message
+        <span className="text-red-500">* </span>{" "}
+      </label>
       <textarea
         value={values.textArea}
         id="textArea"
