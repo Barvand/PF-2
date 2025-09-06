@@ -1,5 +1,6 @@
 import TechStackMarquee from "../TechStackMarquee";
 import { FaHammer } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const ICONS = [
   { src: "/icons/html-1.svg", alt: "HTML5" },
@@ -17,7 +18,13 @@ const ICONS = [
 
 export default function TechStackRow() {
   return (
-    <section className="bg-gradient-to-t from-gray-800 to-gray-900 text-white items-center flex overflow-hidden border-t border-gray-500 py-20">
+    <motion.section
+      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ type: "tween", duration: 1 }}
+      viewport={{ once: true, amount: 0.8 }} // triggers when ~35% is visible
+      className="text-white flex items-center overflow-hidden border-t border-gray-500 py-20"
+    >
       <div className="container px-6 py-16">
         <div className="flex justify-between items-center gap-5">
           <h2 className="text-3xl sm:text-5xl font-bold text-gray-300">
@@ -43,6 +50,6 @@ export default function TechStackRow() {
           gap={28}
         />
       </div>
-    </section>
+    </motion.section>
   );
 }

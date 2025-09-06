@@ -26,9 +26,9 @@ function IntroPortfolio({
       <div className="container flex flex-col gap-5 px-6 lg:px-12 relative bg-gray-900/50">
         {/* Left Section: Text */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          initial={{ y: -400 }}
+          animate={{ y: 10 }}
+          transition={{ duration: 2 }}
           className="text-gray-900 text-center text-4xl sm:text-6xl lg:text-8xl font-bold rounded bg-main p-2 inline-block mt-5"
         >
           Bart van den Berg

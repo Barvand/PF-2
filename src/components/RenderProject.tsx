@@ -39,7 +39,10 @@ function RenderProject({ project }: RenderProjectProps) {
               </div>
               <div className="flex gap-2 flex-wrap">
                 {project.techStack.map((tech, index) => (
-                  <span key={index} className="text-white pe-1 border-r border-gray-600">
+                  <span
+                    key={index}
+                    className="text-white pe-1 border-r border-gray-600"
+                  >
                     {tech}
                   </span>
                 ))}
