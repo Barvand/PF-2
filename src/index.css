@@ -133,14 +133,29 @@ h1 {
   left: 100%;
 }
 
-.flip-horizontal {
-  transform: scaleX(-1);
+/* wrapper around the <img> */
+.project-image {
+  position: relative;
+  display: inline-block; /* keeps the bg tight to the image */
 }
 
-.flip-vertical {
-  transform: scaleY(-1);
+/* the colored plate behind the image */
+.project-image::before {
+  content: ""; 
+  position: absolute;
+  inset: 20px; 
+  background: rgba(94, 90, 88, 0.18);
+  z-index: 0; 
+  pointer-events: none;
+  transform: skew(-50deg, 1deg);
 }
 
+/* the actual image */
+.project-image > img {
+  position: relative;
+  z-index: 1; /* above the colored plate */
+  display: block;
+}
 /* custom grid system 12 grids */
 .row {
   display: grid;

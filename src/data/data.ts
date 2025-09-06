@@ -3,10 +3,6 @@ export const projects = [
     name: "Totalentreprenør AS",
     description:
       "Total entreprenør is a website designed and developed for a local construction company in Bergen.",
-    audience:
-      "We have designed the website for a broader B2C audience to increase the general sales of the company.",
-    design:
-      "The website features a simplistic clean UX to minimize clutter and to maximize customer contact",
     techStack: ["HTML", "CSS", "Tailwind CSS", "NEXT.js", "React"],
     logo: "LogoTotalentreprenor.png",
     favicon: "/totalentreprenorFavicon.svg",
@@ -21,10 +17,6 @@ export const projects = [
     name: "Holidaze",
     description:
       "Holidaze is a modern accommodation booking application designed to provide a seamless and intuitive user experience. This project was built using pure React, without any state management libraries, to explore its capabilities and limitations. My goal was to gain a deeper understanding of React's core principles while creating a functional and stylish booking platform.",
-    audience:
-      "Holidaze is designed for travelers, vacation planners, and anyone looking for a seamless way to discover and book accommodations.",
-    design:
-      "Holidaze features a clean and modern design, combining simplicity with style to create a visually appealing and intuitive user experience.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "HTML"],
     logo: "/Holidaze-logo.svg",
     favicon: "/holidaze-favicon.svg",
@@ -39,10 +31,6 @@ export const projects = [
     name: "TimeLess",
     description:
       "A futuristic eCommerce shop designed to deliver a sleek and immersive shopping experience.",
-    audience:
-      "TimeLess is tailored for a younger audience that values a seamless online shopping journey.",
-    design:
-      "The goal was to create a futuristic yet timeless design, blending dark, bold tones with vibrant accents to achieve a high-tech, visually striking aesthetic. The interface is sleek, minimal, and engaging, ensuring a smooth user experience while maintaining a cutting-edge feel.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Zustand", "HTML"],
     logo: "/timelesslogo.png",
     favicon: "/timeless-favicon.png",
@@ -57,10 +45,6 @@ export const projects = [
     name: "Vindt",
     description:
       "A auction platform designed to provide a seamless and efficient bidding experience.",
-    audience:
-      "Vindt caters to a broad audience, ensuring accessibility for both casual buyers and experienced bidders. To maintain universal appeal, the color palette is kept minimal and neutral, enhancing readability and usability.",
-    design:
-      "The focus was on creating a clean and modern interface, prioritizing simplicity, clarity, and ease of navigation. The design balances functionality with aesthetics, ensuring an intuitive user experience that keeps the attention on the listings and bidding process.",
     techStack: ["JavaScript", "HTML", "Tailwind CSS"],
     logo: "/vindt-logo.svg",
     favicon: "/vindt-favicon.svg",
