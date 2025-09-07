@@ -10,113 +10,157 @@ interface IntroPortFolioProps {
   scrollYProgress?: any;
 }
 
+const container = {
+  hidden: { opacity: 0, y: 12 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut", staggerChildren: 0.12 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 function IntroPortfolio({
   Project,
   Contact,
   scrollYProgress,
 }: IntroPortFolioProps) {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 2], [1, 0.92]);
+
   return (
     <motion.section
       style={{ scale }}
-      className="sticky top-0 py-20 sm:h-[85vh] flex text-white overflow-hidden bg-gray-900"
+      className="sticky top-0 flex overflow-hidden bg-gray-900 text-[#DDCFCF] sm:h-[100vh] py-20"
+      aria-label="Intro hero"
     >
       <HeroStars />
 
-      <div className="container flex flex-col gap-5 px-6 lg:px-12 relative bg-gray-900/50">
-        {/* Left Section: Text */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="container relative mx-auto px-6 lg:px-12 max-w-4xl text-center sm:text-left"
+      >
+        {/* Badge: Name · Location */}
+        <motion.div
+          variants={item}
+          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 backdrop-blur"
+        >
+          <motion.span
+            animate={{
+              opacity: [1.5, 0.5, 1.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="h-2 w-2 rounded-full bg-green-400"
+          />
+          <span className="text-sm text-[#DDCFCF]/85">
+            Bart van den Berg · Bergen, Norway
+          </span>
+        </motion.div>
+
+        {/* Value Prop */}
         <motion.h1
-          initial={{ y: -400 }}
-          animate={{ y: 10 }}
-          transition={{ duration: 2 }}
-          className="text-gray-900 text-center text-4xl sm:text-6xl lg:text-8xl font-bold rounded bg-main p-2 inline-block mt-5"
+          variants={item}
+          className="mt-6 font-extrabold tracking-tight text-4xl md:text-6xl lg:text-7xl"
         >
-          Bart van den Berg
+          Front-end developer crafting clean, fast UIs
         </motion.h1>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mt-6 text-gray-300 text-center"
+
+        {/* Subcopy */}
+        <motion.p
+          variants={item}
+          className="mt-4 text-base md:text-lg text-[#DDCFCF]/85"
         >
-          <h2 className="text-xl md:text-3xl">
-            Im a passionate{" "}
-            <span className="font-bold italic text-main">Front-end</span>{" "}
-            developer located in
-            <span className="font-bold text-green-500 italic">
-              {" "}
-              Bergen, Norway{" "}
-            </span>
-            originated from
-            <span className="font-bold text-blue-500 italic">
-              {" "}
-              Leiden, the Netherlands.{" "}
-            </span>
-          </h2>
-        </motion.div>
+          I’m a passionate{" "}
+          <span className="font-semibold italic">front-end</span> developer
+          based in{" "}
+          <span className="underline decoration-main/70 underline-offset-4">
+            Bergen
+          </span>
+          , originally from Leiden.
+          <span className="text-white italic">
+            {" "}
+            I gap the bridge between companies and the web.{" "}
+          </span>{" "}
+          .
+        </motion.p>
+
+        {/* CTAs + Socials */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.75 }}
-          className="flex justify-center gap-5"
+          variants={item}
+          className="mt-8 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <a
-            href="https://github.com/barvand"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-200 hover:text-blue-500 mt-8 flex items-center"
+          <button
+            onClick={Project}
+            className="inline-flex items-center justify-center rounded-xl bg-main px-5 py-3 font-semibold text-gray-900 hover:text-blue-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-main/60"
+            aria-label="Explore my work"
           >
-            <FaGithub size={32} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/bart-van-den-berg-b90219155/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-200 hover:text-blue-500 mt-8 flex items-center"
+            Explore my work
+          </button>
+
+          <button
+            onClick={Contact}
+            className="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 font-semibold text-[#DDCFCF] cursor-pointer hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+            aria-label="Open contact section"
           >
-            <FaLinkedin size={32} />
-          </a>
-          <a
-            href="mailto:bartberg11@gmail.com"
-            className="text-gray-200 hover:text-blue-500 mt-8 flex items-center"
-          >
-            <BiLogoGmail size={32} />
-          </a>
+            Let’s chat
+          </button>
+
+          <div className="flex items-center gap-3 sm:ml-2">
+            <a
+              href="https://github.com/barvand"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 focus-visible:outline-2 cursor-pointer"
+              title="GitHub"
+            >
+              <FaGithub size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bart-van-den-berg-b90219155/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5  focus-visible:outline-2 cursor-pointer"
+              title="LinkedIn"
+            >
+              <FaLinkedin size={22} />
+            </a>
+            <a
+              href="mailto:bartberg11@gmail.com"
+              aria-label="Email Bart"
+              className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 focus-visible:outline-2 cursor-pointer"
+              title="Email"
+            >
+              <BiLogoGmail size={22} />
+            </a>
+          </div>
         </motion.div>
 
-        {/* Call to Action Button*/}
-        <div className="flex gap-5 justify-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="mt-8 flex"
-          >
-            <button
-              onClick={Project}
-              className="relative border bg-blue-500 hover:bg-amber-950 hover:text-main group py-3 px-3 rounded text-gray-900 cursor-pointer font-bold"
-            >
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main group-hover:w-full group-hover:transition-all"></span>
-              Explore my work
-            </button>
-          </motion.div>
+        {/* Micro-trust */}
+        <motion.p variants={item} className="mt-3 text-sm text-[#DDCFCF]/65">
+          Available for freelance · Replies within 24h
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="mt-8"
-          >
-            <button
-              onClick={Contact}
-              className="relative border border-gray-200 group py-3 px-2.5 hover:border-main rounded text-gray-200 cursor-pointer font-bold"
-            >
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main group-hover:w-full group-hover:transition-all"></span>
-              Let's have a chat!
-            </button>
-          </motion.div>
-        </div>
-      </div>
+        {/* Scroll cue */}
+      </motion.div>
+      <motion.button
+        variants={item}
+        onClick={Project}
+        aria-label="Scroll to work"
+        className="absolute left-1/2 -translate-x-1/2 bottom-10 text-[#DDCFCF]/60 hover:text-[#DDCFCF]/90 cursor-pointer"
+      >
+        ↓
+      </motion.button>
     </motion.section>
   );
 }

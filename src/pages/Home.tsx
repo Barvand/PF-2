@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import ProjectSections from "../components/ProjectSection";
 import IntroPortfolio from "../components/IntroPortfolio";
-import NavigationText from "../components/NavigationText";
 import ButtonToTop from "../features/ButtonToTop";
 import Roadmap from "../components/RoadMap";
 import Navigation from "../components/navigation/Navigation";
 import { useScroll } from "framer-motion";
 import Footer from "../components/footer/Footer";
 import TechStackRow from "../components/techstack/TechStackRow";
+import ValueCards from "../components/value";
 
 function Home() {
   // Define section references
@@ -42,12 +42,9 @@ function Home() {
             scrollYProgress={heroProgress}
           />
         </section>
+        <ValueCards />
         <TechStackRow />
 
-        <NavigationText
-          onProjectsClick={() => scrollToSection(projectsRef)}
-          onAboutMeClick={() => scrollToSection(aboutMeRef)}
-        />
         <ProjectSections ref={projectsRef} />
         {/* <TechStack ref={techStackRef} /> */}
         <section ref={aboutMeRef} className=" justify-center">

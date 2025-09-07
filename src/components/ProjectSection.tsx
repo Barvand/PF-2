@@ -7,12 +7,12 @@ import { IoArrowDownOutline } from "react-icons/io5";
 const ProjectSections = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section ref={ref}>
-      <div className="">
+      <div className="py-20">
         <div className="container">
-          <div className="container border-b border-main flex justify-between cursor-pointer group">
-            <h2 className="text-5xl text-main font-bold">Projects</h2>
+          <div className="container flex justify-between cursor-pointer group">
+            <h2 className="text-5xl text-gray-200 font-bold">Projects</h2>
             <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
-              <IoArrowDownOutline size={42} />
+              <IoArrowDownOutline size={42} className="text-cyan-500" />
             </div>
           </div>
         </div>

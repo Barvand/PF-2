@@ -72,7 +72,7 @@ export default function TechStackMarquee({
           >
             <div
               className="
-                relative rotate-45 rounded-2xl
+                relative rotate-25
                 flex items-center justify-center
                 w-full h-full overflow-hidden
                 bg-[#2b50a0]
@@ -85,7 +85,7 @@ export default function TechStackMarquee({
             >
               {/* icon box ~55% of diamond height */}
               <div
-                className="-rotate-45"
+                className="-rotate-25"
                 style={{
                   width: "calc(var(--size, clamp(56px, 10vw, 96px)) * 1)",
                   height: "calc(var(--size, clamp(56px, 10vw, 96px)) * 0.55)",

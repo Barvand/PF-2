@@ -51,7 +51,16 @@ body {
   background-color: #101828;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", serif;
+}
+
+.card-number {
   font-family: "Montserrat", serif;
 }
 
@@ -138,6 +147,22 @@ h1 {
   position: relative;
   display: inline-block; /* keeps the bg tight to the image */
   overflow: hidden;
+}
+
+.project-card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+/* the colored plate behind the image */
+.project-card-image::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  background: rgba(43, 153, 226, 0.18);
+  z-index: 0;
+  pointer-events: none;
+  transform: skew(-50deg, 1deg);
 }
 
 /* the colored plate behind the image */
