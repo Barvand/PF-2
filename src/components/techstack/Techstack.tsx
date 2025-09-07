@@ -36,7 +36,7 @@ const TechStack = forwardRef<HTMLElement>((_, ref) => {
     <>
       <section
         ref={ref}
-        className="text-white bg-gray-900 md:h-[60vh] flex flex-col items-center"
+        className="text-white bg-gray-900 flex flex-col items-center"
       >
         {/* Section Header */}
         <div className="container flex flex-col justify-center">

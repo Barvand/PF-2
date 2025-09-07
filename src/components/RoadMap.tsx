@@ -24,26 +24,23 @@ export default function AboutSection() {
   return (
     <>
       <div className="relative mt-20">
-        <div className="container border-b border-main flex justify-between cursor-pointer group relative">
-          <h2 className="text-5xl text-main font-bold">About me</h2>
+        <div className="container border-gray-500 flex justify-between cursor-pointer group relative">
+          <div className="my-20 flex justify-between w-full">
+            <h2 className="text-5xl text-gray-200 font-bold">My background</h2>
+            <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
+              <IoArrowDownOutline size={42} className="text-cyan-500" />
+            </div>
+          </div>
           <div className="circleContainer h-24">
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>
           </div>
-
-          <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
-            <IoArrowDownOutline size={42} />
-          </div>
         </div>
       </div>
-      <section ref={sectionRef} className="max-w-4xl mx-auto p-8 text-white">
-        <h2 className="text-3xl font-bold text-white mb-6">
-          How my journey started
-        </h2>
-
+      <section ref={sectionRef} className="container mx-auto p-8 text-white">
         {/* Timeline Container */}
-        <div className="relative border-l-2 border-main pl-6 space-y-8">
+        <div className="relative border-l-2 border-gray-500 pl-6 space-y-8">
           {milestones
             .slice(0, expanded ? milestones.length : 4)
             .map((milestone, index) => (
@@ -59,7 +56,7 @@ export default function AboutSection() {
                 <div className="absolute left-[-35px] top-2 w-5 h-5 bg-main"></div>
 
                 {/* Content */}
-                <div className="p-3 rounded border-gray-500 bg-gray-800 border row h-62 items-center">
+                <div className="p-3 border-b-gray-700 border-r-3 border-b-3 border-gray-800 row h-62 items-center">
                   <div className="col-six flex flex-col justify-center">
                     <h3
                       className={`text-xl font-semibold mt-2 ${
@@ -75,11 +72,11 @@ export default function AboutSection() {
                     <p className="text-white mt-2">{milestone.description}</p>
                     <p className="text-gray-400 mt-2"> {milestone.location}</p>
                   </div>
-                  <div className="col-six mt-4 sm:mt-0 h-48 w-full overflow-hidden rounded">
+                  <div className="col-six mt-4 sm:mt-0 h-48 w-full overflow-hidden">
                     <img
                       src={milestone.image}
                       alt={milestone.title}
-                      className="w-full h-full object-cover object-top rounded clipped-image"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 </div>

@@ -154,6 +154,21 @@ h6 {
   overflow: hidden;
 }
 
+.bg-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  background: rgba(48, 42, 42, 0.18);
+  z-index: 0;
+  pointer-events: none;
+  transform: skew(50deg, 0deg);
+}
+
 /* the colored plate behind the image */
 .project-card-image::before {
   content: "";

@@ -23,7 +23,7 @@ export default function TechStackRow() {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "tween", duration: 1 }}
       viewport={{ once: true, amount: 0.8 }} // triggers when ~35% is visible
-      className="text-white flex items-center overflow-hidden border-t border-b border-gray-500 py-15 sm:py-70 h-full"
+      className="text-white flex items-center overflow-hidden border-t border-b border-4 border-gray-800 py-15 sm:py-40 h-full"
     >
       <div className="container px-6 py-16">
         <div className="flex justify-between items-center gap-5">

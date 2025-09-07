@@ -1,16 +1,18 @@
+import { motion } from "framer-motion";
+
 function ValueCards() {
   const items = [
     {
       n: "01",
-      title: "We Chat",
-      short: "Clarify goals and constraints.",
+      title: "We Communicate",
+      short: "We clarify goals, design and purpose",
       more: "We map your goals, users and constraints into a clear problem statement, so everyone knows what success looks like.",
     },
     {
       n: "02",
       title: "We Work",
-      short: "Design → build → iterate.",
-      more: "We prototype quickly, validate early, and refine. You get visible progress with tight feedback loops.",
+      short: "Design -> build -> iterate.",
+      more: "We prototype quickly, validate early, and refine. You get visible progress with tight feedback loops. So we are able to deliver accurately.",
     },
     {
       n: "03",
@@ -21,15 +23,34 @@ function ValueCards() {
   ];
 
   return (
-    <section className="bg-gray-900 py-20 sm:py-70 h-full">
+    <section className="bg-gray-900 py-20 sm:py-40 h-full">
       <div className="mx-auto max-w-7xl px-4">
         <h2 className="text-3xl font-bold text-gray-200 py-5">
-          How do i work?
+          How do we work?
         </h2>
-        <div className="grid gap-6 md:grid-cols-3">
+        <motion.div
+          className="grid gap-6 md:grid-cols-3"
+          variants={{
+            hidden: { opacity: 0, x: 1 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.5, // delay between cards
+              },
+            },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.8 }}
+        >
           {items.map(({ n, title, short, more }) => (
-            <article
+            <motion.article
               key={n}
+              variants={{
+                hidden: { opacity: 0 },
+                show: { opacity: 1 },
+              }}
+              transition={{ duration: 0.8 }}
               className="
                 group relative h-56 overflow-hidden rounded-2xl project-card-image
                 border border-white/10 bg-gradient-to-b from-gray-800 to-gray-900
@@ -92,9 +113,9 @@ function ValueCards() {
                   bg-[radial-gradient(140px_120px_at_90%_15%,rgba(255,103,0,0.12),transparent_60%)]
                 "
               />
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
