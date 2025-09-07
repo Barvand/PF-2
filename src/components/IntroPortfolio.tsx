@@ -103,14 +103,10 @@ function IntroPortfolio({
             I’m a passionate{" "}
             <span className="font-semibold italic">front-end</span> developer
             based in
-            <span className="underline decoration-main/70 underline-offset-4">
-              {" "}
-              Bergen{" "}
-            </span>
-            , originally from Leiden.
+            <span className="text-main"> Bergen, </span>
             <span className="text-white italic">
               {" "}
-              I bridge the gap between companies and the web.{" "}
+              I help professionals connnect to the internet.{" "}
             </span>
           </motion.p>
 
