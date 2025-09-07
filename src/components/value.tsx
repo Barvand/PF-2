@@ -25,8 +25,8 @@ function ValueCards() {
   return (
     <section className="bg-gray-900 py-20 sm:py-40 h-full">
       <div className="mx-auto max-w-7xl px-4">
-        <h2 className="text-3xl font-bold text-gray-200 py-5">
-          How do we work?
+        <h2 className="text-3xl font-bold text-gray-200 py-5 my-5">
+          What do we do?
         </h2>
         <motion.div
           className="grid gap-6 md:grid-cols-3"
