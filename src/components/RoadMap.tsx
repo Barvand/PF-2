@@ -26,7 +26,7 @@ export default function AboutSection() {
       <div className="relative mt-20">
         <div className="container border-gray-500 flex justify-between cursor-pointer group relative">
           <div className="my-20 flex justify-between w-full">
-            <h2 className="text-5xl text-gray-200 font-bold">My background</h2>
+            <h2 className="text-2xl text-gray-200 font-bold">Background</h2>
             <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
               <IoArrowDownOutline size={42} className="text-cyan-500" />
             </div>

@@ -106,7 +106,7 @@ function IntroPortfolio({
             <span className="text-main"> Bergen, </span>
             <span className="text-white italic">
               {" "}
-              I help professionals connnect to the internet.{" "}
+              I help professionals connect to the internet.{" "}
             </span>
           </motion.p>
 

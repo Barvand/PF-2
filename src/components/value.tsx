@@ -26,7 +26,7 @@ function ValueCards() {
     <section className="bg-gray-900 py-20 sm:py-40 h-full">
       <div className="mx-auto max-w-7xl px-4">
         <h2 className="text-3xl font-bold text-gray-200 py-5 my-5">
-          What do we do?
+          What we do
         </h2>
         <motion.div
           className="grid gap-6 md:grid-cols-3"
@@ -96,10 +96,10 @@ function ValueCards() {
               <div
                 className="
                   absolute inset-x-0 bottom-0 z-20 translate-y-full h-full
-                  border-t border-white/10 bg-gray-900/30 backdrop-blur
+                  border-t border-white/10 bg-gray-900 backdrop-blur
                   p-6 text-sm leading-6 text-zinc-200
                   transition-transform duration-500 ease-out
-                  group-hover:translate-y-0
+                  group-hover:translate-y-0 font-semibold
                 "
               >
                 {more}

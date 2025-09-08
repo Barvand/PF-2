@@ -27,7 +27,7 @@ export default function TechStackRow() {
     >
       <div className="container px-6 py-16">
         <div className="flex justify-between items-center gap-5">
-          <h2 className="text-3xl sm:text-5xl font-bold text-gray-300">
+          <h2 className="text-2xl font-bold text-gray-300">
             Techstack
           </h2>
           {/* Hammer with only two corners */}
