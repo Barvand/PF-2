@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { milestones } from "../data/milestones";
-import { IoArrowDownOutline } from "react-icons/io5";
 
 export default function AboutSection() {
   const [expanded, setExpanded] = useState(false);

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 function ValueCards() {
-  const [openIndex, setOpenIndex] = useState(null); // which card is open (mobile)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const items = [
     {
@@ -46,7 +46,7 @@ function ValueCards() {
           viewport={{ once: true, amount: 0.8 }}
         >
           {items.map(({ n, title, short, more }, idx) => {
-            const isOpen = openIndex === idx;
+            const isOpen: boolean = openIndex === idx;
 
             return (
               <motion.article
