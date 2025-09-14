@@ -26,7 +26,7 @@ function ValueCards() {
   ];
 
   return (
-    <section className="bg-gray-900 py-20 sm:py-40 h-full">
+    <section className="bg-gray-900 py-20 h-full">
       <div className="container mx-auto px-4">
         <div className="container flex justify-between cursor-pointer group border-b border-gray-500">
           <h2 className="text-2xl font-bold text-gray-200">How we work</h2>
@@ -54,12 +54,14 @@ function ValueCards() {
                 variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
                 transition={{ duration: 0.8 }}
                 className="
-                  group relative h-56 overflow-hidden rounded-2xl project-card-image
-                  border border-white/10 bg-gradient-to-b from-gray-800 to-gray-900
-                  shadow-xl transition-transform duration-300 md:hover:-translate-y-1 md:hover:shadow-2xl
-                "
+    group relative h-56 overflow-hidden rounded-2xl project-card-image
+    border border-white/10 bg-gradient-to-b from-gray-800 to-gray-900
+    shadow-xl transition-transform duration-300 md:hover:-translate-y-1 md:hover:shadow-2xl
+  "
                 role="button"
                 tabIndex={0}
+                // Support both tap (mobile) and click (desktop)
+                onTap={() => setOpenIndex(isOpen ? null : idx)}
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
@@ -107,12 +109,16 @@ function ValueCards() {
                 {/* Slide-up panel */}
                 <div
                   className={`
-                    absolute inset-x-0 bottom-0 z-20 translate-y-full h-full
-                    border-t border-white/10 bg-gray-900/95 backdrop-blur
-                    p-6 text-sm leading-6 text-zinc-200 font-semibold
-                    transition-transform duration-500 ease-out
-                    ${isOpen ? "translate-y-0" : "md:group-hover:translate-y-0"}
-                  `}
+      absolute inset-x-0 bottom-0 z-20 h-full
+      border-t border-white/10 bg-gray-900/95 backdrop-blur
+      p-6 text-sm leading-6 text-zinc-200 font-semibold
+      transition-transform duration-500 ease-out
+      ${
+        isOpen
+          ? "translate-y-0 pointer-events-auto"
+          : "translate-y-full pointer-events-none md:group-hover:translate-y-0 md:group-hover:pointer-events-auto"
+      }
+    `}
                 >
                   {more}
                 </div>
