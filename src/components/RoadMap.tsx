@@ -24,12 +24,9 @@ export default function AboutSection() {
   return (
     <>
       <div className="relative mt-20">
-        <div className="container border-gray-500 flex justify-between cursor-pointer group relative">
-          <div className="my-20 flex justify-between w-full">
+        <div className="container border-gray-600 flex justify-between cursor-pointer group relative border-b">
+          <div className="flex justify-between w-full">
             <h2 className="text-2xl text-gray-200 font-bold">Background</h2>
-            <div className="transition-transform duration-300 group-hover:animate-bounce text-main">
-              <IoArrowDownOutline size={42} className="text-cyan-500" />
-            </div>
           </div>
           <div className="circleContainer h-24">
             <div className="circle"></div>
@@ -38,7 +35,25 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+
       <section ref={sectionRef} className="container mx-auto p-8 text-white">
+        <div className="py-2 mb-20">
+          <h3 className="text-gray-200 italic self-end">
+            A little bit about myself before we jump into my working experience.
+          </h3>
+          <blockquote>
+            <p className="text-gray-400 italic self-end">
+              My passion for technology began early, back in the days when you
+              had to disconnect the phone line to access the internet. Gaming
+              and exploring digital tools sparked a natural curiosity for how
+              things work, but it took me time to realize I could turn that into
+              a career. Through my work in customer service, I discovered how
+              empowered and focused I feel behind a computer, a place where I’m
+              both comfortable and in control. That experience fueled my
+              motivation to pursue development as a profession.
+            </p>
+          </blockquote>
+        </div>
         {/* Timeline Container */}
         <div className="relative border-l-2 border-gray-500 pl-6 space-y-8">
           {milestones

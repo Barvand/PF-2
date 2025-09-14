@@ -8,7 +8,7 @@ const ProjectSections = forwardRef<HTMLElement>((_, ref) => {
     <section ref={ref}>
       <div className="py-20">
         <div className="container">
-          <div className="container flex justify-between cursor-pointer group">
+          <div className="container flex justify-between cursor-pointer group border-b border-gray-500">
             <h2 className="text-2xl text-gray-200 font-bold">Projects</h2>
           </div>
         </div>

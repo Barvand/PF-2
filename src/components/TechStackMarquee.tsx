@@ -38,7 +38,7 @@ export default function TechStackMarquee({
 
   return (
     <div
-      className="relative overflow-hidden py-10"
+      className="relative overflow-hidden py-10 my-20"
       style={{
         ...cssVars,
         // Fade edges for nicer look

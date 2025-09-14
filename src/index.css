@@ -6,7 +6,7 @@
   .container {
     margin: auto;
     max-width: 1100px;
-    padding: 6px;
+    padding: 10px;
   }
   .brand-color {
     color: #ff6700;
@@ -58,6 +58,17 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", serif;
+}
+
+#navbar {
+  position: fixed; /* Or sticky */
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
 }
 
 .card-number {
@@ -280,6 +291,34 @@ h6 {
   right: 0;
 }
 
+blockquote {
+  font-style: italic;
+  position: relative;
+  padding: 2rem;
+  color: #ddd; /* text color */
+  z-index: 1; /* keep text above the quotes */
+}
+
+blockquote::before,
+blockquote::after {
+  font-size: 6rem; /* make them BIG */
+  color: #ff6700; /* your brand orange */
+  opacity: 0.5; /* very light, watermark effect */
+  position: absolute;
+  z-index: -1; /* behind the text */
+}
+
+blockquote::before {
+  content: "“";
+  top: -20px;
+  left: 10px;
+}
+
+blockquote::after {
+  content: "”";
+  bottom: -40px;
+  right: 20px;
+}
 /*  Contact form */
 
 form {
