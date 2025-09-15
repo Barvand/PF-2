@@ -2,13 +2,14 @@ export const projects = [
   {
     name: "Totalentreprenør AS",
     description:
-      "Total entreprenør is a website designed and developed for a local construction company in Bergen.",
-    techStack: ["HTML", "CSS", "Tailwind CSS", "NEXT.js", "React"],
+      "A responsive website built for a local construction company in Bergen. Developed with Next.js and React, styled using Tailwind CSS, and optimized for performance and SEO through static site generation. I focused on creating a clean, professional design while ensuring fast load times, even on mobile networks, by optimizing images and minimizing unused CSS. Deployed with Vercel for seamless integration and deployment.",
+    techStack: ["HTML", "CSS", "Tailwind CSS", "NEXT.js"],
+    features: ["Responsive design", "SEO optimization"],
     logo: "LogoTotalentreprenor.png",
     favicon: "/totalentreprenorFavicon.svg",
     mockups: {
-      desktop: "/totalentreprenorProject.png",
-      mobile: "/totalentreprenorProject.png",
+      desktop: "/totalentreprenorProject.jpg",
+      mobile: "/totalentreprenorProject.jpg",
     },
     liveLink: "https://totalbyggoganlegg.no/",
     repoLink: "",
@@ -16,8 +17,15 @@ export const projects = [
   {
     name: "Holidaze",
     description:
-      "Holidaze is a modern accommodation booking application designed to provide a seamless and intuitive user experience. This project was built using pure React, without any state management libraries, to explore its capabilities and limitations. My goal was to gain a deeper understanding of React's core principles while creating a functional and stylish booking platform.",
+      "A modern accommodation booking platform built with React and TypeScript. The project avoids external state management libraries, relying instead on React’s built-in tools (Context API, useReducer, custom hooks) to manage bookings, profiles, and venues. Features include a venue manager dashboard, authentication, search and filtering, and responsive design built with Tailwind CSS. This project deepened my understanding of React’s core principles and demonstrated how to build scalable applications without third-party state libraries.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "HTML"],
+    features: [
+      "User authentication",
+      "Booking system",
+      "Profile dashboard",
+      "Pagination",
+      "Form validation",
+    ],
     logo: "/Holidaze-logo.svg",
     favicon: "/holidaze-favicon.svg",
     mockups: {
@@ -30,8 +38,9 @@ export const projects = [
   {
     name: "TimeLess",
     description:
-      "A futuristic eCommerce shop designed to deliver a sleek and immersive shopping experience.",
+      "A futuristic eCommerce shop built with React, TypeScript, and Zustand for state management. Designed to deliver an immersive shopping experience with reusable UI components, dynamic product filtering, and responsive layouts powered by Tailwind CSS. This project emphasized scalability, clean architecture, and advanced state handling for a smooth user experience.",
     techStack: ["React", "TypeScript", "Tailwind CSS", "Zustand", "HTML"],
+    features: ["Shopping cart", "Search functionality", "Form validation"],
     logo: "/timelesslogo.png",
     favicon: "/timeless-favicon.png",
     mockups: {
@@ -44,8 +53,15 @@ export const projects = [
   {
     name: "Vindt",
     description:
-      "A auction platform designed to provide a seamless and efficient bidding experience.",
-    techStack: ["JavaScript", "HTML", "Tailwind CSS"],
+      "An auction platform designed for a seamless and efficient bidding experience. Built with vanilla JavaScript and SCSS(SASS), it features real-time listings, user bidding, and pagination. I implemented dynamic filtering, carousel displays, and error handling for a more user-friendly experience. This project challenged me to optimize DOM manipulation and API integration without relying on frameworks.",
+    techStack: ["JavaScript", "HTML", "SASS", "Bootstrap"],
+    features: [
+      "User authentication",
+      "Bidding system",
+      "Profile dashboard",
+      "Pagination",
+      "Form validation",
+    ],
     logo: "/vindt-logo.svg",
     favicon: "/vindt-favicon.svg",
     mockups: {

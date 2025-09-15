@@ -1,6 +1,7 @@
 import { Project } from "../types/ProjectType";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaCode } from "react-icons/fa";
+import { GiStaryu } from "react-icons/gi";
 
 interface RenderProjectProps {
   project: Project;
@@ -44,6 +45,24 @@ function RenderProject({ project }: RenderProjectProps) {
                     className="text-white pe-1 border-r border-gray-600"
                   >
                     {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Built With (Full width under the cards) */}
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="border-b border-gray-500 pb-2 flex items-center gap-2">
+                <GiStaryu size={28} className="text-blue-500" />
+                <p className="text-gray-200"> Features </p>
+              </div>
+              <div className="flex gap-2 flex-wrap">
+                {project.features.map((features, index) => (
+                  <span
+                    key={index}
+                    className="text-white pe-1 border-r border-gray-600"
+                  >
+                    {features}
                   </span>
                 ))}
               </div>

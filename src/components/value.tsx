@@ -52,7 +52,7 @@ function ValueCards() {
               <motion.article
                 key={n}
                 variants={{ hidden: { opacity: 0 }, show: { opacity: 1 } }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.5 }}
                 className="
     group relative h-56 overflow-hidden rounded-2xl project-card-image
     border border-white/10 bg-gradient-to-b from-gray-800 to-gray-900
