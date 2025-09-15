@@ -8,6 +8,7 @@ import { useScroll } from "framer-motion";
 import Footer from "../components/footer/Footer";
 import TechStackRow from "../components/techstack/TechStackRow";
 import ValueCards from "../components/value";
+import Wave from "../components/svg/Wave";
 
 function Home() {
   // Define section references
@@ -42,10 +43,16 @@ function Home() {
             scrollYProgress={heroProgress}
           />
         </section>
-        <ValueCards />
-        <TechStackRow />
-
-        <ProjectSections ref={projectsRef} />
+        <Wave />
+        <section>
+          <ProjectSections ref={projectsRef} />
+        </section>
+        <section>
+          <TechStackRow />
+        </section>
+        <section>
+          <ValueCards />
+        </section>
         {/* <TechStack ref={techStackRef} /> */}
         <section ref={aboutMeRef} className=" justify-center">
           <Roadmap />

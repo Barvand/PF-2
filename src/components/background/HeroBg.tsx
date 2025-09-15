@@ -29,7 +29,7 @@ export default function HeroStars() {
       dy: number; // slow drift y
     };
 
-    const STAR_DENSITY = 0.0012; // stars per px² (tweak to taste)
+    const STAR_DENSITY = 0.000152; // stars per px² (tweak to taste)
     let stars: Star[] = [];
 
     function seed() {
@@ -58,7 +58,7 @@ export default function HeroStars() {
     };
     const meteors: Meteor[] = [];
     function maybeSpawnMeteor() {
-      if (Math.random() < 0.008) {
+      if (Math.random() < 0.0008) {
         const fromTop = Math.random() < 0.5;
         const x =
           Math.random() * canvas.clientWidth * 0.7 + canvas.clientWidth * 0.2;

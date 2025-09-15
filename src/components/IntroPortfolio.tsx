@@ -52,7 +52,7 @@ function IntroPortfolio({
         initial="hidden"
         animate="show"
         variants={{}}
-        className="sticky top-0 flex overflow-hidden bg-gray-900 text-[#DDCFCF] sm:h-[100vh] py-20"
+        className="relative flex overflow-hidden bg-gray-900 text-[#DDCFCF] h-[80vh] py-20"
         aria-label="Intro hero"
       >
         <HeroStars />
