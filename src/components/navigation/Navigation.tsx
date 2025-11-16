@@ -76,7 +76,7 @@ const Navigation: React.FC<NavigationProps> = ({
         className="fixed top-0 left-0 w-full text-gray-200 bg-gray-900 flex md:hidden 
         justify-between items-center px-6 py-4 z-50 shadow-sm shadow-gray-600"
       >
-        <img src="BartBergLogo.svg" alt="BartBergLogoBlack" className="w-44" />
+        <img src="logoBB.png" alt="Bartberglogo" className="w-76" />
         {/* Hamburger Toggle Button */}
         <Hamburger size={32} toggled={open} toggle={setOpen} />
       </div>

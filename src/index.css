@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @layer theme, base, components, utilities;
-
 @layer utilities {
   .container {
     margin: auto;
@@ -46,6 +46,10 @@
   transform: scale(1); /* Expand into view */
 }
 
+.playful-text {
+  font-family: "Knewave", cursive;
+}
+
 body {
   font-family: "Inter", serif;
   background-color: #101828;
@@ -57,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", serif;
+  font-family: "montserrat", serif;
 }
 
 #navbar {
@@ -99,6 +103,20 @@ h6 {
   position: absolute;
 }
 
+.gradient-border {
+  border: 2px solid transparent;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(#101828, #101828) padding-box,
+    linear-gradient(to right, #ff6700, #e9a792, rgb(4, 199, 224)) border-box;
+}
+
+.gradient-border:hover {
+  background: linear-gradient(#101828, #101828) padding-box,
+    linear-gradient(to right, #59545e, #ff6700, rgb(10, 112, 126)) border-box;
+  animation: 3s ease-in;
+}
 /* Vertical Line */
 .section--mockup-laptop::before {
   width: 300px;
@@ -107,7 +125,6 @@ h6 {
   right: 0;
   background-color: var(--brand-color);
 }
-
 /* Horizontal Line */
 .section--mockup-laptop::after {
   width: 220px; /* Adjust width */

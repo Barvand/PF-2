@@ -1,202 +1,88 @@
-import { motion, useTransform, MotionConfig } from "framer-motion";
-import HeroStars from "./background/HeroBg";
+import Wave from "./svg/Wave";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 
 interface IntroPortFolioProps {
   Project: () => void;
-  Contact: () => void;
   scrollYProgress?: any;
 }
 
-const DUR = 3; // shorter = snappier
-const STAG = 0.3; // tighter cascade
-
-// Springy fade-up that feels responsive and less "laggy"
-const fadeUp = {
-  hidden: { opacity: 0, y: 12 },
-  show: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "tween",
-      stiffness: 260,
-      damping: 24,
-      mass: 0.9,
-      delay: i * STAG,
-    },
-  }),
-};
-
-// Small helper to assign a sequential index across the whole tree
-const makeSequencer = () => {
-  let i = 0;
-  return () => i++;
-};
-
-function IntroPortfolio({
-  Project,
-  Contact,
-  scrollYProgress,
-}: IntroPortFolioProps) {
-  const scale = useTransform(scrollYProgress, [0, 2], [1, 0.92]);
-
-  // Create a fresh sequencer per render. The order below determines the cascade
-  const next = makeSequencer();
-
+function IntroPortfolio({ Project }: IntroPortFolioProps) {
   return (
-    <MotionConfig transition={{ duration: DUR }}>
-      <motion.section
-        style={{ scale }}
-        initial="hidden"
-        animate="show"
-        variants={{}}
-        className="relative flex overflow-hidden bg-gray-900 text-[#DDCFCF] h-[80vh] py-20"
-        aria-label="Intro hero"
-      >
-        <HeroStars />
-
-        {/* Content container */}
-        <motion.div
-          variants={fadeUp}
-          custom={next()}
-          className="container relative mx-auto px-6 lg:px-12 max-w-4xl text-center sm:text-left"
-        >
-          {/* Badge: Name · Location */}
-          <motion.div
-            variants={fadeUp}
-            custom={next()}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 backdrop-blur"
+    <>
+      <div className="flex-col lg:flex-row mx-auto flex gap-20 justify-center relative pt-50 p-5 min-h-[80vh]">
+        <div className="text-white flex flex-col gap-3 justify-center">
+          <p className="font-semibold tracking-wide uppercase"> Portfolio</p>
+          <h1
+            className="playful-text font-bold tracking-tight 
+  text-4xl md:text-4xl lg:text-5xl text-[#FF6700]"
           >
-            {/* Online dot */}
-            <motion.span
-              // keep the subtle pulse independent of the entrance sequence
-              animate={{ opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-              className="h-2 w-2 rounded-full bg-green-400"
-            />
-            <motion.span
-              variants={fadeUp}
-              custom={next()}
-              className="text-sm text-[#DDCFCF]/85"
-            >
-              Bart van den Berg · Bergen, Norway
-            </motion.span>
-          </motion.div>
+            Technical solutions
+          </h1>
 
-          {/* Value Prop */}
-          <motion.h1
-            variants={fadeUp}
-            custom={next()}
-            className="mt-6 font-extrabold tracking-tight text-4xl md:text-6xl lg:text-7xl"
+          <p className="text-xl font-semibold text-gray-200 mb-8 max-w-xl">
+            Time to take control and scale your company with online prescense.
+            We offer technical solutions for the right price.
+          </p>
+          <button
+            onClick={Project}
+            className="gradient-border text-black font-semibold px-6 py-3 block hover:text-black hover:bg-orange-500e"
           >
-            Front-end developer crafting clean, fast UIs
-          </motion.h1>
-
-          {/* Subcopy */}
-          <motion.p
-            variants={fadeUp}
-            custom={next()}
-            className="mt-4 text-base md:text-lg text-[#DDCFCF]/85"
+            So what we can do for you
+          </button>
+        </div>
+        {/* RIGHT IMAGE */}
+        <div className="flex items-center justify-center z-20">
+          <div className="bg-[#1c3752] rounded-full w-80 h-80 lg:w-128 lg:h-128 p-15 overflow-hidden flex justify-center items-center">
+            <img src="/bartpng.png" alt="Bart Berg" className="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+      <div className="relative h-52 bg-gradient-to-r from-[#1c3752] w-full mt-[-150px] z-0">
+        {/* ICONS */}
+        <div className="flex justify-center gap-6 pt-10 relative z-20 text-white">
+          {/* GitHub */}
+          <a
+            href="https://www.github.com/barvand"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 cursor-pointer backdrop-blur-sm"
+            title="GitHub"
           >
-            I’m a passionate{" "}
-            <span className="font-semibold italic">front-end</span> developer
-            based in
-            <span className="text-main"> Bergen, </span>
-            <span className="text-white italic">
-              {" "}
-              I help professionals connect to the internet.{" "}
-            </span>
-          </motion.p>
+            <FaGithub size={22} />
+          </a>
 
-          {/* CTAs + Socials */}
-          <motion.div
-            variants={fadeUp}
-            custom={next()}
-            className="mt-8 flex flex-col items-center gap-4 sm:flex-row"
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/bart-van-den-berg-b90219155/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 cursor-pointer backdrop-blur-sm"
+            title="LinkedIn"
           >
-            <motion.button
-              variants={fadeUp}
-              custom={next()}
-              onClick={Project}
-              className="inline-flex items-center justify-center rounded-xl bg-main px-5 py-3 font-semibold text-gray-900 hover:text-blue-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-main/60"
-              aria-label="Explore my work"
-            >
-              Explore my work
-            </motion.button>
+            <FaLinkedin size={22} />
+          </a>
 
-            <motion.button
-              variants={fadeUp}
-              custom={next()}
-              onClick={Contact}
-              className="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 font-semibold text-[#DDCFCF] cursor-pointer hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-              aria-label="Open contact section"
-            >
-              Let’s chat
-            </motion.button>
-
-            <motion.div
-              variants={fadeUp}
-              custom={next()}
-              className="flex items-center gap-3 sm:ml-2"
-            >
-              <motion.a
-                variants={fadeUp}
-                custom={next()}
-                href="https://github.com/barvand"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 focus-visible:outline-2 cursor-pointer"
-                title="GitHub"
-              >
-                <FaGithub size={22} />
-              </motion.a>
-
-              <motion.a
-                variants={fadeUp}
-                custom={next()}
-                href="https://www.linkedin.com/in/bart-van-den-berg-b90219155/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5  focus-visible:outline-2 cursor-pointer"
-                title="LinkedIn"
-              >
-                <FaLinkedin size={22} />
-              </motion.a>
-
-              <motion.a
-                variants={fadeUp}
-                custom={next()}
-                href="mailto:bartberg11@gmail.com"
-                aria-label="Email Bart"
-                className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 focus-visible:outline-2 cursor-pointer"
-                title="Email"
-              >
-                <BiLogoGmail size={22} />
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          {/* Micro-trust */}
-          <motion.p
-            variants={fadeUp}
-            custom={next()}
-            className="mt-3 text-sm text-[#DDCFCF]/65"
+          {/* Email */}
+          <a
+            href="mailto:contact@bartholomeusberg.com"
+            aria-label="Email"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 cursor-pointer backdrop-blur-sm"
+            title="Email"
           >
-            Available for freelance · Replies within 24h
-          </motion.p>
-        </motion.div>
-      </motion.section>
-      <motion.div
-        className="inset-5 bg-image"
-        initial={{ backgroundColor: "rgb(0, 255, 0)", opacity: 0 }}
-        animate={{ backgroundColor: "#ffff", opacity: 1 }}
-        transition={{ duration: 1.2, delay: 1 }}
-      />
-    </MotionConfig>
+            <BiLogoGmail size={22} />
+          </a>
+        </div>
+
+        {/* WAVE UNDER ICONS */}
+        <div className="absolute top-0 left-0 w-full z-10">
+          <Wave />
+        </div>
+      </div>
+    </>
   );
 }
 

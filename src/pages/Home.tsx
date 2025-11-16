@@ -8,7 +8,6 @@ import { useScroll } from "framer-motion";
 import Footer from "../components/footer/Footer";
 import TechStackRow from "../components/techstack/TechStackRow";
 import ValueCards from "../components/value";
-import Wave from "../components/svg/Wave";
 
 function Home() {
   // Define section references
@@ -35,15 +34,14 @@ function Home() {
         scrollToAboutMe={() => scrollToSection(aboutMeRef)}
         scrollToContact={() => scrollToSection(contactRef)}
       />
+
       <main>
-        <section ref={heroRef}>
+        <section ref={heroRef} className="">
           <IntroPortfolio
             Project={() => scrollToSection(projectsRef)}
-            Contact={() => scrollToSection(contactRef)}
             scrollYProgress={heroProgress}
           />
         </section>
-        <Wave />
         <section>
           <ProjectSections ref={projectsRef} />
         </section>
