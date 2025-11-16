@@ -22,8 +22,9 @@ function IntroPortfolio({ Project }: IntroPortFolioProps) {
           </h1>
 
           <p className="text-xl font-semibold text-gray-200 mb-8 max-w-xl">
-            Time to take control and scale your company with online prescense.
-            We offer technical solutions for the right price.
+            It’s time to take control and scale your business online. We help
+            you build the technical solutions you need — affordably and
+            effectively.
           </p>
           <button
             onClick={Project}
