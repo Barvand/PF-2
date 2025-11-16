@@ -33,7 +33,7 @@ function IntroPortfolio({ Project }: IntroPortFolioProps) {
           </button>
         </div>
         {/* RIGHT IMAGE */}
-        <div className="flex items-center justify-center z-20">
+        <div className="mb-30 flex items-center justify-center z-20">
           <div className="bg-[#1c3752] rounded-full w-80 h-80 lg:w-128 lg:h-128 p-15 overflow-hidden flex justify-center items-center">
             <img src="/bartpng.png" alt="Bart Berg" className="w-full h-auto" />
           </div>
