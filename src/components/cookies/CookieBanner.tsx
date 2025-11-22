@@ -26,38 +26,37 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-end justify-end z-50 w-full">
       <div className="flex flex-col">
-        <div className="bg-gray-700 h-10 w-full border text-[#DDCFCF]">
+        <div className="bg-white text-black p-6 border border-t-0 w-full max-w-xl">
           <button
             onClick={reject}
-            className="px-4 py-2 rounded-md hover:bg-gray-700 text-white cursor-pointer float-right align-middle"
+            className="px-4 py-2 rounded-md text-red-500 cursor-pointer text-2xl float-right align-middle"
           >
             <IoCloseSharp />
           </button>
-        </div>
-        <div className="bg-black text-[#DDCFCF] p-6 max-w-sm border border-t-0">
-          <h2 className="text-lg font-semibold mb-3">Cookies</h2>
+          <h2 className="text-lg font-semibold">Cookies</h2>
+          <div className="flex flex-col justify-evenly gap-5">
+            <p className="text-sm py-4">
+              This website uses cookies to enhance your experience and to
+              analyze traffic to improve our service. Cookies are not required
+              for our users to use our website.
+            </p>
+            <div className="flex gap-10 items-center justify-center">
+              <button
+                onClick={reject}
+                className="items px-4 py-2 bg-black hover:bg-gray-700 text-white cursor-pointer align-center"
+              >
+                Reject
+              </button>
 
-          <p className="text-sm mb-6 border-t border-b border-gray-400 py-4">
-            We use cookies to track visitors behavior using Hotjar, a third
-            party analytical tool. That gives us insights on how to improve our
-            website.
-          </p>
-          <div className="flex justify-between gap-3">
-            <button
-              onClick={reject}
-              className="px-4 py-2 rounded-md bg-gray-600 hover:bg-gray-700 text-white cursor-pointer"
-            >
-              Reject
-            </button>
-
-            <button
-              onClick={accept}
-              className="px-4 py-2 rounded-md bg-[#FF6700] hover:bg-orange-600 text-white cursor-pointer"
-            >
-              Accept
-            </button>
+              <button
+                onClick={accept}
+                className="px-4 py-2 bg-blue-500 hover:bg-blue-800 text-white cursor-pointer"
+              >
+                Accept
+              </button>
+            </div>
           </div>
         </div>
       </div>

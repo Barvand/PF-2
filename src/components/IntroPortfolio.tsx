@@ -1,7 +1,5 @@
 import Wave from "./svg/Wave";
-import { FaGithub } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { BiLogoGmail } from "react-icons/bi";
+import Socials from "./socials/Socials";
 
 interface IntroPortFolioProps {
   Project: () => void;
@@ -28,7 +26,7 @@ function IntroPortfolio({ Project }: IntroPortFolioProps) {
           </p>
           <button
             onClick={Project}
-            className="gradient-border text-black font-semibold px-6 py-3 block hover:text-black hover:bg-orange-500e"
+            className="gradient-border text-black font-semibold px-6 py-3 block hover:text-black hover:bg-white/90 rounded-md transition"
           >
             So what we can do for you
           </button>
@@ -41,44 +39,8 @@ function IntroPortfolio({ Project }: IntroPortFolioProps) {
         </div>
       </div>
       <div className="relative h-52 bg-gradient-to-r from-[#1c3752] w-full mt-[-150px] z-0">
-        {/* ICONS */}
-        <div className="flex justify-center gap-6 pt-10 relative z-20 text-white">
-          {/* GitHub */}
-          <a
-            href="https://www.github.com/barvand"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 cursor-pointer backdrop-blur-sm"
-            title="GitHub"
-          >
-            <FaGithub size={22} />
-          </a>
-
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/bart-van-den-berg-b90219155/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 cursor-pointer backdrop-blur-sm"
-            title="LinkedIn"
-          >
-            <FaLinkedin size={22} />
-          </a>
-
-          {/* Email */}
-          <a
-            href="mailto:contact@bartholomeusberg.com"
-            aria-label="Email"
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 hover:bg-white/5 cursor-pointer backdrop-blur-sm"
-            title="Email"
-          >
-            <BiLogoGmail size={22} />
-          </a>
-        </div>
-
-        {/* WAVE UNDER ICONS */}
+        <Socials />
+        {/* WAVE UNDER SOCIALS */}
         <div className="absolute top-0 left-0 w-full z-10">
           <Wave />
         </div>

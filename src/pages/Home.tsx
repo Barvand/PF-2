@@ -7,7 +7,6 @@ import Navigation from "../components/navigation/Navigation";
 import { useScroll } from "framer-motion";
 import Footer from "../components/footer/Footer";
 import TechStackRow from "../components/techstack/TechStackRow";
-import ValueCards from "../components/value";
 
 function Home() {
   // Define section references
@@ -48,9 +47,7 @@ function Home() {
         <section>
           <TechStackRow />
         </section>
-        <section>
-          <ValueCards />
-        </section>
+       
         {/* <TechStack ref={techStackRef} /> */}
         <section ref={aboutMeRef} className=" justify-center">
           <Roadmap />

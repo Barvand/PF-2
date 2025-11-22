@@ -2,7 +2,7 @@ export const projects = [
   {
     name: "Totalentreprenør AS",
     description:
-      "A responsive website built for a local construction company in Bergen. Developed with Next.js and React, styled using Tailwind CSS, and optimized for performance and SEO through static site generation. I focused on creating a clean, professional design while ensuring fast load times, even on mobile networks, by optimizing images and minimizing unused CSS. Deployed with Vercel for seamless integration and deployment.",
+      "A responsive website built for a local construction company in Bergen. Developed with Next.js styled using Tailwind CSS, and optimized for performance and SEO through static site generation. I focused on creating a clean, professional design while ensuring fast load times, even on mobile networks, by optimizing images and minimizing unused CSS. Deployed with Vercel for seamless integration and deployment.",
     techStack: ["HTML", "CSS", "Tailwind CSS", "NEXT.js"],
     features: ["Responsive design", "SEO optimization"],
     logo: "LogoTotalentreprenor.png",
