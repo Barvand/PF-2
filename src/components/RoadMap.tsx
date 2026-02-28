@@ -72,13 +72,6 @@ export default function AboutSection() {
         }}
       />
 
-      {/* Watermark — clipped at bottom edge */}
-      <div className="pointer-events-none absolute bottom-0 right-0 select-none overflow-hidden h-[140px] w-full flex items-end justify-end">
-        <span className="font-bebas text-[13vw] leading-none text-[#e5ddd5] tracking-tighter whitespace-nowrap translate-y-3">
-          ABOUT
-        </span>
-      </div>
-
       <div className="max-w-6xl mx-auto relative">
         {/* ── TOP: Portrait + Intro side by side ──────────────────── */}
         <div className="flex flex-col lg:flex-row gap-10 mb-20 items-start">
@@ -127,15 +120,16 @@ export default function AboutSection() {
             </h2>
 
             <p className="text-[17px] leading-[1.9] text-[#2a1f18] font-medium mb-5">
+              I hold an Associate degree in Front-End Development from Noroff,
+              but my background goes a lot further than that.
+            </p>
+            <p className="text-[15px] leading-[1.9] text-[#7a6f65] mb-8">
               Before I wrote a single line of code, I served in the Dutch
               military, coached hundreds of people in the gym, worked customer
-              service in Barcelona, and ran hotel operations in Bergen.
-            </p>
-
-            <p className="text-[15px] leading-[1.9] text-[#7a6f65] mb-8">
-              That's not a career detour. That's 15 years of learning how people
-              work, what they need, and how to deliver under pressure. I bring
-              all of that into every project I build.
+              service in Barcelona, and ran hotel operations in Bergen. That's
+              15 years of learning how people work, what they need, and how to
+              deliver under pressure — and I bring all of it into every project
+              I build.
             </p>
 
             {/* Trait pills */}

@@ -38,7 +38,7 @@ export const milestones = [
     title: "Front-End Development",
     year: "2023 - Present",
     description:
-      "Combining creativity with technical skills to build immersive experiences.",
+      "Completed an Associate degree in Front-End Development at Noroff, then turned that into a profession. Combining creativity with technical skills to build immersive experiences.",
     image: "/father.jpg",
     location: "Bergen, Norway",
   },
