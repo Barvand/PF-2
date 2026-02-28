@@ -57,10 +57,10 @@ function ContactForm() {
   `;
 
   return (
-    <section className="relative bg-brand-bg px-6 py-24 font-nunito md:px-12 lg:px-16">
+    <section className="relative px-6 py-24 font-nunito md:px-12 lg:px-16">
       {/* Ambient glows */}
-      <div className="pointer-events-none absolute -left-20 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,107,0,0.07)_0%,transparent_70%)]" />
-      <div className="pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.04)_0%,transparent_70%)]" />
+      <div className="overflow-hidden pointer-events-none absolute -left-20 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,107,0,0.07)_0%,transparent_70%)]" />
+      <div className="overflow-hidden pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.04)_0%,transparent_70%)]" />
 
       <div className="relative">
         {/* ── Header ──────────────────────────────────────────────── */}
