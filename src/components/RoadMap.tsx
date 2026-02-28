@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { milestones } from "../data/milestones";
 import { GiMilitaryAmbulance } from "react-icons/gi";
@@ -6,7 +6,6 @@ import { MdFitnessCenter, MdHotel } from "react-icons/md";
 import { TbPlane } from "react-icons/tb";
 import { HiOutlineCode } from "react-icons/hi";
 
-// What each chapter ACTUALLY taught you — reframe jobs as traits
 const traits = [
   {
     icon: GiMilitaryAmbulance,
@@ -38,24 +37,7 @@ const traits = [
 ];
 
 export default function AboutSection() {
-  const [expanded, setExpanded] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
-
-  const handleToggle = () => {
-    setExpanded((prev) => {
-      if (prev && sectionRef.current) {
-        setTimeout(() => {
-          sectionRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }, 100);
-      }
-      return !prev;
-    });
-  };
-
-  const visible = milestones.slice(0, expanded ? milestones.length : 4);
 
   return (
     <section
@@ -73,7 +55,7 @@ export default function AboutSection() {
       />
 
       <div className="max-w-6xl mx-auto relative">
-        {/* ── TOP: Portrait + Intro side by side ──────────────────── */}
+        {/* ── Portrait + Intro ────────────────────────────────────── */}
         <div className="flex flex-col lg:flex-row gap-10 mb-20 items-start">
           {/* Portrait */}
           <div className="relative lg:w-[300px] shrink-0">
@@ -83,9 +65,7 @@ export default function AboutSection() {
                 alt="Portrait"
                 className="w-full h-full object-cover object-top"
               />
-              {/* Subtle bottom fade */}
               <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1a1208]/40 to-transparent" />
-              {/* Name tag on photo */}
               <div className="absolute bottom-5 left-5">
                 <p className="text-white font-bebas text-[22px] tracking-wider leading-none drop-shadow-lg">
                   Bergen, Norway
@@ -95,8 +75,6 @@ export default function AboutSection() {
                 </p>
               </div>
             </div>
-
-            {/* Floating accent badge */}
             <div className="absolute -top-3 -right-3 bg-[#ff6b00] text-white rounded-xl px-3 py-2 shadow-lg">
               <p className="font-bebas text-[13px] tracking-widest leading-none">
                 Available
@@ -112,13 +90,11 @@ export default function AboutSection() {
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#ff6b00]">
               The person behind the work
             </p>
-
             <h2 className="mb-7 text-5xl font-bold font-nunito leading-[1.05] tracking-wide text-[#1a1208]">
               Not your average
               <br />
               <span className="text-[#ff6b00]">web developer.</span>
             </h2>
-
             <p className="text-[17px] leading-[1.9] text-[#2a1f18] font-medium mb-5">
               I hold an Associate degree in Front-End Development from Noroff,
               but my background goes a lot further than that.
@@ -140,7 +116,6 @@ export default function AboutSection() {
                     <t.icon className="w-3.5 h-3.5 text-[#ff6b00] shrink-0" />
                     <span>{t.label}</span>
                   </div>
-                  {/* Tooltip */}
                   <div className="pointer-events-none absolute bottom-full left-0 mb-2 w-56 bg-[#1a1208] text-white text-[12px] leading-relaxed rounded-xl px-3.5 py-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 shadow-xl">
                     {t.value}
                     <div className="absolute top-full left-4 border-4 border-transparent border-t-[#1a1208]" />
@@ -151,108 +126,87 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* ── Divider ─────────────────────────────────────────────── */}
-        <div className="mb-12 flex items-center gap-4">
+        {/* ── Timeline header ─────────────────────────────────────── */}
+        <div className="mb-10 flex items-center gap-4">
           <div className="flex-1 h-px bg-[#ddd5c8]" />
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff6b00] mb-0.5 text-center">
-              Work History
-            </p>
             <h3 className="font-bebas text-[28px] tracking-wider text-[#1a1208] leading-none text-center">
-              How I got here
+              Work History
             </h3>
           </div>
           <div className="flex-1 h-px bg-[#ddd5c8]" />
         </div>
 
-        {/* ── Photo grid timeline ──────────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-          <AnimatePresence initial={false}>
-            {visible.map((milestone, index) => {
-              const isLast = milestone.title === "Front-End Development";
-              return (
-                <motion.div
-                  key={milestone.title}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3, delay: index * 0.06 }}
-                  className="group relative h-[260px] rounded-2xl overflow-hidden cursor-default shadow-[0_2px_16px_rgba(0,0,0,0.08)]"
-                >
-                  <img
-                    src={milestone.image}
-                    alt={milestone.title}
-                    className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-107"
-                  />
+        {/* ── Clean text timeline ──────────────────────────────────── */}
+        <div className="relative">
+          {/* Spine */}
+          <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-[#ff6b00]/50 via-[#ddd5c8] to-transparent" />
 
-                  {/* Always-on bottom gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+          <div className="flex flex-col">
+            <AnimatePresence initial={false}>
+              {milestones.map((milestone, index) => {
+                const isLast = milestone.title === "Front-End Development";
+                return (
+                  <motion.div
+                    key={milestone.title}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -8 }}
+                    transition={{ duration: 0.3, delay: index * 0.06 }}
+                    className="relative pl-8 pb-8 group last:pb-0"
+                  >
+                    {/* Dot */}
+                    <div
+                      className={`
+                        absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full border-2
+                        transition-all duration-200
+                        ${
+                          isLast
+                            ? "border-[#ff6b00] bg-[#ff6b00] shadow-[0_0_8px_rgba(255,107,0,0.4)]"
+                            : "border-[#c8bdb4] bg-[#f2ede8] group-hover:border-[#ff6b00]"
+                        }
+                      `}
+                    />
 
-                  {/* Current badge */}
-                  {isLast && (
-                    <div className="absolute top-3 left-3">
-                      <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white bg-[#ff6b00] rounded-full px-2.5 py-1">
-                        Current
+                    {/* Row */}
+                    <div className="flex items-baseline justify-between gap-6 flex-wrap">
+                      <div className="flex items-baseline gap-3 flex-wrap">
+                        {isLast && (
+                          <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-white bg-[#ff6b00] rounded-full px-2 py-0.5">
+                            Current
+                          </span>
+                        )}
+                        <h4
+                          className={`font-bebas text-[22px] tracking-wider leading-none ${
+                            isLast ? "text-[#ff6b00]" : "text-[#1a1208]"
+                          }`}
+                        >
+                          {milestone.title}
+                        </h4>
+                        <span className="text-[12px] font-medium text-[#a89e95]">
+                          {milestone.location}
+                        </span>
+                      </div>
+                      <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#b0a89f]">
+                        {milestone.year}
                       </span>
                     </div>
-                  )}
 
-                  {/* Text */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4
-                      className={`font-bebas text-[18px] tracking-wider leading-none mb-0.5 ${isLast ? "text-[#ff6b00]" : "text-white"}`}
-                    >
-                      {milestone.title}
-                    </h4>
-                    <p className="text-white/60 text-[10px] font-semibold uppercase tracking-[0.12em]">
-                      {milestone.year}
-                    </p>
-                    <p className="text-white/40 text-[10px] mt-0.5">
-                      {milestone.location}
-                    </p>
-                  </div>
-
-                  {/* Hover: show description */}
-                  <div className="absolute inset-0 bg-[#1a1208]/80 flex items-center justify-center p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-[13px] leading-relaxed text-center font-medium">
+                    {/* Description */}
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-[#7a6f65]">
                       {milestone.description}
                     </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </div>
 
-        {/* ── Expand button ───────────────────────────────────────── */}
-        {milestones.length > 4 && (
-          <div className="mt-6 flex justify-center">
-            <motion.button
-              onClick={handleToggle}
-              whileTap={{ scale: 0.97 }}
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl border border-[#c8bdb4] bg-transparent text-sm font-bold tracking-wide text-[#5a5048] transition-all duration-200 hover:border-[#ff6b00]/50 hover:text-[#1a1208]"
-            >
-              <span>
-                {expanded
-                  ? "Show less"
-                  : `See full journey (${milestones.length} chapters)`}
-              </span>
-              <svg
-                className={`w-3.5 h-3.5 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2.5}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </motion.button>
+                    {/* Connector line to next — hidden on last */}
+                    {!isLast && index < milestones.length - 1 && (
+                      <div className="absolute left-[7px] top-[20px] bottom-0 w-px bg-[#e0d8d0]" />
+                    )}
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

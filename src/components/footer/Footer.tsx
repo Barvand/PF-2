@@ -6,9 +6,13 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
     <footer ref={ref} className="relative text-gray-200 bg-brand-bg">
       {/* Main Footer Content */}
-      <div className="bg-gray-900 py-16 flex flex-col items-center gap-8 p-2">
+      <div className=" py-16 gap-8 p-2 mx-auto max-w-6xl">
         {/* Logo */}
-        <img src="/logoBB.png" alt="BartBergLogo" className="w-64" />
+        <img
+          src="/logoBB.png"
+          alt="BartBergLogo"
+          className="w-64 items-center justify-center mx-auto mb-12 block"
+        />
 
         <ContactForm />
       </div>

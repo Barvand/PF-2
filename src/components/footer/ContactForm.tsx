@@ -56,13 +56,22 @@ function ContactForm() {
     }
   `;
 
+  // Always renders the error line — invisible when no error, visible when there is one
+  const ErrorLine = ({ message }: { message?: string }) => (
+    <p
+      className={`mt-1.5 text-[12px] text-red-400 h-4 transition-opacity duration-150 ${message ? "opacity-100" : "opacity-0"}`}
+    >
+      {message ?? "​"}
+    </p>
+  );
+
   return (
-    <section className="relative px-6 py-24 font-nunito md:px-12 lg:px-16">
+    <section className="relative px-6 py-24 font-nunito md:px-12 lg:px-16 max-w-4xl mx-auto">
       {/* Ambient glows */}
       <div className="overflow-hidden pointer-events-none absolute -left-20 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,107,0,0.07)_0%,transparent_70%)]" />
       <div className="overflow-hidden pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.04)_0%,transparent_70%)]" />
 
-      <div className="relative">
+      <div className="relative w-full bg-brand-card rounded-2xl border border-brand-border p-10">
         {/* ── Header ──────────────────────────────────────────────── */}
         <div className="mb-16">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
@@ -74,8 +83,7 @@ function ContactForm() {
             <span className="text-brand-accent">together.</span>
           </h2>
           <p className="max-w-[440px] text-base leading-relaxed text-brand-muted">
-            Drop me a message and I'll get back to you within a day. No sales
-            pitches, no fluff — just a real conversation.
+            Drop me a message and I'll get back to you within a day.
           </p>
         </div>
 
@@ -83,10 +91,10 @@ function ContactForm() {
         <form
           onSubmit={handleSubmit}
           autoComplete="off"
-          className="mx-auto flex flex-col gap-8"
+          className="flex flex-col gap-6"
         >
           {/* Name + Email */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <input
                 value={values.name}
@@ -97,9 +105,7 @@ function ContactForm() {
                 onBlur={handleBlur}
                 className={field(!!(errors.name && touched.name))}
               />
-              {errors.name && touched.name && (
-                <p className="mt-1.5 text-[12px] text-red-400">{errors.name}</p>
-              )}
+              <ErrorLine message={touched.name ? errors.name : undefined} />
             </div>
             <div>
               <input
@@ -111,11 +117,7 @@ function ContactForm() {
                 onBlur={handleBlur}
                 className={field(!!(errors.email && touched.email))}
               />
-              {errors.email && touched.email && (
-                <p className="mt-1.5 text-[12px] text-red-400">
-                  {errors.email}
-                </p>
-              )}
+              <ErrorLine message={touched.email ? errors.email : undefined} />
             </div>
           </div>
 
@@ -130,11 +132,7 @@ function ContactForm() {
               onBlur={handleBlur}
               className={field(!!(errors.subject && touched.subject))}
             />
-            {errors.subject && touched.subject && (
-              <p className="mt-1.5 text-[12px] text-red-400">
-                {errors.subject}
-              </p>
-            )}
+            <ErrorLine message={touched.subject ? errors.subject : undefined} />
           </div>
 
           {/* Message */}
@@ -148,11 +146,9 @@ function ContactForm() {
               onBlur={handleBlur}
               className={`resize-none ${field(!!(errors.textArea && touched.textArea))}`}
             />
-            {errors.textArea && touched.textArea && (
-              <p className="mt-1.5 text-[12px] text-red-400">
-                {errors.textArea}
-              </p>
-            )}
+            <ErrorLine
+              message={touched.textArea ? errors.textArea : undefined}
+            />
           </div>
 
           {/* Submit */}
@@ -160,9 +156,9 @@ function ContactForm() {
             <button
               disabled={isSubmitting}
               type="submit"
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-accent text-white text-sm font-bold tracking-wide transition-all duration-200 hover:brightness-110 hover:shadow-[0_0_24px_rgba(255,107,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed"
+              className="cursor-pointer group flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-accent text-white text-sm font-bold tracking-wide transition-all duration-200 hover:brightness-110 hover:shadow-[0_0_24px_rgba(255,107,0,0.35)] disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              <FiSend className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 cursor-pointer" />
+              <FiSend className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               {isSubmitting ? "Sending..." : "Send message"}
             </button>
 
