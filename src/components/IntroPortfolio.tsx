@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FiArrowDown } from "react-icons/fi";
 
 interface IntroPortFolioProps {
   Project: () => void;
