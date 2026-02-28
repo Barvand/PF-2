@@ -28,7 +28,7 @@ function IntroPortfolio({ Project }: IntroPortFolioProps) {
             onClick={Project}
             className="gradient-border text-black font-semibold px-6 py-3 block hover:text-black hover:bg-white/90 rounded-md transition"
           >
-            So what we can do for you
+            See what we can do for you
           </button>
         </div>
         {/* RIGHT IMAGE */}
