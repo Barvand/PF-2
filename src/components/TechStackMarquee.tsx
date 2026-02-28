@@ -4,106 +4,77 @@ type Icon = { src: string; alt: string };
 
 type Props = {
   icons: Icon[];
-  /** full loop duration in seconds (optional) */
   speedSec?: number;
-  /** scroll direction */
   direction?: "left" | "right";
-  /** glow color */
-  glow?: string;
-  /** diamond size px (optional; if omitted we use responsive clamp) */
-  size?: number;
-  /** gap px (optional; if omitted we use responsive clamp) */
-  gap?: number;
+  label?: string;
 };
 
 export default function TechStackMarquee({
   icons,
-  speedSec = 30,
+  speedSec = 35,
   direction = "left",
-  glow = "#6ea6b2",
-  size, // if undefined, we use clamp()
-  gap, // if undefined, we use clamp()
+  label = "Trusted by leading brands",
 }: Props) {
-  // Duplicate for a perfect loop
   const track = [...icons, ...icons];
 
-  // If user passes fixed numbers, convert to px; otherwise we use clamp() in CSS.
-  const cssVars: React.CSSProperties = {
-    ["--dur" as any]: `${speedSec}s`,
-    ["--dir" as any]: direction === "left" ? "normal" : "reverse",
-    ["--size" as any]: size ? `${size}px` : undefined,
-    ["--gap" as any]: gap ? `${gap}px` : undefined,
-    ["--glow" as any]: glow,
-  };
-
   return (
-    <div
-      className="relative overflow-hidden py-10 my-20"
-      style={{
-        ...cssVars,
-        // Fade edges for nicer look
-        maskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-      }}
-    >
-      <ul
-        className="
-          marquee-track
-          flex items-center
-          w-[200%]       /* track is 2x width because we duplicated */
-          whitespace-nowrap
-          will-change-transform
-          hover:[animation-play-state:paused]
-        "
+    <div className="relative bg-brand-bg px-6 py-16 font-nunito md:px-12 lg:px-16">
+      {/* ── Section label ──────────────────────────────────────── */}
+      <p className="mb-10 text-center text-[11px] font-bold uppercase tracking-[0.25em] text-brand-muted/50">
+        {label}
+      </p>
+
+      {/* ── Marquee strip ──────────────────────────────────────── */}
+      <div
+        className="relative overflow-hidden"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        }}
       >
-        {track.map((icon, i) => (
-          <li
-            key={`${icon.alt}-${i}`}
-            className="flex-none"
-            style={{
-              // Use responsive clamps if not provided
-              width: `var(--size, clamp(56px, 10vw, 96px))`,
-              height: `var(--size, clamp(56px, 10vw, 96px))`,
-              marginLeft: `var(--gap, clamp(12px, 3vw, 32px))`,
-              marginRight: `var(--gap, clamp(12px, 3vw, 32px))`,
-            }}
-          >
-            <div
-              className="
-                relative rotate-25
-                flex items-center justify-center
-                w-full h-full overflow-hidden
-                bg-[#2b50a0]
-                shadow-lg
-              "
-              style={{
-                boxShadow: `0 0 0 1px var(--glow, ${glow}) inset, 0 0 18px 4px rgba(110,166,178,.35)`,
-              }}
-              title={icon.alt}
+        {/* Divider lines */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-brand-border" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-brand-border" />
+
+        <ul
+          className="flex items-center whitespace-nowrap will-change-transform hover:[animation-play-state:paused]"
+          style={{
+            animation: `marquee-scroll ${speedSec}s linear infinite ${direction === "right" ? "reverse" : "normal"}`,
+            width: "max-content",
+          }}
+        >
+          {track.map((icon, i) => (
+            <li
+              key={`${icon.alt}-${i}`}
+              className="flex-none flex items-center justify-center px-12 py-8"
             >
-              {/* icon box ~55% of diamond height */}
-              <div
-                className="-rotate-25"
-                style={{
-                  width: "calc(var(--size, clamp(56px, 10vw, 96px)) * 1)",
-                  height: "calc(var(--size, clamp(56px, 10vw, 96px)) * 0.55)",
-                }}
-              >
-                <img
-                  src={icon.src}
-                  alt={icon.alt}
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                  decoding="async"
-                  onError={() => console.warn("Missing icon:", icon.src)}
-                />
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+              <img
+                src={icon.src}
+                alt={icon.alt}
+                loading="lazy"
+                decoding="async"
+                className="
+                  h-8 w-auto object-contain
+                  brightness-0 invert
+                  opacity-25
+                  transition-all duration-300
+                  hover:opacity-80 hover:scale-105
+                "
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* ── Keyframes ──────────────────────────────────────────── */}
+      <style>{`
+        @keyframes marquee-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+      `}</style>
     </div>
   );
 }

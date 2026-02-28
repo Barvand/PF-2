@@ -6,12 +6,7 @@ import RenderProject from "./RenderProject";
 const ProjectSections = forwardRef<HTMLElement>((_, ref) => {
   return (
     <section ref={ref}>
-      <div className="py-20 mt-50">
-        <div className="container">
-          <div className="container flex justify-between cursor-pointer group border-b border-blue-200">
-            <h2 className="text-2xl text-gray-200 font-bold">Projects</h2>
-          </div>
-        </div>
+      <div className="relative overflow-hidden bg-brand-bg px-6 py-24 font-nunito md:px-12 lg:px-16">
         {projects.map((project) => (
           <RenderProject project={project} key={project.name} />
         ))}

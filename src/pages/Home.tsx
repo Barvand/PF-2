@@ -4,9 +4,8 @@ import IntroPortfolio from "../components/IntroPortfolio";
 import ButtonToTop from "../features/ButtonToTop";
 import Roadmap from "../components/RoadMap";
 import Navigation from "../components/navigation/Navigation";
-import { useScroll } from "framer-motion";
 import Footer from "../components/footer/Footer";
-import TechStackRow from "../components/techstack/TechStackRow";
+import ServicesSection from "../components/serviceSection";
 
 function Home() {
   // Define section references
@@ -21,10 +20,6 @@ function Home() {
   };
 
   const heroRef = useRef<HTMLElement | null>(null);
-  const { scrollYProgress: heroProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
 
   return (
     <>
@@ -38,16 +33,13 @@ function Home() {
         <section ref={heroRef} className="">
           <IntroPortfolio
             Project={() => scrollToSection(projectsRef)}
-            scrollYProgress={heroProgress}
+            Contact={() => scrollToSection(contactRef)}
           />
         </section>
+        <ServicesSection />
         <section>
           <ProjectSections ref={projectsRef} />
         </section>
-        <section>
-          <TechStackRow />
-        </section>
-       
         {/* <TechStack ref={techStackRef} /> */}
         <section ref={aboutMeRef} className=" justify-center">
           <Roadmap />

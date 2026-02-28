@@ -29,14 +29,7 @@ export default function TechStackRow() {
           <h2 className="text-2xl font-bold text-gray-200">Techstack</h2>
         </div>
 
-        <TechStackMarquee
-          icons={ICONS}
-          speedSec={28}
-          direction="left"
-          glow="#61919d"
-          size={88}
-          gap={28}
-        />
+        <TechStackMarquee icons={ICONS} speedSec={28} direction="left" />
       </div>
     </motion.section>
   );

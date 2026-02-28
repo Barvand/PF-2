@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap");
 @import "tailwindcss";
 
 @layer theme, base, components, utilities;
@@ -23,11 +24,17 @@
 }
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
-  --color-main: #ff6700;
-  --breakpoint-3xl: 1920px;
-  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-  --ease-snappy: cubic-bezier(0.2, 0, 0, 1); /* ... */
+  --color-brand-bg: #0d1b2a;
+  --color-brand-card: #0f2236;
+  --color-brand-card-hover: #112438;
+  --color-brand-border: #1a2f45;
+  --color-brand-accent: #ff6b00;
+  --color-brand-muted: #7a8fa8;
+  --color-brand-sub: #8a9bb0;
+  --color-brand-sub-hover: #b8c8d8;
+
+  --font-bebas: "'Bebas Neue'", sans-serif;
+  --font-nunito: "'Nunito'", sans-serif;
 }
 
 :root {
@@ -51,7 +58,7 @@
 }
 
 body {
-  font-family: "Inter", serif;
+  font-family: "Nunito", serif;
   background-color: #101828;
 }
 
@@ -61,7 +68,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "montserrat", serif;
+  font-family: "Nunito", serif;
 }
 
 #navbar {
@@ -108,12 +115,14 @@ h6 {
   display: inline-block;
   cursor: pointer;
   color: white;
-  background: linear-gradient(#101828, #101828) padding-box,
+  background:
+    linear-gradient(#101828, #101828) padding-box,
     linear-gradient(to right, #ff6700, #e9a792, rgb(4, 199, 224)) border-box;
 }
 
 .gradient-border:hover {
-  background: linear-gradient(#101828, #101828) padding-box,
+  background:
+    linear-gradient(#101828, #101828) padding-box,
     linear-gradient(to right, #59545e, #ff6700, rgb(10, 112, 126)) border-box;
   animation: 3s ease-in;
 }
@@ -272,7 +281,9 @@ h6 {
   top: 50%;
   transform: translateY(20%) translateX(10px); /* Slightly offscreen */
   opacity: 0; /* Initially invisible */
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transition:
+    transform 0.5s ease-out,
+    opacity 0.5s ease-out;
   width: 20px;
   height: 10px;
 }
@@ -391,6 +402,13 @@ button:disabled {
 }
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+.background-image-intro {
+  background-image: url("/norway.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 @keyframes marquee {
