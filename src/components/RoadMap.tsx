@@ -66,14 +66,6 @@ export default function AboutSection() {
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1a1208]/40 to-transparent" />
-              <div className="absolute bottom-5 left-5">
-                <p className="text-white font-bebas text-[22px] tracking-wider leading-none drop-shadow-lg">
-                  Bergen, Norway
-                </p>
-                <p className="text-white/70 text-[12px] font-semibold tracking-wide mt-0.5 drop-shadow">
-                  2023 – Present
-                </p>
-              </div>
             </div>
             <div className="absolute -top-3 -right-3 bg-[#ff6b00] text-white rounded-xl px-3 py-2 shadow-lg">
               <p className="font-bebas text-[13px] tracking-widest leading-none">

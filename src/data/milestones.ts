@@ -1,31 +1,11 @@
 export const milestones = [
   {
-    title: "Luchtmobiele brigade",
-    year: "2009 - 2012",
-    description: "Built resilience, teamwork, and leadership.",
-    image: "/military.jpg",
-    location: "Arnhem, Netherlands",
-  },
-  {
-    title: "Fitness Instructor",
-    year: "2012 - 2016",
-    description: "Taught, motivate, and helped people transform.",
-    image: "/instructor.jpg",
-    location: "Leiden, Netherlands",
-  },
-  {
-    title: "Customer Service",
-    year: "2016 - 2019",
-    description: "Developed communication and problem-solving skills.",
-    image: "/barcelona.jpg",
-    location: "Barcelona, Spain",
-  },
-  {
-    title: "Warehouse & Logistics",
-    year: "2019",
-    description: "Learned efficiency, operations, and adaptability.",
-    image: "/amsterdam.jpg",
-    location: "Amsterdam, Netherlands",
+    title: "Front-End Development",
+    year: "2023 - Present",
+    description:
+      "Completed an Associate degree in Front-End Development at Noroff, then turned that into a profession. Combining creativity with technical skills to build immersive experiences.",
+    image: "/father.jpg",
+    location: "Bergen, Norway",
   },
   {
     title: "Hospitality",
@@ -35,11 +15,31 @@ export const milestones = [
     location: "Bergen, Norway",
   },
   {
-    title: "Front-End Development",
-    year: "2023 - Present",
-    description:
-      "Completed an Associate degree in Front-End Development at Noroff, then turned that into a profession. Combining creativity with technical skills to build immersive experiences.",
-    image: "/father.jpg",
-    location: "Bergen, Norway",
+    title: "Warehouse & Logistics",
+    year: "2019",
+    description: "Learned efficiency, operations, and adaptability.",
+    image: "/amsterdam.jpg",
+    location: "Amsterdam, Netherlands",
+  },
+  {
+    title: "Customer Service",
+    year: "2016 - 2019",
+    description: "Developed communication and problem-solving skills.",
+    image: "/barcelona.jpg",
+    location: "Barcelona, Spain",
+  },
+  {
+    title: "Fitness Instructor",
+    year: "2012 - 2016",
+    description: "Taught, motivate, and helped people transform.",
+    image: "/instructor.jpg",
+    location: "Leiden, Netherlands",
+  },
+  {
+    title: "Luchtmobiele brigade",
+    year: "2009 - 2012",
+    description: "Built resilience, teamwork, and leadership.",
+    image: "/military.jpg",
+    location: "Arnhem, Netherlands",
   },
 ];
