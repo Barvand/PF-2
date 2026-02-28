@@ -10,7 +10,7 @@ function DesktopNavigation({
   scrollToContact,
 }: DesktopNavigationProps) {
   return (
-    <nav className="text-gray-200 hidden md:block fixed top-0 left-0 w-full z-[999] bg-gray-900 border-b-2 border-gray-800 shadow-2xl">
+    <nav className="text-gray-200 hidden md:block fixed top-0 left-0 w-full z-[999] bg-brand-bg shadow-2xl">
       <div className="flex justify-around items-center h-20 px-10">
         <img src="logoBB.png" alt="Bartberglogo" className="w-76" />
         <div className="flex justify-around gap-20">
@@ -37,6 +37,7 @@ function DesktopNavigation({
           </button>
         </div>
       </div>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-accent to-transparent"></div>
     </nav>
   );
 }
