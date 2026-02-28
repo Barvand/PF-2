@@ -57,7 +57,7 @@ function ButtonToTop() {
           style={{ backgroundColor: "rgba(31, 41, 55, 0.8)" }} // Equivalent to bg-gray-800 with 50% opacity
           onClick={scrollToTop}
         >
-          <IoMdArrowRoundUp />
+          <IoMdArrowRoundUp color="#fff" />
         </button>
       )}
     </div>

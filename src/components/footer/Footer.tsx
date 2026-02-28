@@ -4,7 +4,10 @@ import { forwardRef } from "react";
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer ref={ref} className="relative text-gray-200 bg-brand-bg">
+    <footer
+      ref={ref}
+      className="relative text-gray-200 bg-brand-bg overflow-hidden"
+    >
       {/* Main Footer Content */}
       <div className=" py-16 gap-8 p-2 mx-auto max-w-6xl">
         {/* Logo */}
