@@ -164,7 +164,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
         >
           <span className="block overflow-hidden">
             <motion.span variants={wordReveal} className="block">
-              I build websites
+              I build websites.
             </motion.span>
           </span>
           <span className="block overflow-hidden">
@@ -172,7 +172,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
               variants={wordReveal}
               className="block text-brand-accent"
             >
-              people remember.
+              that helps you grow.
             </motion.span>
           </span>
         </motion.h1>
@@ -184,8 +184,8 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
           transition={{ duration: 0.8, ease, delay: 0.6 }}
           className="max-w-[520px] text-[17px] leading-[1.85] text-brand-muted mb-12"
         >
-          From landing pages to full stack applications — built fast, designed
-          to convert, and handed over with zero headaches.
+          I build fast, scalable websites for growing companies. Engineered for
+          performance. Structured for scale. Built to last.
         </motion.p>
 
         {/* CTAs */}
