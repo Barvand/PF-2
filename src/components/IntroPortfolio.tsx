@@ -215,24 +215,6 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-muted/50">
-          Scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 7, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-        >
-          <FiArrowDown className="w-4 h-4 text-brand-muted/40" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
