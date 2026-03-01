@@ -26,7 +26,7 @@ function RenderProject({ project }: RenderProjectProps) {
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
             Featured Project
           </p>
-          <h2 className="mb-5 text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
+          <h2 className="mb-5 text-2xl md:text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
             {project.name}
           </h2>
           <p className="text-base leading-relaxed text-brand-muted">

@@ -75,7 +75,7 @@ export default function ServicesSection() {
             What I offer
           </p>
 
-          <h2 className="mb-5 text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
+          <h2 className="mb-5 text-2xl md:text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
             Services that
             <br />
             <span className="text-brand-accent">get results.</span>
