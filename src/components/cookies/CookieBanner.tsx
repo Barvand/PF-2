@@ -2,25 +2,53 @@ import { useEffect, useState } from "react";
 import loadHotjar from "../../utils/loadHotjar";
 import { IoCloseSharp } from "react-icons/io5";
 
-export default function CookieBanner() {
+function getCookie(name: string): string | undefined {
+  return document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(name + "="))
+    ?.split("=")[1];
+}
+
+function setCookie(name: string, value: string, days: number) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Lax`;
+}
+
+interface CookieBannerProps {
+  forceOpen?: boolean;
+  onClose?: () => void;
+}
+
+export { getCookie };
+
+export default function CookieBanner({ forceOpen, onClose }: CookieBannerProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("hotjar_consent");
+    const consent = getCookie("hotjar_consent");
 
     if (!consent) setVisible(true);
     if (consent === "accepted") loadHotjar();
   }, []);
 
-  const accept = () => {
-    localStorage.setItem("hotjar_consent", "accepted");
-    loadHotjar();
+  useEffect(() => {
+    if (forceOpen) setVisible(true);
+  }, [forceOpen]);
+
+  const close = () => {
     setVisible(false);
+    onClose?.();
+  };
+
+  const accept = () => {
+    setCookie("hotjar_consent", "accepted", 365);
+    loadHotjar();
+    close();
   };
 
   const reject = () => {
-    localStorage.setItem("hotjar_consent", "rejected");
-    setVisible(false);
+    setCookie("hotjar_consent", "rejected", 365);
+    close();
   };
 
   if (!visible) return null;

@@ -136,25 +136,6 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto relative w-full z-[2]">
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease, delay: 0.1 }}
-          className="mb-6 flex items-center gap-3"
-        >
-          <motion.span
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5, ease, delay: 0.15 }}
-            style={{ originX: 0 }}
-            className="block h-px w-8 bg-brand-accent"
-          />
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-brand-accent">
-            Web developer · Bergen, Norway
-          </p>
-        </motion.div>
-
         {/* Headline */}
         <motion.h1
           variants={container}
@@ -172,7 +153,7 @@ function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
               variants={wordReveal}
               className="block text-brand-accent"
             >
-              that helps you grow.
+              that help you grow.
             </motion.span>
           </span>
         </motion.h1>

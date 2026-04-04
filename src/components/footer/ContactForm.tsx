@@ -111,7 +111,7 @@ function ContactForm() {
               <input
                 value={values.email}
                 id="email"
-                type="text"
+                type="email"
                 onChange={handleChange}
                 placeholder="Your email"
                 onBlur={handleBlur}
