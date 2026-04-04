@@ -21,7 +21,10 @@
     <meta property="og:title" content="Bart van den Berg | Freelance Web Developer – Bergen, Norway" />
     <meta property="og:description"
       content="Freelance web developer based in Bergen, Norway. I build fast, scalable websites and web applications for growing businesses." />
-    <meta property="og:image" content="/logoBB.png" />
+    <meta property="og:image" content="https://bartholomeusberg.com/logoBB.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Bart van den Berg – Freelance Web Developer" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Bart van den Berg" />
 
@@ -30,7 +33,10 @@
     <meta name="twitter:title" content="Bart van den Berg | Freelance Web Developer – Bergen, Norway" />
     <meta name="twitter:description"
       content="Freelance web developer based in Bergen, Norway. I build fast, scalable websites and web applications for growing businesses." />
-    <meta name="twitter:image" content="/logoBB.png" />
+    <meta name="twitter:image" content="https://bartholomeusberg.com/logoBB.png" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
 
     <!-- Google verification -->
     <meta name="google-site-verification" content="mn5st5xQkCQ9SLDeb_kTh106on3h-jH3k7fteENWPas" />
@@ -43,23 +49,31 @@
 
     <!-- Structured data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Bart van den Berg",
-      "url": "https://bartholomeusberg.com",
-      "jobTitle": "Freelance Web Developer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bergen",
-        "addressCountry": "NO"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bart van den Berg",
+        "url": "https://bartholomeusberg.com",
+        "jobTitle": "Freelance Web Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bergen",
+          "addressCountry": "NO"
+        },
+        "email": "contact@bartholomeusberg.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/bart-van-den-berg-b90219155/",
+          "https://www.github.com/barvand"
+        ]
       },
-      "email": "contact@bartholomeusberg.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/bart-van-den-berg-b90219155/",
-        "https://www.github.com/barvand"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://bartholomeusberg.com",
+        "name": "Bart van den Berg"
+      }
+    ]
     </script>
   </head>
 
