@@ -1,7 +1,22 @@
 import { Project } from "../types/ProjectType";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { HiOutlineCode, HiOutlineSparkles } from "react-icons/hi";
+
+const TECH_ICONS: Record<string, string> = {
+  HTML: "/icons/html-1.svg",
+  CSS: "/icons/css-3.svg",
+  "Tailwind CSS": "/icons/tailwind-css-1-2.svg",
+  "NEXT.js": "/icons/nextjs-13.svg",
+  "Next.js": "/icons/nextjs-13.svg",
+  React: "/icons/react-2.svg",
+  TypeScript: "/icons/typescript.svg",
+  JavaScript: "/icons/javascript-1.svg",
+  Bootstrap: "/icons/bootstrap-4.svg",
+  "Node.js": "/icons/nodejs-3.svg",
+  Docker: "/icons/docker.svg",
+  Zustand: "/icons/react-2.svg",
+};
 
 interface RenderProjectProps {
   project: Project;
@@ -10,26 +25,27 @@ interface RenderProjectProps {
 function RenderProject({ project }: RenderProjectProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-      className="relative overflow-hidden bg-brand-bg px-6 py-24 font-nunito md:px-12 lg:px-16"
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
+      viewport={{ once: true, amount: 0.12 }}
+      className="relative mb-20 last:mb-0"
     >
-      <div className="max-w-6xl mx-auto relative">
+      <div className="relative">
         {/* Ambient glow — top-left orange */}
         <div className="pointer-events-none absolute -left-20 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,107,0,0.07)_0%,transparent_70%)]" />
         {/* Ambient glow — bottom-right blue */}
         <div className="pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.04)_0%,transparent_70%)]" />
 
         {/* ── Section Header ─────────────────────────────────────── */}
-        <div className="relative mb-16">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
-            Featured Project
+        <div className="relative mb-8">
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-accent">
+            Project
           </p>
-          <h2 className="mb-5 text-2xl md:text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
+          <h2 className="mb-3 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-wide text-white">
             {project.name}
           </h2>
-          <p className="text-base leading-relaxed text-brand-muted">
+          <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-brand-muted">
             {project.description}
           </p>
         </div>
@@ -40,72 +56,16 @@ function RenderProject({ project }: RenderProjectProps) {
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-accent/80 via-brand-accent/30 to-transparent" />
 
           <div className="flex flex-col lg:flex-row">
-            {/* ── Left Panel ─────────────────────────────────────── */}
-            <div className="flex-1 p-10 flex flex-col gap-10">
-              {/* Tech Stack */}
-              <div>
-                <div className="flex items-center gap-2.5 mb-4">
-                  <HiOutlineCode className="text-brand-accent w-4 h-4" />
-                  <span className="text-md font-semibold uppercase tracking-[0.2em] text-brand-accent">
-                    Tech Stack
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1.5 trext-md rounded-lg border border-brand-border bg-brand-bg font-semibold text-brand-sub tracking-wide transition-colors duration-200 hover:border-brand-accent/40 hover:text-brand-accent"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Features */}
-              <div>
-                <div className="flex items-center gap-2.5 mb-4">
-                  <HiOutlineSparkles className="text-brand-accent w-4 h-4" />
-                  <span className="text-md font-semibold uppercase tracking-[0.2em] text-brand-accent">
-                    Features
-                  </span>
-                </div>
-                <div className="flex flex-col gap-2.5 border-t border-white/[0.06] pt-5">
-                  {project.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-2.5">
-                      <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" />
-                      <span className="text-[13px] font-semibold text-brand-sub leading-relaxed">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Links */}
-              <div className="flex gap-3 mt-auto pt-2">
-                <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-accent text-white text-sm font-bold tracking-wide transition-all duration-200 hover:brightness-110 hover:shadow-[0_0_24px_rgba(255,107,0,0.35)]"
-                >
-                  <FaExternalLinkAlt className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  Live Link
-                </a>
-              </div>
-            </div>
-
-            {/* ── Right Panel — Image ─────────────────────────────── */}
-            <div className="flex-1 flex items-center justify-center p-8 lg:p-10 bg-gradient-to-br from-transparent to-brand-bg/40">
+            {/* ── Image — top on mobile, right on desktop ─────────── */}
+            <div className="lg:flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-10 bg-gradient-to-br from-transparent to-brand-bg/40 order-first lg:order-last">
               <div className="w-full max-w-[520px] rounded-xl overflow-hidden border border-brand-border shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-transform duration-300 hover:-translate-y-1">
                 {/* Fake browser bar */}
-                <div className="flex items-center gap-2 bg-brand-card-hover border-b border-brand-border px-4 py-3">
-                  <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-green-500/70" />
-                  <div className="ml-3 flex-1 rounded-md bg-brand-bg/80 border border-brand-border px-3 py-1">
-                    <span className="text-[11px] font-medium text-brand-muted tracking-wide truncate block">
+                <div className="flex items-center gap-1.5 sm:gap-2 bg-brand-card-hover border-b border-brand-border px-3 sm:px-4 py-2.5 sm:py-3">
+                  <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-red-500/70" />
+                  <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-yellow-500/70" />
+                  <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-green-500/70" />
+                  <div className="ml-2 sm:ml-3 flex-1 rounded-md bg-brand-bg/80 border border-brand-border px-2 sm:px-3 py-1">
+                    <span className="text-[10px] sm:text-[11px] font-medium text-brand-muted tracking-wide truncate block">
                       {project.liveLink}
                     </span>
                   </div>
@@ -118,8 +78,82 @@ function RenderProject({ project }: RenderProjectProps) {
                     alt={project.name}
                     className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-brand-bg/60 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 h-10 sm:h-12 bg-gradient-to-t from-brand-bg/60 to-transparent pointer-events-none" />
                 </div>
+              </div>
+            </div>
+
+            {/* ── Info Panel ─────────────────────────────────────── */}
+            <div className="lg:flex-1 p-5 sm:p-7 lg:p-10 flex flex-col gap-7 lg:gap-10 order-last lg:order-first">
+              {/* Tech Stack */}
+              <div>
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                  <HiOutlineCode className="text-brand-accent w-4 h-4 shrink-0" />
+                  <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
+                    Tech Stack
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg border border-brand-border bg-brand-bg font-semibold text-brand-sub tracking-wide transition-colors duration-200 hover:border-brand-accent/40 hover:text-brand-accent"
+                    >
+                      {TECH_ICONS[tech] && (
+                        <img
+                          src={TECH_ICONS[tech]}
+                          alt={tech}
+                          className="h-3.5 w-3.5 sm:h-4 sm:w-4 object-contain shrink-0"
+                        />
+                      )}
+                      <span className="text-[11px] sm:text-xs">{tech}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Features */}
+              <div>
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                  <HiOutlineSparkles className="text-brand-accent w-4 h-4 shrink-0" />
+                  <span className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
+                    Features
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 border-t border-white/[0.06] pt-4">
+                  {project.features.map((feature, index) => (
+                    <div key={index} className="flex items-start gap-2.5">
+                      <span className="mt-[5px] sm:mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" />
+                      <span className="text-xs sm:text-[13px] font-semibold text-brand-sub leading-relaxed">
+                        {feature}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-wrap gap-3 mt-auto pt-2">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-brand-accent text-white text-xs sm:text-sm font-bold tracking-wide transition-all duration-200 hover:brightness-110 hover:shadow-[0_0_24px_rgba(255,107,0,0.35)]"
+                >
+                  <FaExternalLinkAlt className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  Live Link
+                </a>
+                {project.repoLink && (
+                  <a
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl border border-brand-border text-xs sm:text-sm font-bold tracking-wide text-brand-sub transition-all duration-200 hover:border-brand-accent/40 hover:text-white"
+                  >
+                    <FaGithub className="w-3.5 h-3.5" />
+                    Source
+                  </a>
+                )}
               </div>
             </div>
           </div>

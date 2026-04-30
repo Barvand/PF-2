@@ -80,24 +80,23 @@ function ContactForm() {
   const charLimit = 1000;
 
   return (
-    <section className="relative px-6 py-24 font-nunito md:px-12 lg:px-16 max-w-4xl mx-auto">
+    <section className="relative px-4 py-10 sm:px-6 sm:py-14 md:px-10 lg:px-16 font-nunito max-w-4xl mx-auto">
       {/* Ambient glows */}
       <div className="overflow-hidden pointer-events-none absolute -left-20 -top-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,107,0,0.07)_0%,transparent_70%)]" />
       <div className="overflow-hidden pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.04)_0%,transparent_70%)]" />
 
-      <div className="relative w-full bg-brand-card rounded-2xl border border-brand-border p-10">
+      <div className="relative w-full bg-brand-card rounded-2xl border border-brand-border p-5 sm:p-7 lg:p-10">
 
         {/* ── Header ──────────────────────────────────────────────── */}
-        <div className="mb-10">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
+        <div className="mb-7 sm:mb-10">
+          <p className="mb-2 sm:mb-3 text-[11px] sm:text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
             Get in touch
           </p>
-          <h2 className="mb-4 text-2xl md:text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
-            Let's build something
-            <br />
+          <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-nunito leading-tight tracking-wide text-white">
+            Let's build something{" "}
             <span className="text-brand-accent">together.</span>
           </h2>
-          <p className="max-w-[440px] text-[15px] leading-relaxed text-brand-muted">
+          <p className="max-w-[440px] text-sm sm:text-[15px] leading-relaxed text-brand-muted">
             Drop me a message and I'll get back to you within a day.
           </p>
         </div>

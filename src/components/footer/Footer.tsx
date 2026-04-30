@@ -15,7 +15,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
       )}
 
       {/* Main Footer Content */}
-      <div className=" py-16 gap-8 p-2 mx-auto max-w-6xl">
+      <div className="py-10 sm:py-14 mx-auto max-w-6xl">
         {/* Logo */}
         <img
           src="/logoBB.png"
