@@ -42,7 +42,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#f2ede8] px-6 py-24 font-nunito md:px-12 lg:px-16 overflow-hidden"
+      className="relative bg-white px-6 py-24 font-nunito md:px-12 lg:px-16 overflow-hidden"
     >
       {/* Grain texture */}
       <div
@@ -155,7 +155,7 @@ export default function AboutSection() {
                         ${
                           isLast
                             ? "border-[#ff6b00] bg-[#ff6b00] shadow-[0_0_8px_rgba(255,107,0,0.4)]"
-                            : "border-[#c8bdb4] bg-[#f2ede8] group-hover:border-[#ff6b00]"
+                            : "border-[#c8bdb4] bg-white group-hover:border-[#ff6b00]"
                         }
                       `}
                     />

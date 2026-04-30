@@ -6,6 +6,7 @@ import Roadmap from "../components/RoadMap";
 import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/footer/Footer";
 import ServicesSection from "../components/serviceSection";
+import CaseStudy from "../components/CaseStudy";
 
 function Home() {
   // Define section references
@@ -37,11 +38,39 @@ function Home() {
           />
         </section>
         <ServicesSection />
+
+        {/* ── Dark → White transition ────────────────────────────── */}
+        <div className="relative bg-white" aria-hidden="true">
+          <svg
+            viewBox="0 0 1440 72"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            className="w-full block"
+          >
+            <rect width="1440" height="72" fill="#0d1b2a" />
+            <path d="M0,72 L0,50 C360,6 1080,6 1440,50 L1440,72 Z" fill="white" />
+          </svg>
+        </div>
+
+        <CaseStudy />
         <section>
           <ProjectSections ref={projectsRef} />
         </section>
         {/* <TechStack ref={techStackRef} /> */}
-        <section ref={aboutMeRef} className=" justify-center">
+        {/* ── Dark → White transition ────────────────────────────── */}
+        <div className="relative bg-white" aria-hidden="true">
+          <svg
+            viewBox="0 0 1440 72"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            className="w-full block"
+          >
+            <rect width="1440" height="72" fill="#0d1b2a" />
+            <path d="M0,72 L0,50 C360,6 1080,6 1440,50 L1440,72 Z" fill="white" />
+          </svg>
+        </div>
+
+        <section ref={aboutMeRef} className="justify-center">
           <Roadmap />
         </section>
         <Footer ref={contactRef} />

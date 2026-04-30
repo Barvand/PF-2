@@ -451,3 +451,10 @@ button:disabled {
     animation-duration: calc(var(--dur, 28s) + 8s);
   }
 }
+
+.bg-case {
+  background-image: url("/background-case-study.png");
+  background-size: cover;
+  background-position: center; /* centers image */
+  background-repeat: no-repeat;
+}

@@ -20,6 +20,7 @@ function ContactForm() {
     initialValues: { subject: "", textArea: "", email: "", name: "" },
     validationSchema: contactSchema,
     onSubmit: async (values, { setSubmitting }) => {
+      setErrorMessage("");
       try {
         const response = await fetch(
           "https://email-backend-d5o0.onrender.com/send-email",
@@ -27,43 +28,56 @@ function ContactForm() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(values),
-          },
+          }
         );
         if (response.ok) {
           setSuccessMessage("Got it — I'll be in touch soon.");
           setTimeout(() => {
             resetForm();
             setSuccessMessage("");
-          }, 3000);
+          }, 4000);
         } else {
           throw new Error();
         }
       } catch {
-        setErrorMessage("Something went wrong. Try again.");
+        setErrorMessage("Something went wrong. Please try again.");
       }
       setSubmitting(false);
     },
   });
 
-  const field = (hasError: boolean) => `
-    w-full bg-white/[0.07] border rounded-xl py-3.5 px-4
-    text-white text-[15px] placeholder:text-white/40
+  const inputClass = (hasError: boolean) => `
+    w-full bg-white/[0.06] border rounded-xl py-3 px-4
+    text-white text-[15px] placeholder:text-white/0
     outline-none transition-all duration-200
     ${
       hasError
         ? "border-red-400/70 bg-red-500/[0.06]"
-        : "border-white/20 hover:border-white/35 focus:border-brand-accent focus:bg-white/[0.09] focus:shadow-[0_0_0_3px_rgba(255,107,0,0.1)]"
+        : "border-white/15 hover:border-white/30 focus:border-brand-accent focus:bg-white/[0.09] focus:shadow-[0_0_0_3px_rgba(255,107,0,0.1)]"
     }
   `;
 
-  // Always renders the error line — invisible when no error, visible when there is one
   const ErrorLine = ({ message }: { message?: string }) => (
     <p
-      className={`mt-1.5 text-[12px] text-red-400 h-4 transition-opacity duration-150 ${message ? "opacity-100" : "opacity-0"}`}
+      className={`mt-1.5 text-[12px] text-red-400 h-4 transition-opacity duration-150 ${
+        message ? "opacity-100" : "opacity-0"
+      }`}
     >
-      {message ?? "​"}
+      {message ?? "\u200b"}
     </p>
   );
+
+  const Label = ({ htmlFor, children }: { htmlFor: string; children: string }) => (
+    <label
+      htmlFor={htmlFor}
+      className="block mb-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white/50"
+    >
+      {children}
+    </label>
+  );
+
+  const charCount = values.textArea.length;
+  const charLimit = 1000;
 
   return (
     <section className="relative px-6 py-24 font-nunito md:px-12 lg:px-16 max-w-4xl mx-auto">
@@ -72,50 +86,52 @@ function ContactForm() {
       <div className="overflow-hidden pointer-events-none absolute -bottom-24 -right-16 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.04)_0%,transparent_70%)]" />
 
       <div className="relative w-full bg-brand-card rounded-2xl border border-brand-border p-10">
+
         {/* ── Header ──────────────────────────────────────────────── */}
-        <div className="mb-16">
+        <div className="mb-10">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-brand-accent">
             Get in touch
           </p>
-          <h2 className="mb-5 text-2xl md:text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
+          <h2 className="mb-4 text-2xl md:text-5xl font-bold font-nunito leading-[0.95] tracking-wide text-white">
             Let's build something
             <br />
             <span className="text-brand-accent">together.</span>
           </h2>
-          <p className="max-w-[440px] text-base leading-relaxed text-brand-muted">
+          <p className="max-w-[440px] text-[15px] leading-relaxed text-brand-muted">
             Drop me a message and I'll get back to you within a day.
           </p>
         </div>
 
         {/* ── Form ────────────────────────────────────────────────── */}
-        <form
-          onSubmit={handleSubmit}
-          autoComplete="off"
-          className="flex flex-col gap-6"
-        >
+        <form onSubmit={handleSubmit} autoComplete="off" className="flex flex-col gap-5">
+
           {/* Name + Email */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
+              <Label htmlFor="name">Your name</Label>
               <input
-                value={values.name}
                 id="name"
+                name="name"
                 type="text"
+                value={values.name}
                 onChange={handleChange}
-                placeholder="Your name"
                 onBlur={handleBlur}
-                className={field(!!(errors.name && touched.name))}
+                placeholder="Bart van den Berg"
+                className={inputClass(!!(errors.name && touched.name))}
               />
               <ErrorLine message={touched.name ? errors.name : undefined} />
             </div>
             <div>
+              <Label htmlFor="email">Email address</Label>
               <input
-                value={values.email}
                 id="email"
+                name="email"
                 type="email"
+                value={values.email}
                 onChange={handleChange}
-                placeholder="Your email"
                 onBlur={handleBlur}
-                className={field(!!(errors.email && touched.email))}
+                placeholder="you@example.com"
+                className={inputClass(!!(errors.email && touched.email))}
               />
               <ErrorLine message={touched.email ? errors.email : undefined} />
             </div>
@@ -123,36 +139,49 @@ function ContactForm() {
 
           {/* Subject */}
           <div>
+            <Label htmlFor="subject">Subject</Label>
             <input
-              value={values.subject}
               id="subject"
+              name="subject"
               type="text"
+              value={values.subject}
               onChange={handleChange}
-              placeholder="Subject"
               onBlur={handleBlur}
-              className={field(!!(errors.subject && touched.subject))}
+              placeholder="What's this about?"
+              className={inputClass(!!(errors.subject && touched.subject))}
             />
             <ErrorLine message={touched.subject ? errors.subject : undefined} />
           </div>
 
           {/* Message */}
           <div>
+            <div className="flex items-end justify-between mb-1.5">
+              <Label htmlFor="textArea">Message</Label>
+              <span
+                className={`text-[11px] font-medium tabular-nums transition-colors duration-150 ${
+                  charCount > charLimit * 0.9
+                    ? "text-red-400"
+                    : "text-white/30"
+                }`}
+              >
+                {charCount} / {charLimit}
+              </span>
+            </div>
             <textarea
-              value={values.textArea}
               id="textArea"
-              rows={4}
+              name="textArea"
+              rows={5}
+              value={values.textArea}
               onChange={handleChange}
-              placeholder="Tell me about your project..."
               onBlur={handleBlur}
-              className={`resize-none ${field(!!(errors.textArea && touched.textArea))}`}
+              placeholder="Tell me about your project..."
+              className={`resize-none ${inputClass(!!(errors.textArea && touched.textArea))}`}
             />
-            <ErrorLine
-              message={touched.textArea ? errors.textArea : undefined}
-            />
+            <ErrorLine message={touched.textArea ? errors.textArea : undefined} />
           </div>
 
           {/* Submit */}
-          <div className="flex items-center gap-5 flex-wrap">
+          <div className="flex items-center gap-5 flex-wrap pt-1">
             <button
               disabled={isSubmitting}
               type="submit"
@@ -163,14 +192,10 @@ function ContactForm() {
             </button>
 
             {successMessage && (
-              <p className="text-[13px] font-medium text-green-400">
-                {successMessage}
-              </p>
+              <p className="text-[13px] font-medium text-green-400">{successMessage}</p>
             )}
             {errorMessage && (
-              <p className="text-[13px] font-medium text-red-400">
-                {errorMessage}
-              </p>
+              <p className="text-[13px] font-medium text-red-400">{errorMessage}</p>
             )}
           </div>
         </form>
