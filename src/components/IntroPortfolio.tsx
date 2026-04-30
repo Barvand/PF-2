@@ -39,100 +39,20 @@ const fadeReveal = {
 function IntroPortfolio({ Project, Contact }: IntroPortFolioProps) {
   return (
     <section className="relative overflow-hidden bg-brand-bg min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-16 font-nunito">
-      {/* Keyframes */}
-      <style>{`
-        @keyframes scanH {
-          0%   { transform: translateY(-4px); opacity: 0; }
-          5%   { opacity: 1; }
-          95%  { opacity: 1; }
-          100% { transform: translateY(100vh); opacity: 0; }
-        }
-        @keyframes scanV {
-          0%   { transform: translateX(-4px); opacity: 0; }
-          5%   { opacity: 1; }
-          95%  { opacity: 1; }
-          100% { transform: translateX(100vw); opacity: 0; }
-        }
-        @keyframes crossPulse {
-          0%, 100% { transform: scale(0.6); opacity: 0.3; }
-          50%       { transform: scale(1.5); opacity: 0.65; }
-        }
-      `}</style>
-
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -left-20 top-1/4 h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(255,107,0,0.08)_0%,transparent_70%)] z-0" />
       <div className="pointer-events-none absolute -right-20 bottom-1/4 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(0,180,255,0.05)_0%,transparent_70%)] z-0" />
 
-      {/* Blueprint grid layer */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden z-[1]">
-        {/* CSS grid background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,107,0,0.08) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,107,0,0.08) 1px, transparent 1px),
-              linear-gradient(rgba(255,107,0,0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,107,0,0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: "200px 200px, 200px 200px, 40px 40px, 40px 40px",
-            maskImage:
-              "radial-gradient(ellipse 90% 90% at 40% 50%, black 20%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 90% 90% at 40% 50%, black 20%, transparent 100%)",
-          }}
-        />
-
-        {/* Horizontal scan line */}
-        <div
-          className="absolute left-0 right-0 h-px"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(255,107,0,0.5) 30%, rgba(255,107,0,0.8) 50%, rgba(255,107,0,0.5) 70%, transparent 100%)",
-            animation: "scanH 8s linear infinite",
-          }}
-        />
-
-        {/* Vertical scan line */}
-        <div
-          className="absolute top-0 bottom-0 w-px"
-          style={{
-            background:
-              "linear-gradient(180deg, transparent 0%, rgba(255,107,0,0.4) 30%, rgba(255,107,0,0.6) 50%, rgba(255,107,0,0.4) 70%, transparent 100%)",
-            animation: "scanV 12s linear infinite",
-          }}
-        />
-
-        {/* Crosshair targets */}
-        {(
-          [
-            { top: "12%", left: "8%", delay: "0s" },
-            { top: "20%", left: "88%", delay: "0.7s" },
-            { top: "78%", left: "15%", delay: "1.4s" },
-            { top: "72%", left: "82%", delay: "2.1s" },
-          ] as const
-        ).map((pos, i) => (
-          <div
-            key={i}
-            className="absolute w-7 h-7"
-            style={{
-              top: pos.top,
-              left: pos.left,
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            <div className="absolute top-1/2 left-0 right-0 h-px bg-[rgba(255,107,0,0.45)]" />
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[rgba(255,107,0,0.45)]" />
-            <div
-              className="absolute inset-0 rounded-full border border-[rgba(255,107,0,0.4)]"
-              style={{
-                animation: `crossPulse ${3 + i * 0.7}s ease-in-out infinite`,
-                animationDelay: pos.delay,
-              }}
-            />
-          </div>
-        ))}
-      </div>
+      {/* Dotted grid */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255,107,0,0.18) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          maskImage: "radial-gradient(ellipse 85% 85% at 40% 50%, black 10%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 85% 85% at 40% 50%, black 10%, transparent 100%)",
+        }}
+      />
 
       {/* Content */}
       <div className="max-w-6xl mx-auto relative w-full z-[2]">
